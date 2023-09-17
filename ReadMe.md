@@ -8,7 +8,7 @@ This repository consists of Src code for Android Studio project consisting of **
 ### Kotlin Activity
 |                Name                |                Location                 |
 | :--------------------------------: | :-------------------------------------: | 
-|              Main.kt               |                                         |              
+|              Main.kt               |  [Here](/src/main/java/com/eample/cthulhucharacter/MainActivity.kt) |              
 |            Character.kt            |                                         |
 |  Create1920sPlayerStepOneActivity  |                                         |
 |  Create1920sPlayerStepTwoActivity  |                                         |
