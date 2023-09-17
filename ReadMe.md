@@ -19,5 +19,6 @@ This repository consists of Src code for Android Studio project consisting of **
 | Create1920sPlayerStepSevenActivity.kt | [Here](/src/main/java/com/example/cthulhucharacter/Create1920sPlayerStepSevenActivity.kt) |
 
 ### Layout XML 
-| Name | Location |
-| :--: | :------: |
+|       Name        |                    Location                    |
+| :---------------: | :--------------------------------------------: |
+| main_activity.xml | [Here](/src/main/res/layout/activity_main.xml) |
