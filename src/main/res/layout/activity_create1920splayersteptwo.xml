@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Testing"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/stepTwoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/stepTwoPartTwoRollLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:visibility="visible"
+            tools:visibility="gone">
+
+            <Button
+                android:id="@+id/backToStep2Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back" />
+
+            <TextView
+                android:id="@+id/rolltitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Luck Rolled"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/strengthTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Strength:" />
+
+            <TextView
+                android:id="@+id/strengthStatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/constitutionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Constitution:" />
+
+            <TextView
+                android:id="@+id/constitutionStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/dexterityTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dexterity:" />
+
+            <TextView
+                android:id="@+id/dexterityStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/intelligenceTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Intelligence:" />
+
+            <TextView
+                android:id="@+id/intelligenceStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/sizeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Size:" />
+
+            <TextView
+                android:id="@+id/sizeStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/powerTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Power:" />
+
+            <TextView
+                android:id="@+id/powerStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/appearanceTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Appearance:" />
+
+            <TextView
+                android:id="@+id/appearanceStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/educationTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Education:" />
+
+            <TextView
+                android:id="@+id/educationStatsTextView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/hitPointsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hit Points:" />
+
+            <TextView
+                android:id="@+id/hitPointsStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/magicPointsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Magic Points:" />
+
+            <TextView
+                android:id="@+id/magicPointsStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/luckTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Luck:" />
+
+            <TextView
+                android:id="@+id/luckStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/sanityTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sanity" />
+
+            <TextView
+                android:id="@+id/sanityStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/rerollButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Re-Roll" />
+
+            <Button
+                android:id="@+id/continueButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stepTwoPartTwoStandardArrayLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="gone">
+
+            <Button
+                android:id="@+id/backToStepTwoButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back" />
+
+            <TextView
+                android:id="@+id/standardArrayTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Standard Array"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/rolltitleTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:text="Select the value next for each score but only use one of each value"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/strengthTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Strength:" />
+
+            <TextView
+                android:id="@+id/constitutionTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Constitution:" />
+
+            <TextView
+                android:id="@+id/dexterityTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dexterity:" />
+
+            <TextView
+                android:id="@+id/intelligenceTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Intelligence:" />
+
+            <TextView
+                android:id="@+id/sizeTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Size:" />
+
+            <TextView
+                android:id="@+id/powerTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Power:" />
+
+            <TextView
+                android:id="@+id/appearanceTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Appearance:" />
+
+            <TextView
+                android:id="@+id/educationTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Education:" />
+
+            <Button
+                android:id="@+id/continueButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/backToStepOneButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Last Step" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Build Stats"
+            android:textSize="34sp" />
+
+        <Spinner
+            android:id="@+id/stndArrayVsRollspinner"
+            android:layout_width="match_parent"
+            android:layout_height="52dp" />
+
+        <Button
+            android:id="@+id/continueButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next" />
+
+        <TextView
+            android:id="@+id/printingChracterTestTextView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/testing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

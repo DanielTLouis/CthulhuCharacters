@@ -1,0 +1,383 @@
+{"Occupations":
+[
+  {"name": "Antiquarian",
+    "Description" : "",
+    "Occupation Points":  220,
+    "Credit Rating" :  "30-70",
+    "Occupation Skills" : [
+      "Appraise",
+      {"ArtandCraft" : ["any"]},
+      "History",
+      "Library Use",
+      {"Language Other" :  ["any"]},
+      {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Spot Hidden",
+      "any one other skill as a personal or era specialty"
+    ]
+  },
+  {"name": "Archaeologist",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "10-40",
+    "Occupation Skills": [
+      "Appraise",
+      "Archeology",
+      "History",
+      {"Language Other" : ["any"]},
+      "Library Use",
+      "Spot Hidden",
+      "Mechanical Repair",
+      "Navigate or Science(e.g. chemistry, physics, geology, etc.)"
+    ]
+  },
+  {"name": "Author",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "09-30",
+    "Occupation Skills": [
+      {"ArtandCraft" : ["Literature"]},
+      "History",
+      "Library Use",
+      {"one": ["Natural World; Occult"]},
+      {"Language Other" : ["any"]},
+      "Language Own",
+      "Psychology",
+      "one other skill as a personal or era specialty"
+    ]
+  },
+  {"name": "Dilettante",
+    "Description" : "",
+    "Occupation Points": 200,
+    "Credit Rating": "50-99",
+    "Occupation Skills": [
+      {"ArtandCraft" : ["any"]},
+      "Firearms(Handgun)",
+      "Firearms(Rifle)",
+      {"Language Other":["any"]},
+      "Ride",
+      {"one":["Charm; Fast Talk; Intimidate; Persuade"]},
+      "any three other skills as personal or era specialties"
+    ]
+  },
+  {"name": "Doctor of Medicine",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "30-80",
+    "Occupation Skills": [
+      "First Aid",
+      "Medicine",
+      {"Language Other" : ["Latin"]},
+      "Psychology",
+      {"Science" : ["Biology; Pharmacy"]},
+      "any two other skills as academic or personal specialties"
+    ]
+  },
+  {"name": "Pilot",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "20-70",
+    "Occupation Skills": [
+      "Electrical Repair",
+      "Mechanical Repair",
+      "Navigate",
+      "Operate Heavy Machine",
+      "Pilot",
+      {"Science" : ["Astronomy"]},
+      "any two other skills as personal or era specialties"
+    ]
+  },
+  {"name": "Police Detective",
+    "Description" : "",
+    "Occupation Points": 250,
+    "Credit Rating": "20-50",
+    "Occupation Skills": [
+      {"ArtandCraft" : "Acting; Disguise"},
+      "Firearms(Handgun)",
+      "Firearms(Rifle)",
+      "Law",
+      "Listen",
+      {"one" : "Charm; Fast Talk; Intimidate; Persuade"},
+      "Psychology",
+      "Spot Hidden",
+      "any one other skill"
+    ]
+  },
+  {"name": "Professor",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "20-70",
+    "Occupation Skills": [
+      "Library Use",
+      {"Language Other":["any"]},
+      "Language Own",
+      "Psychology",
+      "any four other skills as academic era or personal specialties"
+    ]
+  },
+  {"name": "Reporter",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "09-30",
+    "Occupation Skills": [
+      {"ArtandCraft": ["Acting"]},
+      "History",
+      "Listen",
+      "Language Own",
+      {"one":["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Psychology",
+      "Stealth",
+      "Spot Hidden"
+    ]
+  },
+  {"name": "Uniformed Police Officer",
+    "Description" : "",
+    "Occupation Points": 250,
+    "Credit Rating": "09-30",
+    "Occupation Skills": [
+      "Fighting (Brawl)",
+      "Firearms(Handgun)",
+      "Firearms(Rifle)",
+      "First Aid",
+      {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Law",
+      "Psychology",
+      "Spot Hidden",
+      {"one" : ["Drive Automobile; Ride"]}
+    ]
+  },
+  {"name": "Accountant",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "30-70",
+    "Occupation Skills": [
+      "Accounting",
+      "Law",
+      "Library Use",
+      "Listen",
+      "Persuade",
+      "Spot Hidden",
+      "any two other skills as personal or era specialties."
+    ]
+  },
+  {"name": "Acrobat",
+    "Description" : "",
+    "Occupation Points": 250,
+    "Credit Rating": "09-20",
+    "Occupation Skills": [
+      "Climb",
+      "Dodge",
+      "Jump",
+      "Throw",
+      "Spot Hidden",
+      "Swim",
+      "any two other skills as personal or era specialties"
+    ]
+  },
+  {"name": "Agency Detective",
+    "Description" : "",
+    "Occupation Points": 250,
+    "Credit Rating": "20-45",
+    "Occupation Skills": [
+      {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Fighting (Brawl)",
+      "Firearms(Rifle)",
+      "Firearms(Handgun)",
+      "Law",
+      "Library Use",
+      "Psychology",
+      "Stealth",
+      "Track"
+    ]
+  },
+  {"name": "Alienist",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "10-60",
+    "Occupation Skills": [
+      "Law",
+      "Listen",
+      "Medicine",
+      {"Language Other" : ["any"]},
+      "Psychoanalysis",
+      "Psychology",
+      {"Science" : ["Biology; Chemistry"]}
+    ]
+  },
+  {"name": "Animal Trainer",
+    "Description" : "",
+    "Occupation Points": 200,
+    "Credit Rating": "10-40",
+    "Occupation Skills": [
+      "Jump",
+      "Listen",
+      "Natural World",
+      "Psychology",
+      {"Science" : ["Zoology"]},
+      "Stealth",
+      "Track",
+      "any one other skill as a personal or era specialty"
+    ]
+  },
+  {"name": "Antique Dealer",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "30-50",
+    "Occupation Skills": [
+      "Accounting",
+      "Appraise",
+      "Drive Auto",
+      {"two Charm" : ["Fast Talk; Intimidate; Persuade"]},
+      "History",
+      "Library Use",
+      "Navigate"
+    ]
+  },
+  {"name": "Architect",
+    "Description" : "",
+    "Occupation Points": 280,
+    "Credit Rating": "30-70",
+    "Occupation Skills": [
+      "Accounting",
+      {"ArtandCraft" : ["Technical Drawing"]},
+      "Law",
+      "Own Language",
+      "Library Use",
+      "Persuade",
+      "Psychology",
+      {"Science" : ["Mathematics"]}
+    ]
+  },
+  {"name": "Artist",
+    "Description" : "",
+    "Occupation Points": 290,
+    "Credit Rating": "09-50",
+    "Occupation Skills": [
+      {"ArtandCraft" : ["any"]},
+      {"one" : ["History; Natural World"]},
+      {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      {"Language Other" : ["any"]},
+      "Psychology",
+      "Spot Hidden",
+      "any two other skills as personal or era specialties"
+    ]
+  },
+  {"name": "Asylum Attendant",
+    "Description" : "",
+    "Occupation Points": 260,
+    "Credit Rating": "08-20",
+    "Occupation Skills": [
+      "Dodge",
+      "Fighting(Brawl)",
+      "First Aid",
+      {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Listen",
+      "Psychology",
+      "Stealth"
+    ]
+  },
+  {"name": "Athlete",
+    "Description" : "",
+    "Occupation Points": 260,
+    "Credit Rating": "09-70",
+    "Occupation Skills": [
+      "Climb",
+      "Jump",
+      "Fighting(Brawl)",
+      "Ride",
+      {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Swim",
+      "Throw",
+      "any one other skill as a personal or era specialty"
+    ]
+  },
+  {"name": "Aviator",
+    "Description" : "",
+    "Occupation Points": 210,
+    "Credit Rating": "30-60",
+    "Occupation Skills": [
+      "Accounting",
+      "Electrical Repair",
+      "Listen",
+      "Mechanical Repair",
+      "Navigate",
+      "Pilot",
+      "Spot Hidden",
+      "any one other skill as a personal or era specialty"
+    ]
+  },
+  {"name": "Bartender",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "08-25",
+    "Occupation Skills": [
+      "Accounting",
+      {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Fighting(Brawl)",
+      "Listen",
+      "Psychology",
+      "Spot Hidden",
+      "any one other skill as a personal or era specialty"
+    ]
+  },
+  {"name": "Big Game Hunter",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "20-50",
+        "Occupation Skills": [
+          "Firearms(Handgun)",
+          "Firearms(Rifle)",
+          {"one" : ["Listen; Spot Hidden"]},
+          "Natural World",
+          "Navigate",
+          {"Language Other" : ["any"]},
+          "Survival",
+          {"Science" : ["Biology; Botany)"]},
+          "Stealth",
+          "Track"
+        ]
+      },
+      {"name": "Book Dealer",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "20-40",
+        "Occupation Skills": [
+          "Accounting",
+          "Appraise",
+          "Drive Auto",
+          "History",
+          "Library Use",
+          "Language Own",
+          {"Language Other":["any"]},
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]}
+        ]
+      },
+      {"name": "Bounty Hunter",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "09-30",
+        "Occupation Skills": [
+          "Drive Auto",
+          "Electrical Repair",
+          {"one":["Fighting(Brawl), Firearms(Handgun); Firearms(Rifle)"]},
+          {"one" : ["Fast Talk; Charm; Intimidate; Persuade"]},
+          "Law",
+          "Psychology",
+          "Track and Stealth"
+        ]
+      },
+      {"name": "Boxer",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "09-60",
+        "Occupation Skills": [
+          "Dodge",
+          "Fighting(Brawl)",
+          "Intimidate",
+          "Jump",
+          "Psychology",
+          "Spot Hidden",
+          "any two other skills as personal or era specialties"
+        ]
+      }
+    ]
+  }

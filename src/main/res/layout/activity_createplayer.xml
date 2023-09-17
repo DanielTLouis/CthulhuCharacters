@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/printingChracterTestTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/stepOneLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#51FF9800"
+        android:orientation="vertical"
+        android:visibility="visible"
+        tools:visibility="gone">
+
+        <Button
+            android:id="@+id/backToHomeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back To Home Screen" />
+
+        <TextView
+            android:id="@+id/titleTextView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Basic Information"
+            android:textSize="34sp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Character's Name"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/residenceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:hint="Enter Your Living Arrangements"
+            android:inputType="text"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/genderTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gender:"
+            android:textSize="24sp" />
+
+        <Spinner
+            android:id="@+id/genderSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/ageTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Age:"
+            android:textSize="24sp" />
+
+        <Spinner
+            android:id="@+id/ageSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="25dp" />
+
+        <Button
+            android:id="@+id/continueButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/stepTwoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/stepTwoPartTwoRollLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            tools:visibility="visible">
+
+            <Button
+                android:id="@+id/backToStep2Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back" />
+
+            <TextView
+                android:id="@+id/rolltitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Luck Rolled"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/strengthTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Strength:" />
+
+            <TextView
+                android:id="@+id/strengthStatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/constitutionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Constitution:" />
+
+            <TextView
+                android:id="@+id/constitutionStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/dexterityTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dexterity:" />
+
+            <TextView
+                android:id="@+id/dexterityStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/intelligenceTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Intelligence:" />
+
+            <TextView
+                android:id="@+id/intelligenceStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/sizeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Size:" />
+
+            <TextView
+                android:id="@+id/sizeStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/powerTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Power:" />
+
+            <TextView
+                android:id="@+id/powerStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/appearanceTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Appearance:" />
+
+            <TextView
+                android:id="@+id/appearanceStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/educationTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Education:" />
+
+            <TextView
+                android:id="@+id/educationStatsTextView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/hitPointsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hit Points:" />
+
+            <TextView
+                android:id="@+id/hitPointsStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/magicPointsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Magic Points:" />
+
+            <TextView
+                android:id="@+id/magicPointsStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/luckTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Luck:" />
+
+            <TextView
+                android:id="@+id/luckStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/sanityTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sanity" />
+
+            <TextView
+                android:id="@+id/sanityStatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="16dp"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/rerollButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Re-Roll" />
+
+            <Button
+                android:id="@+id/continueButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stepTwoPartTwoStandardArrayLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="gone">
+
+            <Button
+                android:id="@+id/backToStepTwoButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back" />
+
+            <TextView
+                android:id="@+id/standardArrayTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Standard Array"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/rolltitleTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:text="Select the value next for each score but only use one of each value"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/strengthTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Strength:" />
+
+            <TextView
+                android:id="@+id/constitutionTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Constitution:" />
+
+            <TextView
+                android:id="@+id/dexterityTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dexterity:" />
+
+            <TextView
+                android:id="@+id/intelligenceTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Intelligence:" />
+
+            <TextView
+                android:id="@+id/sizeTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Size:" />
+
+            <TextView
+                android:id="@+id/powerTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Power:" />
+
+            <TextView
+                android:id="@+id/appearanceTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Appearance:" />
+
+            <TextView
+                android:id="@+id/educationTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Education:" />
+
+            <Button
+                android:id="@+id/continueButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/backToStepOneButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Last Step" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Build Stats"
+            android:textSize="34sp" />
+
+        <Spinner
+            android:id="@+id/stndArrayVsRollspinner"
+            android:layout_width="match_parent"
+            android:layout_height="52dp" />
+
+        <Button
+            android:id="@+id/continueButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/stepThreeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:visibility="visible">
+
+        <Button
+            android:id="@+id/backToStepTwoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back " />
+
+        <TextView
+            android:id="@+id/titleTextView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Occupation:"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/occuptionsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select an Occupation Below"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/warningTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/occupationSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="49dp" />
+
+        <TextView
+            android:id="@+id/OccupationDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/creditRatingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Credit Ratting"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/occPointsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Occupation Points" />
+
+        <TextView
+            android:id="@+id/skillsFromOccupationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Skills From Occupation: "
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/contimueButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next" />
+
+        <TextView
+            android:id="@+id/tesingJsonTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Json Goes Here"
+            tools:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>
