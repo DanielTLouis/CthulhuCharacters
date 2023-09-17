@@ -6,16 +6,16 @@ This repository consists of Src code for Android Studio project consisting of **
 * [Drawable Resources](#drawable-resources)
 
 ### Kotlin Activity
-|                Name                |                Location                 |
-| :--------------------------------: | :-------------------------------------: | 
-|              Main.kt               |  [Here](/src/main/java/com/eample/cthulhucharacter/MainActivity.kt) |              
-|            Character.kt            |                                         |
-|  Create1920sPlayerStepOneActivity  |                                         |
-|  Create1920sPlayerStepTwoActivity  |                                         |
-| Create1920sPlayerStepThreeActivity |                                         |
-| Create1920sPlayerStepFourActivity  |                                         |
-|  Create1920sPlayerStepSixActivity  |                                         |
-| Create1920sPlayerStepSevenActivity |                                         |
+|                  Name                 |                Location                 |
+| :-----------------------------------: | :-----------------------------------------------------------------: | 
+|           MainActivivty.kt            |  [Here](/src/main/java/com/eample/cthulhucharacter/MainActivity.kt) |              
+|             Character.kt              |                                         |
+|  Create1920sPlayerStepOneActivity.kt  |                                         |
+|  Create1920sPlayerStepTwoActivity.kt  |                                         |
+| Create1920sPlayerStepThreeActivity.kt |                                         |
+| Create1920sPlayerStepFourActivity.kt  |                                         |
+|  Create1920sPlayerStepSixActivity.kt  |                                         |
+| Create1920sPlayerStepSevenActivity.kt |                                         |
 
 ### Layout XML 
 | Name | Location |
