@@ -9,7 +9,7 @@ This repository consists of Src code for Android Studio project consisting of **
 |                  Name                 |                Location                 |
 | :-----------------------------------: | :------------------------------------------------------------------: | 
 |           MainActivivty.kt            |  [Here](/src/main/java/com/example/cthulhucharacter/MainActivity.kt) |              
-|             Character.kt              |                                         |
+|             Character.kt              |  [Here](/src/main/java/com/example/cthulhucharacter/Character.kt)                                       |
 |  Create1920sPlayerStepOneActivity.kt  |                                         |
 |  Create1920sPlayerStepTwoActivity.kt  |                                         |
 | Create1920sPlayerStepThreeActivity.kt |                                         |
