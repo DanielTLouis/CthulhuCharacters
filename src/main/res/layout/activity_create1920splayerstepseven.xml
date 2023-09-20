@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/backToStepSixButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back" />
+
+        <TextView
+            android:id="@+id/finalTouchesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Final Touches"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/cashTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cash" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/cashEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add You On Hand Cash"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/cashButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Add Cash" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/spendingTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spending level" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/spendingEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add Your Spending Level"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/spendingButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Add Spending Level" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/assetsTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Assets" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/assetEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add An Asset Name"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/assetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Add an Asset" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/assetsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/AddInvestagatorsTwxtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add the names of your fellow investigators" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/number1TextView"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1."
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/player1EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add Player Name"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/character1EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add Character Name"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/number2TextView"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2."
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/player2EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add Player Name"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/character2EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add Character Name"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/number3TextView"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3."
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/player3EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add Player Name"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/character3EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add Character Name"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/number4TextView"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4."
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/player4EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add Player Name"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/character4EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add Charater Name"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/number5TextView"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5."
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/player5EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add Player Name"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/character5EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Add Character Name "
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/otherInvestigatorsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Other Investicators " />
+
+        <Button
+            android:id="@+id/finializeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Finalize" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -110,12 +110,12 @@ class Character(){
     var damageBonus : String = "0"
 
     //combat
-    var attackName : ArrayList<String> = arrayListOf()
-    var damage : ArrayList<String> = arrayListOf()
-    var numOfAttacks : ArrayList<Int> = arrayListOf()
-    var range : ArrayList<Int> = arrayListOf()
-    var ammo : ArrayList<Int> = arrayListOf()
-    var malf : ArrayList<Int> = arrayListOf()
+    var attackName : String = ""
+    var damage : String = ""
+    var numOfAttacks : String = ""
+    var range : String = ""
+    var ammo : String = ""
+    var malf : String = ""
 
     //Background
     var myStory : String = ""
@@ -131,16 +131,16 @@ class Character(){
     var encountersWithStrangeEntities : String = ""
 
     //Gear and Possessions
-    var gearAndPossessions : List<String>  = listOf()
+    var gearAndPossessions : String = ""
 
     //Wealth
     var spendingLevel : Int = 0
     var cash : Int = 0
-    var assets : List<String> = listOf()
+    var assets : String = ""
 
     //fellow investigators
-    var characterNames : List<String> = listOf()
-    var playerNames : List<String> = listOf()
+    var characterNames : String = ""
+    var playerNames : String = ""
 
     var test : String = ""
 
@@ -228,12 +228,12 @@ class Character(){
             this.build = (characterDetail.getInt("build"))
             this.dodge = (characterDetail.getInt("dodge"))
             this.damageBonus = (characterDetail.getString("damageBonus"))
-            //this.attackName = ArrayList<String> = arrayListOf()
-            //this.damage : ArrayList<String> = arrayListOf()
-            //this.numOfAttacks : ArrayList<Int> = arrayListOf()
-            //this.range : ArrayList<Int> = arrayListOf()
-            //this.ammo : ArrayList<Int> = arrayListOf()
-            //this.malf : ArrayList<Int> = arrayListOf()
+            this.attackName = (characterDetail.getString("attackName"))
+            this.damage = (characterDetail.getString("damage"))
+            this.numOfAttacks = (characterDetail.getString("numOfAttacks"))
+            this.range = (characterDetail.getString("range"))
+            this.ammo = (characterDetail.getString("ammo"))
+            this.malf = (characterDetail.getString("malf"))
             this.myStory = (characterDetail.getString("myStory"))
             this.personalDescription = (characterDetail.getString("personalDescription"))
             this.traits = (characterDetail.getString("traits"))
@@ -245,12 +245,12 @@ class Character(){
             this.arcaneTomesAndSpells = (characterDetail.getString("arcaneTomesAndSpells"))
             this.treasuredPossessions = (characterDetail.getString("treasuredPossessions"))
             this.encountersWithStrangeEntities = (characterDetail.getString("encountersWithStrangeEntities"))
-            //this.gearAndPossessions : List<String>  = listOf()
+            this.gearAndPossessions = (characterDetail.getString("gearAndPossessions"))
             this.spendingLevel = (characterDetail.getInt("spendingLevel"))
             this.cash = (characterDetail.getInt("cash"))
-            //this.assets : List<String> = listOf()
-            //this.characterNames : List<String> = listOf()
-            //this.playerNames : List<String> = listOf()
+            this.assets = (characterDetail.getString("assets"))
+            this.characterNames = (characterDetail.getString("characterNames"))
+            this.playerNames = (characterDetail.getString("playerNames"))
         }
         catch(e: IOException){
             this.name = "Did not find file to open"
@@ -261,6 +261,7 @@ class Character(){
 
     //print character class to TextView this will change to save json file
     fun createJson() : String {
+        //add items
         val json = "{\"Character\" :\n" +
                 "[\n" +
                 "  {\"name\": \"${this.name}\",\n" +
@@ -337,12 +338,12 @@ class Character(){
                 "    \"build\" : ${this.build},\n" +
                 "    \"dodge\" : ${this.dodge},\n" +
                 "    \"damageBonus\" : \"${this.damageBonus}\",\n" +
-                "    \"attackName\" : [],\n" +
-                "    \"damage\" : [],\n" +
-                "    \"numOfAttacks\" : [],\n" +
-                "    \"range\" : [],\n" +
-                "    \"ammo\" : [],\n" +
-                "    \"malf\" : [],\n" +
+                "    \"attackName\" : \"${this.attackName}\",\n" +
+                "    \"damage\" : \"${this.damage}\",\n" +
+                "    \"numOfAttacks\" : \"${this.numOfAttacks}\",\n" +
+                "    \"range\" : \"${this.range}\",\n" +
+                "    \"ammo\" : \"${this.ammo}\",\n" +
+                "    \"malf\" : \"${this.malf}\",\n" +
                 "    \"myStory\" : \"${this.myStory}\",\n" +
                 "    \"personalDescription\" : \"${this.personalDescription}\",\n" +
                 "    \"traits\" : \"${this.traits}\",\n" +
@@ -354,12 +355,12 @@ class Character(){
                 "    \"arcaneTomesAndSpells\" : \"${this.arcaneTomesAndSpells}\",\n" +
                 "    \"treasuredPossessions\" : \"${this.treasuredPossessions}\",\n" +
                 "    \"encountersWithStrangeEntities\" : \"${this.encountersWithStrangeEntities}\",\n" +
-                "    \"gearAndPossessions\" : [],\n" +
+                "    \"gearAndPossessions\" : \"${this.gearAndPossessions}\",\n" +
                 "    \"spendingLevel\" : ${this.spendingLevel},\n" +
                 "    \"cash\" : ${this.cash},\n" +
-                "    \"assets\" : [],\n" +
-                "    \"characterNames\" : [],\n" +
-                "    \"playerNames\" : []\n" +
+                "    \"assets\" : \"${this.assets}\",\n" +
+                "    \"characterNames\" : \"${this.characterNames}\",\n" +
+                "    \"playerNames\" : \"${this.playerNames}\"\n" +
                 "  }\n" +
                 "]}"
         return json

@@ -1,0 +1,10 @@
+{"Weapons": [
+  {"Name" : "Brawl",
+    "Ammo" : "n/a",
+    "Malf" : "n/a",
+    "Damage" : "1D3+DB",
+    "NumberOfAttacks" : 1,
+    "Range" : "n/a"
+  }
+]
+}
