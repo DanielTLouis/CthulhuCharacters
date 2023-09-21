@@ -72,33 +72,42 @@ class Create1920sPlayerStepOneActivity : ComponentActivity() {
         val continueButton1 : Button = findViewById(R.id.continueButton1)
         continueButton1.setOnClickListener(){
             val characterNameEditText : EditText = findViewById(R.id.nameEditText)
-            newCharacter.name = characterNameEditText.text.toString()
+            if (characterNameEditText.text.toString() == ""){
+                val WarningMessageTextView : TextView = findViewById(R.id.WarningMessageTextView)
+                WarningMessageTextView.text = "Please Enter A Name"
+            }else {
+                newCharacter.name = characterNameEditText.text.toString()
 
-            val residenceEditText : EditText = findViewById(R.id.residenceEditText)
-            newCharacter.residence = residenceEditText.text.toString()
+                val residenceEditText: EditText = findViewById(R.id.residenceEditText)
+                newCharacter.residence = residenceEditText.text.toString()
 
-            when(genderSpinner.selectedItem.toString()){
-                "Male" -> newCharacter.gender = 1
-                "Female" -> newCharacter.gender = 2
-                "Other" -> newCharacter.gender = 3
-                else -> newCharacter.gender = 0
+                when (genderSpinner.selectedItem.toString()) {
+                    "Male" -> newCharacter.gender = 1
+                    "Female" -> newCharacter.gender = 2
+                    "Other" -> newCharacter.gender = 3
+                    else -> newCharacter.gender = 0
+                }
+
+
+                val titleTextView1: TextView = findViewById(R.id.titleTextView1)
+                val genderTextView: TextView = findViewById(R.id.genderTextView)
+                val ageTextView: TextView = findViewById(R.id.ageTextView)
+
+                newCharacter.age = ageSpinner.selectedItem.toString().toInt()
+
+                //save to json file
+                saveCharacter(newCharacter)
+
+                //go to next step
+                val intent = Intent(
+                    this@Create1920sPlayerStepOneActivity,
+                    Create1920sPlayerStepTwoActivity::class.java
+                )
+                startActivity(intent)
+                val printingChracterTestTextView2: TextView =
+                    findViewById(R.id.printingChracterTestTextView2)
+                //printingChracterTestTextView2.text = newCharacter.createJson()
             }
-
-
-            val titleTextView1 : TextView = findViewById(R.id.titleTextView1)
-            val genderTextView : TextView = findViewById(R.id.genderTextView)
-            val ageTextView : TextView = findViewById(R.id.ageTextView)
-
-            newCharacter.age = ageSpinner.selectedItem.toString().toInt()
-
-            //save to json file
-            saveCharacter(newCharacter)
-
-            //go to next step
-            val intent = Intent(this@Create1920sPlayerStepOneActivity, Create1920sPlayerStepTwoActivity::class.java)
-            startActivity(intent)
-            val printingChracterTestTextView2 : TextView = findViewById(R.id.printingChracterTestTextView2)
-            //printingChracterTestTextView2.text = newCharacter.createJson()
 
         }
     }

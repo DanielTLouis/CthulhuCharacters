@@ -23,8 +23,7 @@ import java.io.InputStream
 import java.io.OutputStream
 import java.util.UUID
 
-
-class Create1920sPlayerStepSevenActivity : ComponentActivity() {
+class DisplayCharacterSheetActivity : ComponentActivity() {
     var artsArray: ArrayList<String> = arrayListOf()
     var languageArray: ArrayList<String> = arrayListOf()
     var scienceArray: ArrayList<String> = arrayListOf()
@@ -91,77 +90,28 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create1920splayerstepseven)
+        setContentView(R.layout.activity_displaycharactersheet)
 
-        val cashButton : Button = findViewById(R.id.cashButton)
-        val spendingButton : Button = findViewById(R.id.spendingButton)
-        val assetButton : Button = findViewById(R.id.assetButton)
-        val otherInvestigatorsButton : Button = findViewById(R.id.otherInvestigatorsButton)
-        val finializeButton : Button = findViewById(R.id.finializeButton)
+        val BackToCharSelectButton : Button = findViewById(R.id.BackToCharSelectButton)
+        val jsonTextView : TextView = findViewById(R.id.jsonTextView)
 
-        var newCharacter : Character = loadCharacter()
+        createCharacterList()
+        var selectedCharacter : Character = Character()
+
+        for(i in characterList.indices){
+            if(characterList[i].name == intent.getStringExtra("name")){
+                selectedCharacter = characterList[i]
+            }
+        }
+        jsonTextView.text = "Character: \n" + selectedCharacter.createJson()
 
         /**
-         * Button
+         * Buttons
          */
-        cashButton.setOnClickListener(){
-            val cashEditText : EditText = findViewById(R.id.cashEditText)
-            newCharacter.cash = cashEditText.text.toString().toInt()
-            saveCharacter(newCharacter)
-        }
-        spendingButton.setOnClickListener(){
-            val spendingEditText : EditText = findViewById(R.id.spendingEditText)
-            newCharacter.spendingLevel = spendingEditText.text.toString().toInt()
-            saveCharacter(newCharacter)
-        }
-        assetButton.setOnClickListener(){
-            val assetEditText : EditText = findViewById(R.id.assetEditText)
-            var tempString = newCharacter.assets
-            val assetsTextView : TextView = findViewById(R.id.assetsTextView)
-            tempString += assetEditText.text.toString() + "; "
-            newCharacter.assets = tempString
-            assetsTextView.text = tempString.replace(";", "\n")
-            saveCharacter(newCharacter)
-        }
-        otherInvestigatorsButton.setOnClickListener(){
-            val player1EditText : EditText = findViewById(R.id.player1EditText)
-            val player2EditText : EditText = findViewById(R.id.player2EditText)
-            val player3EditText : EditText = findViewById(R.id.player3EditText)
-            val player4EditText : EditText = findViewById(R.id.player4EditText)
-            val player5EditText : EditText = findViewById(R.id.player5EditText)
-            val character1EditText : EditText = findViewById(R.id.character1EditText)
-            val character2EditText : EditText = findViewById(R.id.character2EditText)
-            val character3EditText : EditText = findViewById(R.id.character3EditText)
-            val character4EditText : EditText = findViewById(R.id.character4EditText)
-            val character5EditText : EditText = findViewById(R.id.character5EditText)
-            var tempPlayerString = player1EditText.text.toString() +
-                    player2EditText.text.toString() +
-                    player3EditText.text.toString() +
-                    player4EditText.text.toString() +
-                    player5EditText.text.toString()
-            var tempCharacterString : String = character1EditText.text.toString() +
-                    character2EditText.text.toString() +
-                    character3EditText.text.toString() +
-                    character4EditText.text.toString() +
-                    character5EditText.text.toString()
-            newCharacter.characterNames = tempCharacterString
-            newCharacter.playerNames = tempPlayerString
-            saveCharacter(newCharacter)
-        }
-        finializeButton.setOnClickListener(){
-            newCharacter.era = "1920s"
-            saveCharacter(newCharacter)
-            createCharacterList(newCharacter)
-            updateCharacterListAndJson()
-            var temp : String = "Characters\n"
-            for(i in characterList){
-                temp += i.createJson() + "\n"
-            }
-            val assetsTextView : TextView = findViewById(R.id.assetsTextView)
-            val intent = Intent(this@Create1920sPlayerStepSevenActivity, MainActivity::class.java)
+        BackToCharSelectButton.setOnClickListener(){
+            val intent = Intent(this@DisplayCharacterSheetActivity, DisplayCharactersActivity::class.java)
             startActivity(intent)
         }
-
 
     }
     fun updateCharacterListAndJson(){
@@ -181,7 +131,7 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
         }
     }
 
-    fun createCharacterList(newCharacter: Character){
+    fun createCharacterList(){
         try {
             val json : String
             val bufferedReader: BufferedReader = File(filesDir, "Characters.json").bufferedReader()
@@ -198,7 +148,6 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
         } catch (ex: Exception) {
             ex.printStackTrace()
         }
-        characterList.add(newCharacter)
     }
     private fun loadCharacter(): Character {
         var tempCharacter : Character = Character()

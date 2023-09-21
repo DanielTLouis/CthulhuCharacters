@@ -29,7 +29,12 @@ class MainActivity : ComponentActivity() {
         val createCharacterButton : Button = findViewById(R.id.createCharacterButton)
         createCharacterButton.setOnClickListener{
             //val intent = Intent(this@MainActivity, Create1920sPlayerStepOneActivity::class.java)
-            val intent = Intent(this@MainActivity, Create1920sPlayerStepSixActivity::class.java)
+            val intent = Intent(this@MainActivity, Create1920sPlayerStepOneActivity::class.java)
+            startActivity(intent)
+        }
+        val charactersButton : Button = findViewById(R.id.charactersButton)
+        charactersButton.setOnClickListener(){
+            val intent = Intent(this@MainActivity, DisplayCharactersActivity::class.java)
             startActivity(intent)
         }
     }

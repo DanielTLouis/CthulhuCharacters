@@ -142,7 +142,7 @@ class Character(){
     var characterNames : String = ""
     var playerNames : String = ""
 
-    var test : String = ""
+    var era : String = ""
 
     /**
      * functions
@@ -251,6 +251,7 @@ class Character(){
             this.assets = (characterDetail.getString("assets"))
             this.characterNames = (characterDetail.getString("characterNames"))
             this.playerNames = (characterDetail.getString("playerNames"))
+            this.era = (characterDetail.getString("era"))
         }
         catch(e: IOException){
             this.name = "Did not find file to open"
@@ -262,107 +263,109 @@ class Character(){
     //print character class to TextView this will change to save json file
     fun createJson() : String {
         //add items
-        val json = "{\"Character\" :\n" +
-                "[\n" +
-                "  {\"name\": \"${this.name}\",\n" +
-                "   \"occupation\" : \"${this.occupation}\",\n" +
-                "    \"gender\" : ${this.gender},\n" +
-                "    \"residence\" : \"${this.residence}\",\n" +
-                "    \"age\" : ${this.age},\n" +
-                "    \"strength\" : ${this.strength},\n" +
-                "    \"constitution\" : ${this.constitution},\n" +
-                "    \"dexterity\" : ${this.dexterity},\n" +
-                "    \"intelligence\" : ${this.intelligence},\n" +
-                "    \"size\" : ${this.size},\n" +
-                "    \"power\" : ${this.power},\n" +
-                "    \"appearance\" : ${this.appearance},\n" +
-                "    \"education\" : ${this.education},\n" +
-                "    \"maxHitPoints\" : ${this.maxHitPoints},\n" +
-                "    \"hitPoints\" : ${this.hitPoints},\n" +
-                "    \"maxMagicPoints\" : ${this.maxMagicPoints},\n" +
-                "    \"magicPoints\" : ${this.magicPoints},\n" +
-                "    \"startingLuck\" : ${this.startingLuck},\n" +
-                "    \"luck\" : ${this.luck},\n" +
-                "    \"startingSanity\" : ${this.startingSanity},\n" +
-                "    \"sanity\" : ${this.sanity},\n" +
-                "    \"temporarySanity\" : ${this.temporarySanity},\n" +
-                "    \"indefiniteInsanity\" : ${this.indefiniteInsanity},\n" +
-                "    \"majorWound\" : ${this.majorWound},\n" +
-                "    \"unconscious\" : ${this.unconscious},\n" +
-                "    \"dying\" : ${this.dying},\n" +
-                "    \"accounting\" : ${this.accounting},\n" +
-                "    \"anthropology\" : ${this.anthropology},\n" +
-                "    \"appraise\" : ${this.appraise},\n" +
-                "    \"archaeology\" : ${this.archaeology},\n" +
-                "    \"artAndCraft\" : ${this.artAndCraft},\n" +
-                "    \"ArtandCraftArray\": \"${this.arts}\",\n" +
-                "    \"charm\" : ${this.charm},\n" +
-                "    \"climb\" : ${this.climb},\n" +
-                "    \"cthulhuMythos\" : ${this.cthulhuMythos},\n" +
-                "    \"disguise\" : ${this.disguise},\n" +
-                "    \"driveAuto\" : ${this.driveAuto},\n" +
-                "    \"elcRepair\" :${this.elcRepair},\n" +
-                "    \"fastTalk\" : ${this.fastTalk},\n" +
-                "    \"fightingBrawl\" : ${this.fightingBrawl},\n" +
-                "    \"firearmsHandgun\" : ${this.firearmsHandgun},\n" +
-                "    \"firearmsRifle\" : ${this.firearmsRifle},\n" +
-                "    \"firstAid\" : ${this.firstAid},\n" +
-                "    \"intimidate\" : ${this.intimidate},\n" +
-                "    \"jump\" : ${this.jump},\n" +
-                "    \"languageOther\" : ${this.languageOther},\n" +
-                "    \"LanguageArray\" : \"${this.languages}\",\n" +
-                "    \"law\" : ${this.law},\n" +
-                "    \"libraryUse\" : ${this.libraryUse},\n" +
-                "    \"listen\" : ${this.listen},\n" +
-                "    \"locksmith\" : ${this.locksmith},\n" +
-                "    \"mechRepair\" : ${this.mechRepair},\n" +
-                "    \"medicine\" : ${this.medicine},\n" +
-                "    \"naturalWorld\" : ${this.naturalWorld},\n" +
-                "    \"navigate\" : ${this.navigate},\n" +
-                "    \"occult\" : ${this.occult},\n" +
-                "    \"persuade\" : ${this.persuade},\n" +
-                "    \"pilot\" : ${this.pilot},\n" +
-                "    \"psychoanalysis\" : ${this.psychoanalysis},\n" +
-                "    \"psychology\" : ${this.psychology},\n" +
-                "    \"ride\" : ${this.ride},\n" +
-                "    \"science\" : ${this.science},\n" +
-                "    \"ScienceArray\" : \"${this.sciences}\",\n" +
-                "    \"sleightOfHand\" : ${this.sleightOfHand},\n" +
-                "    \"spotHidden\" : ${this.spotHidden},\n" +
-                "    \"stealth\" : ${this.stealth},\n" +
-                "    \"survival\" : ${this.survival},\n" +
-                "    \"swim\" : ${this.swim},\n" +
-                "    \"thro\" : ${this.thro},\n" +
-                "    \"track\" : ${this.track},\n" +
-                "    \"move\" : ${this.move},\n" +
-                "    \"build\" : ${this.build},\n" +
-                "    \"dodge\" : ${this.dodge},\n" +
-                "    \"damageBonus\" : \"${this.damageBonus}\",\n" +
-                "    \"attackName\" : \"${this.attackName}\",\n" +
-                "    \"damage\" : \"${this.damage}\",\n" +
-                "    \"numOfAttacks\" : \"${this.numOfAttacks}\",\n" +
-                "    \"range\" : \"${this.range}\",\n" +
-                "    \"ammo\" : \"${this.ammo}\",\n" +
-                "    \"malf\" : \"${this.malf}\",\n" +
-                "    \"myStory\" : \"${this.myStory}\",\n" +
-                "    \"personalDescription\" : \"${this.personalDescription}\",\n" +
-                "    \"traits\" : \"${this.traits}\",\n" +
-                "    \"ideologyAndBeliefs\" : \"${this.ideologyAndBeliefs}\",\n" +
-                "    \"injuriesAndScars\" : \"${this.injuriesAndScars}\",\n" +
-                "    \"significantPeople\" : \"${this.significantPeople}\",\n" +
-                "    \"phobiasAndManias\" : \"${this.phobiasAndManias}\",\n" +
-                "    \"meaningfulLocations\" : \"${this.meaningfulLocations}\",\n" +
-                "    \"arcaneTomesAndSpells\" : \"${this.arcaneTomesAndSpells}\",\n" +
-                "    \"treasuredPossessions\" : \"${this.treasuredPossessions}\",\n" +
-                "    \"encountersWithStrangeEntities\" : \"${this.encountersWithStrangeEntities}\",\n" +
-                "    \"gearAndPossessions\" : \"${this.gearAndPossessions}\",\n" +
-                "    \"spendingLevel\" : ${this.spendingLevel},\n" +
-                "    \"cash\" : ${this.cash},\n" +
-                "    \"assets\" : \"${this.assets}\",\n" +
-                "    \"characterNames\" : \"${this.characterNames}\",\n" +
-                "    \"playerNames\" : \"${this.playerNames}\"\n" +
-                "  }\n" +
-                "]}"
+        val json = "    {\"Character\" :\n" +
+                "   [\n" +
+                "       {\"name\": \"${this.name}\",\n" +
+                "       \"occupation\" : \"${this.occupation}\",\n" +
+                "       \"gender\" : ${this.gender},\n" +
+                "       \"residence\" : \"${this.residence}\",\n" +
+                "       \"age\" : ${this.age},\n" +
+                "       \"strength\" : ${this.strength},\n" +
+                "       \"constitution\" : ${this.constitution},\n" +
+                "       \"dexterity\" : ${this.dexterity},\n" +
+                "       \"intelligence\" : ${this.intelligence},\n" +
+                "       \"size\" : ${this.size},\n" +
+                "       \"power\" : ${this.power},\n" +
+                "       \"appearance\" : ${this.appearance},\n" +
+                "       \"education\" : ${this.education},\n" +
+                "       \"maxHitPoints\" : ${this.maxHitPoints},\n" +
+                "       \"hitPoints\" : ${this.hitPoints},\n" +
+                "       \"maxMagicPoints\" : ${this.maxMagicPoints},\n" +
+                "       \"magicPoints\" : ${this.magicPoints},\n" +
+                "       \"startingLuck\" : ${this.startingLuck},\n" +
+                "       \"luck\" : ${this.luck},\n" +
+                "       \"startingSanity\" : ${this.startingSanity},\n" +
+                "       \"sanity\" : ${this.sanity},\n" +
+                "       \"temporarySanity\" : ${this.temporarySanity},\n" +
+                "       \"indefiniteInsanity\" : ${this.indefiniteInsanity},\n" +
+                "       \"majorWound\" : ${this.majorWound},\n" +
+                "       \"unconscious\" : ${this.unconscious},\n" +
+                "       \"dying\" : ${this.dying},\n" +
+                "       \"accounting\" : ${this.accounting},\n" +
+                "       \"anthropology\" : ${this.anthropology},\n" +
+                "       \"appraise\" : ${this.appraise},\n" +
+                "       \"archaeology\" : ${this.archaeology},\n" +
+                "       \"artAndCraft\" : ${this.artAndCraft},\n" +
+                "       \"ArtandCraftArray\": \"${this.arts}\",\n" +
+                "       \"charm\" : ${this.charm},\n" +
+                "       \"climb\" : ${this.climb},\n" +
+                "       \"cthulhuMythos\" : ${this.cthulhuMythos},\n" +
+                "       \"disguise\" : ${this.disguise},\n" +
+                "       \"driveAuto\" : ${this.driveAuto},\n" +
+                "       \"elcRepair\" :${this.elcRepair},\n" +
+                "       \"fastTalk\" : ${this.fastTalk},\n" +
+                "       \"fightingBrawl\" : ${this.fightingBrawl},\n" +
+                "       \"firearmsHandgun\" : ${this.firearmsHandgun},\n" +
+                "       \"firearmsRifle\" : ${this.firearmsRifle},\n" +
+                "       \"firstAid\" : ${this.firstAid},\n" +
+                "       \"intimidate\" : ${this.intimidate},\n" +
+                "       \"jump\" : ${this.jump},\n" +
+                "       \"languageOther\" : ${this.languageOther},\n" +
+                "       \"LanguageArray\" : \"${this.languages}\",\n" +
+                "       \"law\" : ${this.law},\n" +
+                "       \"libraryUse\" : ${this.libraryUse},\n" +
+                "       \"listen\" : ${this.listen},\n" +
+                "       \"locksmith\" : ${this.locksmith},\n" +
+                "       \"mechRepair\" : ${this.mechRepair},\n" +
+                "       \"medicine\" : ${this.medicine},\n" +
+                "       \"naturalWorld\" : ${this.naturalWorld},\n" +
+                "       \"navigate\" : ${this.navigate},\n" +
+                "       \"occult\" : ${this.occult},\n" +
+                "       \"persuade\" : ${this.persuade},\n" +
+                "       \"pilot\" : ${this.pilot},\n" +
+                "       \"psychoanalysis\" : ${this.psychoanalysis},\n" +
+                "       \"psychology\" : ${this.psychology},\n" +
+                "       \"ride\" : ${this.ride},\n" +
+                "       \"science\" : ${this.science},\n" +
+                "       \"ScienceArray\" : \"${this.sciences}\",\n" +
+                "       \"sleightOfHand\" : ${this.sleightOfHand},\n" +
+                "       \"spotHidden\" : ${this.spotHidden},\n" +
+                "       \"stealth\" : ${this.stealth},\n" +
+                "       \"survival\" : ${this.survival},\n" +
+                "       \"swim\" : ${this.swim},\n" +
+                "       \"thro\" : ${this.thro},\n" +
+                "       \"track\" : ${this.track},\n" +
+                "       \"move\" : ${this.move},\n" +
+                "       \"build\" : ${this.build},\n" +
+                "       \"dodge\" : ${this.dodge},\n" +
+                "       \"damageBonus\" : \"${this.damageBonus}\",\n" +
+                "       \"attackName\" : \"${this.attackName}\",\n" +
+                "       \"damage\" : \"${this.damage}\",\n" +
+                "       \"numOfAttacks\" : \"${this.numOfAttacks}\",\n" +
+                "       \"range\" : \"${this.range}\",\n" +
+                "       \"ammo\" : \"${this.ammo}\",\n" +
+                "       \"malf\" : \"${this.malf}\",\n" +
+                "       \"myStory\" : \"${this.myStory}\",\n" +
+                "       \"personalDescription\" : \"${this.personalDescription}\",\n" +
+                "       \"traits\" : \"${this.traits}\",\n" +
+                "       \"ideologyAndBeliefs\" : \"${this.ideologyAndBeliefs}\",\n" +
+                "       \"injuriesAndScars\" : \"${this.injuriesAndScars}\",\n" +
+                "       \"significantPeople\" : \"${this.significantPeople}\",\n" +
+                "       \"phobiasAndManias\" : \"${this.phobiasAndManias}\",\n" +
+                "       \"meaningfulLocations\" : \"${this.meaningfulLocations}\",\n" +
+                "       \"arcaneTomesAndSpells\" : \"${this.arcaneTomesAndSpells}\",\n" +
+                "       \"treasuredPossessions\" : \"${this.treasuredPossessions}\",\n" +
+                "       \"encountersWithStrangeEntities\" : \"${this.encountersWithStrangeEntities}\",\n" +
+                "       \"gearAndPossessions\" : \"${this.gearAndPossessions}\",\n" +
+                "       \"spendingLevel\" : ${this.spendingLevel},\n" +
+                "       \"cash\" : ${this.cash},\n" +
+                "       \"assets\" : \"${this.assets}\",\n" +
+                "       \"characterNames\" : \"${this.characterNames}\",\n" +
+                "       \"playerNames\" : \"${this.playerNames}\",\n" +
+                "       \"era\" : \"${this.era}\"\n"+
+                "       }\n" +
+                "   ]\n" +
+                "   }\n"
         return json
     }
 
