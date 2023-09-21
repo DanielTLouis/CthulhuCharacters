@@ -29,6 +29,7 @@ This repository consists of Src code for Android Studio project consisting of **
 | activity_create1920splayerstepfour.xml  | [Here](/src/main/res/layout/activity_create1920splayerstepfour.xml) |
 | activity_create1920splayerstepfive.xml  | [Here](/src/main/res/layout/activity_create1920splayerstepfive.xml) |
 |  activity_create1920splayerstepsix.xml  | [Here](/src/main/res/layout/activity_create1920splayerstepsix.xml)  |
+| activity_create1920splayerstepseven.xml |[Here](/src/main/res/layout/activity_create1920splayerstepseven.xml) |
 
 ### Drawable Resources
 
