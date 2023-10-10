@@ -3,25 +3,16 @@ package com.example.cthulhucharacter
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Environment
-import android.preference.PreferenceManager
-import android.util.Log
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.ComponentActivity
-import com.google.gson.Gson
+import kotlinx.coroutines.selects.select
 import org.json.JSONObject
-import java.io.BufferedOutputStream
 import java.io.BufferedReader
 import java.io.File
-import java.io.FileOutputStream
 import java.io.IOException
-import java.io.InputStream
 import java.io.OutputStream
-import java.util.UUID
+import kotlin.random.Random
 
 class DisplayCharacterSheetActivity : ComponentActivity() {
     var artsArray: ArrayList<String> = arrayListOf()
@@ -94,6 +85,39 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
 
         val BackToCharSelectButton : Button = findViewById(R.id.BackToCharSelectButton)
         val jsonTextView : TextView = findViewById(R.id.jsonTextView)
+        val nameTextView : TextView = findViewById(R.id.nameTextView)
+        val occupationTextView : TextView = findViewById(R.id.occupationTextView)
+        val genderTextView : TextView = findViewById(R.id.genderTextView)
+        val residenceTextView : TextView = findViewById(R.id.residenceTextView)
+        val ageTextView : TextView = findViewById(R.id.ageTextView)
+        val strTextView : TextView = findViewById(R.id.strTextView)
+        val rollResultTextView : TextView = findViewById(R.id.rollResultTextView)
+        val rollSTRButton : Button = findViewById(R.id.rollSTRButton)
+        val intTextView : TextView = findViewById(R.id.intTextView)
+        val conTextView : TextView = findViewById(R.id.conTextView)
+        val dexTextView : TextView = findViewById(R.id.dexTextView)
+        val sizTextView : TextView = findViewById(R.id.sizTextView)
+        val powTextView : TextView = findViewById(R.id.powTextView)
+        val intRollButton : Button = findViewById(R.id.intRollButton)
+        val powRollbutton : Button = findViewById(R.id.powRollButton)
+        val conRollButton : Button = findViewById(R.id.conRollButton)
+        val dexRollButton : Button = findViewById(R.id.dexRollButton)
+        val eduTextView : TextView = findViewById(R.id.eduTextView)
+        val maxHealthtextView : TextView = findViewById(R.id.maxHealthtextView)
+        val maxSanityTextView : TextView = findViewById(R.id.maxSanityTextView)
+        val maxLuckTextView : TextView = findViewById(R.id.maxLuckTextView)
+        val currentHealthTextView : TextView = findViewById(R.id.currentHealthTextView)
+        val currentSanityTextView : TextView = findViewById(R.id.currentSanityTextView)
+        val currentLuckTextView : TextView = findViewById(R.id.currentLuckTextView)
+        val appTextView : TextView = findViewById(R.id.appTextView)
+        val healthMinusButton : Button = findViewById(R.id.healthMinusButton)
+        val healthPlusButton : Button = findViewById(R.id.healthPlusButton)
+        val sanityMinusButton : Button = findViewById(R.id.sanityMinusButton)
+        val sanityPlusButton : Button = findViewById(R.id.sanityPlusButton)
+        val luckMinusButton : Button = findViewById(R.id.luckMinusButton)
+        val luckPlusButton : Button = findViewById(R.id.luckPlusButton)
+        val eduRollButton : Button = findViewById(R.id.eduRollButton)
+        val accountingTextView : TextView = findViewById(R.id.accountingTextView)
 
         createCharacterList()
         var selectedCharacter : Character = Character()
@@ -104,6 +128,36 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
             }
         }
         jsonTextView.text = "Character: \n" + selectedCharacter.createJson()
+        nameTextView.text = selectedCharacter.name
+        occupationTextView.text = selectedCharacter.occupation
+        residenceTextView.text = selectedCharacter.residence
+        ageTextView.text = selectedCharacter.age.toString()
+        if(selectedCharacter.gender == 1){
+            genderTextView.text = "Male"
+        }
+        else if(selectedCharacter.gender == 2){
+            genderTextView.text = "Female"
+        }else{
+            genderTextView.text = "Other"
+        }
+
+        strTextView.text = selectedCharacter.strength.toString()
+        conTextView.text = selectedCharacter.constitution.toString()
+        dexTextView.text = selectedCharacter.dexterity.toString()
+        intTextView.text = selectedCharacter.intelligence.toString()
+        sizTextView.text = selectedCharacter.size.toString()
+        powTextView.text = selectedCharacter.power.toString()
+        eduTextView.text = selectedCharacter.education.toString()
+        appTextView.text = selectedCharacter.appearance.toString()
+
+        maxHealthtextView.text = selectedCharacter.maxHitPoints.toString()
+        maxSanityTextView.text = selectedCharacter.startingSanity.toString()
+        maxLuckTextView.text = selectedCharacter.startingLuck.toString()
+        currentHealthTextView.text = selectedCharacter.hitPoints.toString()
+        currentSanityTextView.text = selectedCharacter.sanity.toString()
+        currentLuckTextView.text = selectedCharacter.luck.toString()
+
+        accountingTextView.text = selectedCharacter.accounting.toString()
 
         /**
          * Buttons
@@ -112,8 +166,146 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
             val intent = Intent(this@DisplayCharacterSheetActivity, DisplayCharactersActivity::class.java)
             startActivity(intent)
         }
-
+        rollSTRButton.setOnClickListener(){
+            var num : Int = Random.nextInt(1, 100)
+            if(num >= selectedCharacter.strength){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Fail"
+            }else if(num < selectedCharacter.strength / 5){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Exterme Success"
+            }else if(num < selectedCharacter.strength / 2){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Hard Success"
+            }else {
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Success"
+            }
+        }
+        intRollButton.setOnClickListener(){
+            var num : Int = Random.nextInt(1, 100)
+            if(num >= selectedCharacter.intelligence){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Fail"
+            }else if(num < selectedCharacter.intelligence / 5){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Exterme Success"
+            }else if(num < selectedCharacter.intelligence / 2){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Hard Success"
+            }else {
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Success"
+            }
+        }
+        powRollbutton.setOnClickListener(){
+            var num : Int = Random.nextInt(1, 100)
+            if(num >= selectedCharacter.power){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Fail"
+            }else if(num < selectedCharacter.power / 5){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Exterme Success"
+            }else if(num < selectedCharacter.power / 2){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Hard Success"
+            }else {
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Success"
+            }
+        }
+        conRollButton.setOnClickListener(){
+            var num : Int = Random.nextInt(1, 100)
+            if(num >= selectedCharacter.constitution){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Fail"
+            }else if(num < selectedCharacter.constitution / 5){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Exterme Success"
+            }else if(num < selectedCharacter.constitution / 2){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Hard Success"
+            }else {
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Success"
+            }
+        }
+        dexRollButton.setOnClickListener(){
+            var num : Int = Random.nextInt(1, 100)
+            if(num >= selectedCharacter.dexterity){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Fail"
+            }else if(num < selectedCharacter.dexterity / 5){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Exterme Success"
+            }else if(num < selectedCharacter.dexterity / 2){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Hard Success"
+            }else {
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Success"
+            }
+        }
+        healthMinusButton.setOnClickListener(){
+            selectedCharacter.hitPoints -= 1
+            currentHealthTextView.text = selectedCharacter.hitPoints.toString()
+            saveCharacter(selectedCharacter)
+            for(i in characterList.indices){
+                if(characterList[i].name == intent.getStringExtra("name")){
+                     characterList[i] = selectedCharacter
+                }
+            }
+            updateCharacterListAndJson()
+        }
+        healthPlusButton.setOnClickListener(){
+            selectedCharacter.hitPoints += 1
+            currentHealthTextView.text = selectedCharacter.hitPoints.toString()
+            saveCharacter(selectedCharacter)
+            for(i in characterList.indices){
+                if(characterList[i].name == intent.getStringExtra("name")){
+                    characterList[i] = selectedCharacter
+                }
+            }
+            updateCharacterListAndJson()
+        }
+        sanityMinusButton.setOnClickListener(){
+            selectedCharacter.sanity -= 1
+            currentSanityTextView.text = selectedCharacter.sanity.toString()
+            saveCharacter(selectedCharacter)
+            for(i in characterList.indices){
+                if(characterList[i].name == intent.getStringExtra("name")){
+                    characterList[i] = selectedCharacter
+                }
+            }
+            updateCharacterListAndJson()
+        }
+        sanityPlusButton.setOnClickListener(){
+            selectedCharacter.sanity += 1
+            currentSanityTextView.text = selectedCharacter.sanity.toString()
+            saveCharacter(selectedCharacter)
+            for(i in characterList.indices){
+                if(characterList[i].name == intent.getStringExtra("name")){
+                    characterList[i] = selectedCharacter
+                }
+            }
+            updateCharacterListAndJson()
+        }
+        luckMinusButton.setOnClickListener(){
+            selectedCharacter.luck -= 1
+            currentLuckTextView.text = selectedCharacter.luck.toString()
+            saveCharacter(selectedCharacter)
+            for(i in characterList.indices){
+                if(characterList[i].name == intent.getStringExtra("name")){
+                    characterList[i] = selectedCharacter
+                }
+            }
+            updateCharacterListAndJson()
+        }
+        luckPlusButton.setOnClickListener(){
+            selectedCharacter.luck += 1
+            currentLuckTextView.text = selectedCharacter.luck.toString()
+            saveCharacter(selectedCharacter)
+            for(i in characterList.indices){
+                if(characterList[i].name == intent.getStringExtra("name")){
+                    characterList[i] = selectedCharacter
+                }
+            }
+            updateCharacterListAndJson()
+        }
+        eduRollButton.setOnClickListener(){
+            var num : Int = Random.nextInt(1, 100)
+            if(num >= selectedCharacter.education){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Fail"
+            }else if(num < selectedCharacter.education / 5){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Exterme Success"
+            }else if(num < selectedCharacter.education / 2){
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Hard Success"
+            }else {
+                rollResultTextView.text = "Roll Result: " + num.toString() + " Success"
+            }
+        }
     }
+
     fun updateCharacterListAndJson(){
         var tempString : String = "{\"Characters\" : \n[\n"
         val filename = "Characters.json"
