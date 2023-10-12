@@ -2,14 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/mainLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -152,6 +157,28 @@
                         android:textSize="20sp" />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/eraTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Era:"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/eraTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Did not load"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
@@ -173,6 +200,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="INT"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <TextView
@@ -180,6 +208,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <Button
@@ -200,6 +229,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="SIZ"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <TextView
@@ -207,6 +237,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -222,6 +253,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="POW"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <TextView
@@ -229,6 +261,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <Button
@@ -256,6 +289,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="STR"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <TextView
@@ -263,6 +297,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <Button
@@ -284,6 +319,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="CON"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <TextView
@@ -291,6 +327,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <Button
@@ -318,6 +355,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <Button
@@ -345,6 +383,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="EDU"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <TextView
@@ -352,6 +391,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <Button
@@ -372,6 +412,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="APP"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                         <TextView
@@ -379,6 +420,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
+                            android:textAlignment="center"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -776,19 +818,19 @@
                             android:id="@+id/charmTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Charm" />
 
                         <TextView
                             android:id="@+id/charmTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/charmButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Char" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -801,19 +843,19 @@
                             android:id="@+id/climbTTitleextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Climb" />
 
                         <TextView
                             android:id="@+id/climbTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/climbButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Cli" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -826,19 +868,19 @@
                             android:id="@+id/cthulhuMythosTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Cthulhu Mythos" />
 
                         <TextView
                             android:id="@+id/cthulhuMythosTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/cthulhuMythosButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Myth" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -851,19 +893,19 @@
                             android:id="@+id/disguiseTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Disguise" />
 
                         <TextView
                             android:id="@+id/disguiseTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/disguiseButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Dis" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -876,19 +918,19 @@
                             android:id="@+id/driveAutoTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Drive" />
 
                         <TextView
                             android:id="@+id/driveAutotextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/driveAutoButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Dri" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -907,19 +949,19 @@
                             android:id="@+id/elcRepairTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Elc Repair" />
 
                         <TextView
                             android:id="@+id/elcRepairTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/elcRepairButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Elc" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -932,19 +974,19 @@
                             android:id="@+id/fastTalkTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Fast Talk" />
 
                         <TextView
                             android:id="@+id/fastTalkTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/fastTalkButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll fast" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -957,19 +999,19 @@
                             android:id="@+id/fightingBrawlTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Fighting Brawl" />
 
                         <TextView
                             android:id="@+id/fightingBrawlTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/fightingBrawlButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Bra" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -982,19 +1024,19 @@
                             android:id="@+id/firearmsHandgunTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Firearm Handgun" />
 
                         <TextView
                             android:id="@+id/firearmsHandgunTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/firearmsHandgunButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Hand" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1007,19 +1049,19 @@
                             android:id="@+id/firearmsRifleTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Firearms Rifle" />
 
                         <TextView
                             android:id="@+id/firearmsRifletextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/firearmsRiflebutton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Rifl" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -1038,19 +1080,19 @@
                             android:id="@+id/firstAidTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="First Aid" />
 
                         <TextView
                             android:id="@+id/firstAidTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/firstAidButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Aid" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1063,19 +1105,19 @@
                             android:id="@+id/IntimidateTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Intimidate" />
 
                         <TextView
                             android:id="@+id/IntimidateTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/IntimidateButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Int" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1088,19 +1130,19 @@
                             android:id="@+id/jumpTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Jump" />
 
                         <TextView
                             android:id="@+id/jumpTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/jumpButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Jump" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1113,19 +1155,19 @@
                             android:id="@+id/languageOtherTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Language Other" />
 
                         <TextView
                             android:id="@+id/languageOtherTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/languageOtherButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Othe" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1138,19 +1180,19 @@
                             android:id="@+id/lawTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Law" />
 
                         <TextView
                             android:id="@+id/lawTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/lawButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Law" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -1169,19 +1211,19 @@
                             android:id="@+id/libraryUseTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Library Use" />
 
                         <TextView
                             android:id="@+id/libraryUseTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/libraryUseButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Lib" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1194,19 +1236,19 @@
                             android:id="@+id/listenTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Listen" />
 
                         <TextView
                             android:id="@+id/listenTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/listenButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll List" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1219,19 +1261,19 @@
                             android:id="@+id/locksmithTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Locksmith" />
 
                         <TextView
                             android:id="@+id/locksmithTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/locksmithButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Lock" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1241,22 +1283,22 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/meckPerpairTitleTextView"
+                            android:id="@+id/mechRerpairTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Mech Rerpair" />
 
                         <TextView
                             android:id="@+id/mechRepairTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/mechRepairButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Mech" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1269,19 +1311,19 @@
                             android:id="@+id/medicineTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Medicine" />
 
                         <TextView
                             android:id="@+id/medicineTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/medicineButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Med" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -1300,19 +1342,19 @@
                             android:id="@+id/naturalWorldTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Natural World" />
 
                         <TextView
                             android:id="@+id/naturalWorldTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/naturalWorldButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Nat" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1325,19 +1367,19 @@
                             android:id="@+id/navigateTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Navigate" />
 
                         <TextView
                             android:id="@+id/navigateTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/navigateButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Nav" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1350,19 +1392,19 @@
                             android:id="@+id/occultTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Occult" />
 
                         <TextView
                             android:id="@+id/occultTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/occultButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Occ" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1375,19 +1417,19 @@
                             android:id="@+id/persuadeTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Persuade" />
 
                         <TextView
                             android:id="@+id/persuadeTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/persuadeButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Pers" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1400,19 +1442,19 @@
                             android:id="@+id/pilotTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Pilot" />
 
                         <TextView
                             android:id="@+id/pilotTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/pilotButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Pilo" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -1431,19 +1473,19 @@
                             android:id="@+id/psychoanalysisTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Psychoanalysis" />
 
                         <TextView
                             android:id="@+id/psychoanalysisTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/psychoanalysisButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Psy" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1456,19 +1498,19 @@
                             android:id="@+id/psychologyTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Psychology" />
 
                         <TextView
                             android:id="@+id/psychologyTextView8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/psychologyButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Psy" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1481,19 +1523,19 @@
                             android:id="@+id/rideTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Ride" />
 
                         <TextView
                             android:id="@+id/rideTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/rideButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Ride" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1506,19 +1548,19 @@
                             android:id="@+id/scienceTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Science" />
 
                         <TextView
                             android:id="@+id/scienceTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/scienceButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Sci" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1531,19 +1573,19 @@
                             android:id="@+id/sleightOfHandTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Sleight of Hand" />
 
                         <TextView
                             android:id="@+id/sleightOfHandTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/sleightOfHandButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Slei" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -1562,19 +1604,19 @@
                             android:id="@+id/spotHiddenTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Spt Hidden" />
 
                         <TextView
                             android:id="@+id/spotHiddenTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/spotHiddenButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Spot" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1587,19 +1629,19 @@
                             android:id="@+id/stealthTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Stealth" />
 
                         <TextView
                             android:id="@+id/stealthTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/stealthButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Stea" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1612,19 +1654,19 @@
                             android:id="@+id/survivalTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Survival" />
 
                         <TextView
                             android:id="@+id/survivalTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/survivalButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Sur" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1637,19 +1679,19 @@
                             android:id="@+id/swimTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Swim" />
 
                         <TextView
                             android:id="@+id/swimTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/swimButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Swi" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1662,19 +1704,19 @@
                             android:id="@+id/throwTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Throw" />
 
                         <TextView
                             android:id="@+id/throwTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/throwButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Thr" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -1693,19 +1735,19 @@
                             android:id="@+id/trackTitleTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Track" />
 
                         <TextView
                             android:id="@+id/trackTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0" />
 
                         <Button
                             android:id="@+id/trackButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Roll Tra" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1743,6 +1785,7 @@
                     android:background="#673AB7" />
 
                 <LinearLayout
+                    android:id="@+id/moveStuffLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -1834,24 +1877,398 @@
                     android:layout_height="2dp"
                     android:background="#673AB7" />
 
-            </LinearLayout>
-        </ScrollView>
+                <LinearLayout
+                    android:id="@+id/damangeLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:visibility="gone">
+                    <TextView
+                        android:id="@+id/attackTitleTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Attacks" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/jsonTextView"
+                        <LinearLayout
+                            android:id="@+id/rollLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/rollTitleTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Roll" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/attackNameLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/attackNameTitleTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Attack Name" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/damageLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/DamageTitleTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Damage" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/numberOfAttacksLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/numberOfAttacksTitleTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Number of Attacks" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/rangesLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/rangeTitleTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Range" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/amoLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/AmmoTitleTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Ammo" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/malfLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/malfTitleTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Malf" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#673AB7" />
+
+                <LinearLayout
+                    android:id="@+id/gearAndMoneyLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/gearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/gearTitleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Gear" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view9"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#673AB7" />
+
+                <LinearLayout
+                    android:id="@+id/backgroundLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/myStoryTitleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="My Story" />
+
+                        <TextView
+                            android:id="@+id/myStoryTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/personalDescriptionTitleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Personal Description" />
+
+                        <TextView
+                            android:id="@+id/personalDescriptionTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/traitsTitleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Traits" />
+
+                        <TextView
+                            android:id="@+id/traitsTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/ideologyAndBeliefsTitleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ideolody and Beliefs" />
+
+                        <TextView
+                            android:id="@+id/ideologyAndBeliefsTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/injuriesAndScarsTitleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Injuries and Scars" />
+
+                        <TextView
+                            android:id="@+id/injuriesAndScarsTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/significantPeopleTitleTextView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Significant People" />
+
+                        <TextView
+                            android:id="@+id/significantPeopleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/phobiasAndManiasTitleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phobias And Manias" />
+
+                        <TextView
+                            android:id="@+id/phobiasAndManiastextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/meaningfulLocationsTitleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Meaningful Locations" />
+
+                        <TextView
+                            android:id="@+id/meaningfulLocationsTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/arcaneTomesAndSpellsTitleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Arcane Tomes and Spells" />
+
+                        <TextView
+                            android:id="@+id/arcaneTomesAndSpellsTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/teasuredPossessionsTitleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Treasured Possessions" />
+
+                        <TextView
+                            android:id="@+id/teasuredPossessionsTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/encountersWithStrangeEntitiesTitleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Encounters With Strange Entities" />
+
+                        <TextView
+                            android:id="@+id/encountersWithStrangeEntitiesTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view10"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#673AB7" />
+
+                <LinearLayout
+                    android:id="@+id/partymembersLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" />
+
+                <View
+                    android:id="@+id/view11"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#673AB7" />
+
+                <LinearLayout
+                    android:id="@+id/JsonLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Did Not Load Json" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/jsonTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Did Not Load Json" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#673AB7" />
 
             </LinearLayout>
         </ScrollView>

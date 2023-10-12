@@ -294,28 +294,28 @@ class Create1920sPlayerStepSixActivity : ComponentActivity() {
             }
         }
         var holdAttackNumOfAt : List<String> = listOf()
-        holdAttackNumOfAt = tempCharacter.damage.split(';')
+        holdAttackNumOfAt = tempCharacter.numOfAttacks.split(';')
         for(i in holdAttackNumOfAt){
             if(i.filter {it.isLetterOrDigit()} != ""){
                 playerNumOfA.add(i)
             }
         }
         var holdAttackAmmo : List<String> = listOf()
-        holdAttackAmmo = tempCharacter.damage.split(';')
+        holdAttackAmmo = tempCharacter.ammo.split(';')
         for(i in holdAttackAmmo){
             if(i.filter {it.isLetterOrDigit()} != ""){
                 playerAmmo.add(i)
             }
         }
         var holdAttackMalf : List<String> = listOf()
-        holdAttackMalf = tempCharacter.damage.split(';')
+        holdAttackMalf = tempCharacter.malf.split(';')
         for(i in holdAttackMalf){
             if(i.filter {it.isLetterOrDigit()} != ""){
                 playerMalf.add(i)
             }
         }
         var holdAttackRange : List<String> = listOf()
-        holdAttackRange = tempCharacter.damage.split(';')
+        holdAttackRange = tempCharacter.range.split(';')
         for(i in holdAttackRange){
             if(i.filter {it.isLetterOrDigit()} != ""){
                 playerRange.add(i)

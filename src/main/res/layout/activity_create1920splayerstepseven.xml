@@ -111,7 +111,7 @@
             android:id="@+id/assetsTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="0" />
 
         <TextView
             android:id="@+id/AddInvestagatorsTwxtView"
@@ -292,6 +292,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Finalize" />
+
+        <TextView
+            android:id="@+id/tesingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
 
     </LinearLayout>
 

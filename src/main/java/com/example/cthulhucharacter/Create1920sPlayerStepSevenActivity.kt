@@ -98,12 +98,19 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
         val assetButton : Button = findViewById(R.id.assetButton)
         val otherInvestigatorsButton : Button = findViewById(R.id.otherInvestigatorsButton)
         val finializeButton : Button = findViewById(R.id.finializeButton)
+        val backToStepSixButton : Button = findViewById(R.id.backToStepSixButton)
 
         var newCharacter : Character = loadCharacter()
+
 
         /**
          * Button
          */
+        backToStepSixButton.setOnClickListener(){
+            val intent = Intent(this@Create1920sPlayerStepSevenActivity, Create1920sPlayerStepSixActivity::class.java)
+            startActivity(intent)
+        }
+
         cashButton.setOnClickListener(){
             val cashEditText : EditText = findViewById(R.id.cashEditText)
             newCharacter.cash = cashEditText.text.toString().toInt()
@@ -158,10 +165,16 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
                 temp += i.createJson() + "\n"
             }
             val assetsTextView : TextView = findViewById(R.id.assetsTextView)
+
+            val tesingTextView : TextView = findViewById(R.id.tesingTextView)
+            var temp2 : String = ""
+            for(i in characterList){
+                temp2 += i.name + " "
+            }
+            tesingTextView.text = temp2
             val intent = Intent(this@Create1920sPlayerStepSevenActivity, MainActivity::class.java)
             startActivity(intent)
         }
-
 
     }
     fun updateCharacterListAndJson(){
@@ -172,7 +185,7 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
             if(i < characterList.size-1) {
                 tempString += characterList[i].createJson() + ",\n"
             } else{
-                tempString += characterList[i].createJson()
+                tempString += characterList[i].createJson() + "\n"
             }
         }
         tempString += "]\n}"
@@ -190,7 +203,8 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
 
             var obj = JSONObject(json)
             val characterArray = obj.getJSONArray("Characters")
-            for (i in 0 until characterArray.length()) {
+            for (i in 0 .. characterArray.length()) {
+                tempCharacter = Character()
                 val characterDetail = characterArray.getJSONObject(i)
                 tempCharacter.loadCharacter(characterDetail.toString())
                 characterList.add(tempCharacter)
@@ -254,28 +268,28 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
             }
         }
         var holdAttackNumOfAt : List<String> = listOf()
-        holdAttackNumOfAt = tempCharacter.damage.split(';')
+        holdAttackNumOfAt = tempCharacter.numOfAttacks.split(';')
         for(i in holdAttackNumOfAt){
             if(i.filter {it.isLetterOrDigit()} != ""){
                 playerNumOfA.add(i)
             }
         }
         var holdAttackAmmo : List<String> = listOf()
-        holdAttackAmmo = tempCharacter.damage.split(';')
+        holdAttackAmmo = tempCharacter.ammo.split(';')
         for(i in holdAttackAmmo){
             if(i.filter {it.isLetterOrDigit()} != ""){
                 playerAmmo.add(i)
             }
         }
         var holdAttackMalf : List<String> = listOf()
-        holdAttackMalf = tempCharacter.damage.split(';')
+        holdAttackMalf = tempCharacter.malf.split(';')
         for(i in holdAttackMalf){
             if(i.filter {it.isLetterOrDigit()} != ""){
                 playerMalf.add(i)
             }
         }
         var holdAttackRange : List<String> = listOf()
-        holdAttackRange = tempCharacter.damage.split(';')
+        holdAttackRange = tempCharacter.range.split(';')
         for(i in holdAttackRange){
             if(i.filter {it.isLetterOrDigit()} != ""){
                 playerRange.add(i)
