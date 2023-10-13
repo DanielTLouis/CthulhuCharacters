@@ -236,13 +236,7 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
         }
         loadArrays(selectedCharacter)
 
-        var temp = ""
-        for(i in characterList){
-            temp += i.name + " "
-        }
-        jsonTextView.text = temp
-
-        //jsonTextView.text = "Character: \n" + selectedCharacter.createJson()
+        jsonTextView.text = "Character: \n" + selectedCharacter.createJson()
         nameTextView.text = selectedCharacter.name
         occupationTextView.text = selectedCharacter.occupation
         residenceTextView.text = selectedCharacter.residence
@@ -375,17 +369,23 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
             newButton.text = "Roll"
             newButton.setOnClickListener(){
                 var damage = playerDamage[i]
-                var damage1 = damage.split('+')
-                val d = damage1[0].split('D')
+                var damageSplit = damage.split('+')
+                val d = damageSplit[0].split('D')
                 val numOfDice : Int = d[0].toInt()
                 val sizeOfDice : Int = d[1].toInt()
                 var dbNumOfDice : Int = 0
                 var dbSzeOfDice : Int = 0
-                if(damage1[1] == "DB"){
-                    var scDb  = selectedCharacter.damageBonus.split('D')
-                    scDb[0]
-                    dbNumOfDice = scDb[0].toInt()
-                    dbSzeOfDice = scDb[1].toInt()
+                var offset : Int = 0
+                if(damageSplit[1] != null && damageSplit[1] == "DB"){
+                    if(selectedCharacter.damageBonus != "None"){
+                        if(selectedCharacter.damageBonus == "-1" || selectedCharacter.damageBonus == "-2"){
+                            offset = selectedCharacter.damageBonus.toInt()
+                        }else {
+                            var scDb = selectedCharacter.damageBonus.split('D')
+                            dbNumOfDice = scDb[0].toInt()
+                            dbSzeOfDice = scDb[1].toInt()
+                        }
+                    }
                 }
                 var finDamage : Int = 0
                 for(i in 1..numOfDice){
@@ -394,9 +394,8 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
                 for(i in 1..dbNumOfDice){
                     finDamage += Random.nextInt(1, dbSzeOfDice)
                 }
-                var temp : String = numOfDice.toString() + " " + sizeOfDice.toString() + " " + dbNumOfDice + " " + dbSzeOfDice
+                finDamage -= offset
                 rollResultTextView.text = "Damage = " +  finDamage.toString()
-
             }
             rollLayout.addView(newButton)
         }

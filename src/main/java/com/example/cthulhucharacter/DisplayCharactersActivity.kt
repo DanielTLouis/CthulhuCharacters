@@ -86,7 +86,7 @@ class DisplayCharactersActivity : ComponentActivity() {
                         updateCharacterListAndJson()
                     }
                 }
-                //val intent = Intent(this@DisplayCharactersActivity, this@DisplayCharactersActivity::class.java)
+                val intent = Intent(this@DisplayCharactersActivity, DisplayCharactersActivity::class.java)
                 startActivity(intent)
             }
             val horLayout : LinearLayout = LinearLayout(this)

@@ -378,6 +378,308 @@
           "Spot Hidden",
           "any two other skills as personal or era specialties"
         ]
+      },
+      {
+        "name" : "Butler",
+        "Description" : "",
+        "Occupation Points": 160,
+        "Credit Rating": "9 - 40",
+        "Occupation Skills": [
+          "Accounting or Appraise",
+          "Art/Craft (any, e.g. Cook, Tailor, Barber)",
+          "First Aid",
+          "Listen",
+          "Other Language",
+          "Psychology",
+          "Spot Hidden",
+          "any two other skills as personal or era specialties."
+        ]
+      },
+      {
+        "name" : "Chauffeur",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "10-40",
+        "Occupation Skills": [
+          "Drive Auto",
+          "two interpersonal skills (Charm, Fast Talk, Intimidate, or Persuade)",
+          "Listen",
+          "Mechanical Repair",
+          "Navigate",
+          "Spot Hidden",
+          "any one other skill as a personal or era specialty"
+        ]
+      },
+      {
+        "name" : "Clerk/Executive",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "9-20",
+        "Occupation Skills": [
+          "Accounting",
+          "Language",
+          "Law",
+          "Library Use",
+          "Listen",
+          "one interpersonal skill(Charm,Fast Talk, Intimidate, or Persuade)",
+          "any two other skills as personal or era specialties"
+        ]
+      },
+      {
+        "name" : "Cowboy",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "9-20",
+        "Occupation Skills": [
+          "Dodge",
+          "Fighting or Firearms",
+          "First Aid or Natural World",
+          "Jump",
+          "Ride",
+          "Survival(any)",
+          "Throw",
+          "Track"
+        ]
+      },
+      {
+        "name" : "Craftsperson",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "10-40",
+        "Occupation Skills": [
+          "Accounting",
+          "Art/Craft (any two)",
+          "Mechanical Repair",
+          "Natural World",
+          "Spot Hidden",
+          "any two other skills as personal specialties"
+        ]
+      },
+      {
+        "name" : "Criminal",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "5-65",
+        "Occupation Skills": [
+          "Art/Cra\u001Dft (Acting) or Disguise",
+          "Appraise",
+          "one interpersonal skill (Charm, Fast Talk, or Intimidate)",
+          "Fighting or Firearms",
+          "Locksmith or Mechanical Repair",
+          "Stealth",
+          "Psychology",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Criminal: Assassin",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "30-60",
+        "Occupation Skills": [
+          "Disguise",
+          "Electrical Repair",
+          "Fighting",
+          "Firearms",
+          "Locksmith",
+          "Mechanical Repair",
+          "Stealth",
+          "Psychology"
+        ]
+      },
+      {
+        "name" : " Criminal: Bank Robber",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "5-75",
+        "Occupation Skills": [
+          "Drive Auto",
+          "Electrical or Mechanical Repair",
+          "Fighting",
+          "Firearms",
+          "Intimidate",
+          "Locksmith",
+          "Operate Heavy Machinery",
+          "any one other skill as personal or era specialty"
+        ]
+      },
+      {
+        "name" : "Criminal: Bootlegger",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "5-30",
+        "Occupation Skills": [
+          "Drive Auto",
+          "Fighting",
+          "Firearms",
+          "two interpersonal skills(Charm, Fast Talk, Intimidate, or Persuade)",
+          "Psychology",
+          "Stealth",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Criminal: Burglar",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "5-40",
+        "Occupation Skills": [
+          "Appraise",
+          "Climb",
+          "Electrical or Mechanical Repair",
+          "Listen",
+          "Locksmith",
+          "Sleight of Hand",
+          "Stealth",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Criminal: Conman",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "10-65",
+        "Occupation Skills": [
+          "Appraise, Art/Cra\u001Dft (Acting)",
+          "Law or Other Language",
+          "Listen",
+          "two interpersonal skills(Charm, Fast Talk, Intimidate, or Persuade)",
+          "Psychology",
+          "Sleight of Hand"
+        ]
+      },
+      {
+        "name" : "Criminal: Counterfeiter",
+        "Description" : "",
+        "Occupation Points": 340,
+        "Credit Rating": "20-60",
+        "Occupation Skills": [
+          "Accounting",
+          "Appraise",
+          "Art/Craft\u001D (Forgery)",
+          "History",
+          "Library Use",
+          "Spot Hidden",
+          "Sleight of Hand",
+          "any one other skill as personal or era specialty(e.g. Computer Use)."
+        ]
+      },
+      {
+        "name" : " Criminal: Fence",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "20-40",
+        "Occupation Skills": [
+          "Accounting",
+          "Appraise",
+          "Art/Craft\u001D (Forgery)",
+          "History",
+          "one interpersonal skill(Charm, Fast Talk, Intimidate, or Persuade)",
+          "Library Use",
+          "Spot Hidden",
+          "any one other skill"
+        ]
+      },
+      {
+        "name" : "Criminal: Forger",
+        "Description" : "",
+        "Occupation Points": 340,
+        "Credit Rating": "20-60",
+        "Occupation Skills": [
+          "Accounting",
+          "Appraise",
+          "Art/Craft\u001D (Forgery)",
+          "History",
+          "Library Use",
+          "Spot Hidden",
+          "Sleight of Hand",
+          "any one other skill as personal or era specialty(e.g. Computer Use)."
+        ]
+      },
+      {
+        "name" : "Criminal: Gun Moll",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "10-80",
+        "Occupation Skills": [
+          "Art/Cra\u001Dft (any)",
+          "two interpersonal skills (Charm, Fast Talk, Intimidate, or Persuade)",
+          "Fighting(Brawl) or Firearms (Handgun)",
+          "Drive Auto",
+          "Listen",
+          "Stealth",
+          "any one other skill as personal or era specialty."
+        ]
+      },
+      {
+        "name" : "Criminal: Smuggler",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "30-60",
+        "Occupation Skills": [
+          "Firearms",
+          "Listen",
+          "Navigate",
+          "one interpersonal skill (Charm, Fast Talk, Intimidate, or Persuade)",
+          "Drive Auto or Pilot (Boat)",
+          "Psychology",
+          "Sleight of Hand",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Criminal: Street Punk",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "3-10",
+        "Occupation Skills": [
+          "Climb",
+          "one interpersonal skill (Charm, Fast Talk, Intimidate, or Persuade)",
+          "Fighting",
+          "Firearms",
+          "Jump",
+          "Sleight of Hand",
+          "Stealth",
+          "Throw"
+        ]
+      },
+      {
+        "name" : "Criminal: Thug",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "5-30",
+        "Occupation Skills": [
+          "Drive Auto",
+          "Fighting",
+          "Firearms",
+          "two interpersonal skills(Charm, Fast Talk, Intimidate, or Persuade)",
+          "Psychology",
+          "Stealth",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Cult Leader",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "30-60",
+        "Occupation Skills": [
+          "Accounting",
+          "two interpersonal skills (Charm, Fast Talk, Intimidate, or Persuade)",
+          "Occult",
+          "Psychology",
+          "Spot Hidden",
+          "any two other skills as specialties."
+        ]
+      },
+      {
+        "name" : "",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "",
+        "Occupation Skills": [
+
+        ]
       }
     ]
   }
