@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.preference.PreferenceManager
 import android.util.Log
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -69,6 +70,7 @@ class DisplayCharactersActivity : ComponentActivity() {
         for(i in characterList) {
             val charName : TextView = TextView(this)
             charName.text = i.name
+            //charName.id = i.name.toInt()
             val choiceButton : Button = Button(this)
             choiceButton.text = "Select"
             choiceButton.setOnClickListener(){
@@ -80,10 +82,14 @@ class DisplayCharactersActivity : ComponentActivity() {
             val deleteButton : Button = Button(this)
             deleteButton.text = "Delete"
             deleteButton.setOnClickListener(){
-                for(j in characterList) {
-                    if(j.name == i.name) {
-                        characterList.remove(j)
+                for(j in characterList.indices) {
+                    if(characterList[j].name == i.name) {
+                        characterList.removeAt(j)
                         updateCharacterListAndJson()
+
+                        //var tempString : Int = characterList[j].name.toInt()
+                       //val tempTextView : TextView = findViewById(tempString)
+                        //tempTextView.visibility = View.GONE
                     }
                 }
                 val intent = Intent(this@DisplayCharactersActivity, DisplayCharactersActivity::class.java)

@@ -3,6 +3,8 @@ package com.example.cthulhucharacter
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextClock
@@ -36,6 +38,9 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
     var playerRange : ArrayList<String> = arrayListOf()
     var playerAmmo : ArrayList<String> = arrayListOf()
     var playerMalf : ArrayList<String> = arrayListOf()
+
+    var otherInvesticatorsNames : ArrayList<String> = arrayListOf()
+    var otherInvesticatorsCharacters : ArrayList<String> = arrayListOf()
 
     var characterList : ArrayList<Character> = arrayListOf()
 
@@ -225,6 +230,10 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
         val amoLayout : LinearLayout = findViewById(R.id.amoLayout)
         val malfLayout : LinearLayout = findViewById(R.id.malfLayout)
         val rollLayout : LinearLayout = findViewById(R.id.rollLayout)
+        val otherInvestigatorsLinearLayout : LinearLayout = findViewById(R.id.otherInvestigatorsLinearLayout)
+        val cashTextView : TextView = findViewById(R.id.cashTextView)
+        val spendingLevelTextView : TextView = findViewById(R.id.spendingLevelTextView)
+        val assetsTextView : TextView = findViewById(R.id.assetsTextView)
 
         createCharacterList()
         var selectedCharacter : Character = Character()
@@ -326,6 +335,10 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
         teasuredPossessionsTextView.text = selectedCharacter.treasuredPossessions
         encountersWithStrangeEntitiesTextView.text = selectedCharacter.encountersWithStrangeEntities
 
+        cashTextView.text = selectedCharacter.cash.toString()
+        spendingLevelTextView.text = selectedCharacter.spendingLevel.toString()
+        assetsTextView.text = selectedCharacter.assets
+
         for(i in gearArray){
             if(i == "Brawl"){
                 continue
@@ -398,6 +411,43 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
                 rollResultTextView.text = "Damage = " +  finDamage.toString()
             }
             rollLayout.addView(newButton)
+        }
+
+        for(i in otherInvesticatorsNames.indices){
+            if(otherInvesticatorsNames[i] != "" && otherInvesticatorsCharacters[i] != "") {
+                val horLinLayout: LinearLayout = LinearLayout(this)
+                horLinLayout.orientation = LinearLayout.HORIZONTAL
+                val nameText: TextView = TextView(this)
+                val charText: TextView = TextView(this)
+                val viewBreak: View = View(this)
+
+                horLinLayout.orientation = LinearLayout.HORIZONTAL
+                viewBreak.layoutParams = LinearLayout.LayoutParams(
+                    2,
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    0.002f
+                )
+                viewBreak.setBackgroundResource(R.color.purple_500)
+
+                nameText.layoutParams = LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    0.50f
+                )
+                charText.layoutParams = LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    0.50f
+                )
+
+                //re arrange the views
+                nameText.text = otherInvesticatorsNames[i]
+                charText.text = otherInvesticatorsCharacters[i]
+                horLinLayout.addView(nameText)
+                horLinLayout.addView(viewBreak)
+                horLinLayout.addView(charText)
+                otherInvestigatorsLinearLayout.addView(horLinLayout)
+            }
         }
 
         /**
@@ -1266,6 +1316,18 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
         catch(e: IOException){
             tempCharacter.name = "Did not find file to open"
         }
+
+        var holdNames : List<String> = listOf()
+        holdNames = tempCharacter.playerNames.split(';')
+        for(i in holdNames){
+            otherInvesticatorsNames.add(i)
+        }
+        var holdCharacters : List<String> = listOf()
+        holdCharacters = tempCharacter.characterNames.split(';')
+        for(i in holdCharacters){
+            otherInvesticatorsCharacters.add(i)
+        }
+
         var holdArtsList : List<String> = listOf()
         holdArtsList = tempCharacter.arts.split(';')
         for(i in holdArtsList){

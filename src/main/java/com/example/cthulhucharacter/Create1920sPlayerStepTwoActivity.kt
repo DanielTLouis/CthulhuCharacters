@@ -4,11 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import androidx.compose.runtime.traceEventEnd
 import com.google.gson.Gson
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -18,10 +21,20 @@ import java.io.InputStream
 import java.io.OutputStream
 import java.time.temporal.Temporal
 
+//generate base skills
 class Create1920sPlayerStepTwoActivity : ComponentActivity() {
     var artsArray : ArrayList<String> = arrayListOf()
     var languageArray : ArrayList<String> = arrayListOf()
     var scienceArray : ArrayList<String> = arrayListOf()
+
+    var stdArraystg : ArrayList<String> = arrayListOf( "-","80","70","60","60","50","50","50","40")
+    var stdArraycon : ArrayList<String> = arrayListOf( "-","80","70","60","60","50","50","50","40")
+    var stdArraydex : ArrayList<String> = arrayListOf( "-","80","70","60","60","50","50","50","40")
+    var stdArrayint : ArrayList<String> = arrayListOf( "-","80","70","60","60","50","50","50","40")
+    var stdArraysiz : ArrayList<String> = arrayListOf( "-","80","70","60","60","50","50","50","40")
+    var stdArraypow : ArrayList<String> = arrayListOf( "-","80","70","60","60","50","50","50","40")
+    var stdArrayapp : ArrayList<String> = arrayListOf( "-","80","70","60","60","50","50","50","40")
+    var stdArrayedu : ArrayList<String> = arrayListOf( "-","80","70","60","60","50","50","50","40")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,12 +42,11 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
 
         var newCharacter : Character = loadCharacter()
 
-        val testing : TextView = findViewById(R.id.testing)
-        //testing.text = newCharacter.arts[0].toString() + " " + newCharacter.arts[0].toString()
-
         val stepTwoPartTwoRollLayout : View = findViewById(R.id.stepTwoPartTwoRollLayout)
         val stepTwoPartTwoStandardArrayLayout : View = findViewById(R.id.stepTwoPartTwoStandardArrayLayout)
-        stepTwoPartTwoRollLayout.visibility = View.GONE
+        val startAct2LinearLayout : View = findViewById(R.id.startAct2LinearLayout)
+        startAct2LinearLayout.visibility = View.GONE
+        stepTwoPartTwoRollLayout.visibility = View.VISIBLE
         stepTwoPartTwoStandardArrayLayout.visibility = View.GONE
 
         val stndArrayVsRollspinner : Spinner = findViewById(R.id.stndArrayVsRollspinner)
@@ -42,7 +54,7 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
             val adapter = ArrayAdapter(
                 this,
                 //add stanard array later "Standard Array"
-                android.R.layout.simple_spinner_item, arrayListOf<String>("Roll for Stats")
+                android.R.layout.simple_spinner_item, arrayListOf<String>("Roll for Stats","Standard Array")
             )
             stndArrayVsRollspinner.adapter = adapter
         }
@@ -60,6 +72,19 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
         val magicPointsStatsTextView : TextView = findViewById(R.id.magicPointsStatsTextView)
         val luckStatsTextView : TextView = findViewById(R.id.luckStatsTextView)
         val sanityStatsTextView : TextView = findViewById(R.id.sanityStatsTextView)
+
+        val stgSpinner : Spinner = findViewById(R.id.stgSpinner)
+        val conSpinner : Spinner = findViewById(R.id.conSpinner)
+        val dexSpinner : Spinner = findViewById(R.id.dexSpinner)
+        val intSpinner : Spinner = findViewById(R.id.intSpinner)
+        val sizSpinner : Spinner = findViewById(R.id.sizSpinner)
+        val powSpinner : Spinner = findViewById(R.id.powSpinner)
+        val appSpinner : Spinner = findViewById(R.id.appSpinner)
+        val eduSpinner : Spinner = findViewById(R.id.eduSpinner)
+
+        val continueButton4 : Button = findViewById(R.id.continueButton4)
+        val testing : TextView = findViewById(R.id.testing)
+
 
         fun rollStats(){
             //roll stats
@@ -80,13 +105,498 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
             luckStatsTextView.text = (((1..6).random() + (1..6).random() + (1..6).random())*5).toString()
             sanityStatsTextView.text = powerStatsTextView.text.toString()
         }
+        rollStats()
 
         val printingChracterTestTextView3 : TextView = findViewById(R.id.printingChracterTestTextView3)
-        //printingChracterTestTextView3.text = newCharacter.name
+        var firstSelectSize : Boolean = false
+        var firstSelectStr: Boolean = false
+        var firstSelectCon : Boolean = false
+        var firstSelectDex : Boolean = false
+        var firstSelectInt : Boolean = false
+        var firstSelectPow : Boolean = false
+        var firstSelectEdu : Boolean = false
+        var firstSelectApp  : Boolean = false
+        if(stgSpinner!= null){
+            val adapter = ArrayAdapter(
+                this,
+                android.R.layout.simple_spinner_item, stdArraystg
+            )
+            stgSpinner.adapter = adapter
+        }
+        stgSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            var tempStirng : String = stdArraystg[0]
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                var tempStringSup : String = "Standard Array: "
+                for(i in stdArraystg){
+                    tempStringSup += i + " "
+                }
+                printingChracterTestTextView3.text = tempStringSup
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if(tempStirng == "-" && firstSelectStr == true){
+                    tempStirng= stgSpinner.selectedItem.toString()
+                    stdArrayint.remove(tempStirng)
+                    stdArraycon.remove(tempStirng)
+                    stdArraydex.remove(tempStirng)
+                    stdArraypow.remove(tempStirng)
+                    stdArrayapp.remove(tempStirng)
+                    stdArrayedu.remove(tempStirng)
+                    stdArraysiz.remove(tempStirng)
+                }
+                else if( firstSelectStr == true){
+                    stdArrayint.add(tempStirng)
+                    stdArraycon.add(tempStirng)
+                    stdArraydex.add(tempStirng)
+                    stdArraypow.add(tempStirng)
+                    stdArrayapp.add(tempStirng)
+                    stdArrayedu.add(tempStirng)
+                    stdArraysiz.add(tempStirng)
+                    tempStirng= stgSpinner.selectedItem.toString()
+                    if(tempStirng != "-") {
+                        stdArrayint.remove(tempStirng)
+                        stdArraycon.remove(tempStirng)
+                        stdArraydex.remove(tempStirng)
+                        stdArraypow.remove(tempStirng)
+                        stdArrayapp.remove(tempStirng)
+                        stdArrayedu.remove(tempStirng)
+                        stdArraysiz.remove(tempStirng)
+                    }
+                }else{
+                    firstSelectStr = true
+                }
+                var tempStringSup : String = ""
+                for(i in stdArraystg){
+                    tempStringSup += i + " "
+                }
+                printingChracterTestTextView3.text = tempStringSup
+            }
+        }
+        if(conSpinner!= null){
+            val adapter = ArrayAdapter(
+                this,
+                //add stanard array later "Standard Array"
+                android.R.layout.simple_spinner_item, stdArraycon
+            )
+            conSpinner.adapter = adapter
+        }
+        conSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            var tempStirng : String = stdArraycon[0]
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if(tempStirng == "-" && firstSelectCon == true){
+                    tempStirng= conSpinner.selectedItem.toString()
+                    stdArraystg.remove(tempStirng)
+                    stdArrayint.remove(tempStirng)
+                    stdArraydex.remove(tempStirng)
+                    stdArraypow.remove(tempStirng)
+                    stdArrayapp.remove(tempStirng)
+                    stdArrayedu.remove(tempStirng)
+                    stdArraysiz.remove(tempStirng)
+                }
+                else if(firstSelectCon == true){
+                    stdArraystg.add(tempStirng)
+                    stdArrayint.add(tempStirng)
+                    stdArraydex.add(tempStirng)
+                    stdArraypow.add(tempStirng)
+                    stdArrayapp.add(tempStirng)
+                    stdArrayedu.add(tempStirng)
+                    stdArraysiz.add(tempStirng)
+                    tempStirng= conSpinner.selectedItem.toString()
+                    if(tempStirng != "-"){
+                        stdArraystg.remove(tempStirng)
+                        stdArrayint.remove(tempStirng)
+                        stdArraydex.remove(tempStirng)
+                        stdArraypow.remove(tempStirng)
+                        stdArrayapp.remove(tempStirng)
+                        stdArrayedu.remove(tempStirng)
+                        stdArraysiz.remove(tempStirng)
+                    }
+                }
+                else{
+                    firstSelectCon = true
+                }
+            }
+        }
+        if(dexSpinner!= null){
+            val adapter = ArrayAdapter(
+                this,
+                //add stanard array later "Standard Array"
+                android.R.layout.simple_spinner_item, stdArraydex
+            )
+            dexSpinner.adapter = adapter
+        }
+        dexSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            var tempStirng : String = stdArraydex[0]
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if(tempStirng == "" && firstSelectDex == true){
+                    tempStirng= dexSpinner.selectedItem.toString()
+                    stdArraystg.remove(tempStirng)
+                    stdArrayint.remove(tempStirng)
+                    stdArraycon.remove(tempStirng)
+                    stdArraypow.remove(tempStirng)
+                    stdArrayapp.remove(tempStirng)
+                    stdArrayedu.remove(tempStirng)
+                    stdArraysiz.remove(tempStirng)
+                }
+                else if(firstSelectDex == true){
+                    stdArraystg.add(tempStirng)
+                    stdArrayint.add(tempStirng)
+                    stdArraycon.add(tempStirng)
+                    stdArraypow.add(tempStirng)
+                    stdArrayapp.add(tempStirng)
+                    stdArrayedu.add(tempStirng)
+                    stdArraysiz.add(tempStirng)
+                    tempStirng= dexSpinner.selectedItem.toString()
+                    if(tempStirng != "-"){
+                        stdArraystg.remove(tempStirng)
+                        stdArrayint.remove(tempStirng)
+                        stdArraycon.remove(tempStirng)
+                        stdArraypow.remove(tempStirng)
+                        stdArrayapp.remove(tempStirng)
+                        stdArrayedu.remove(tempStirng)
+                        stdArraysiz.remove(tempStirng)
+                    }
+                }else{
+                    firstSelectDex = true
+                }
+            }
+        }
+        if(intSpinner!= null){
+            val adapter = ArrayAdapter(
+                this,
+                //add stanard array later "Standard Array"
+                android.R.layout.simple_spinner_item, stdArrayint
+            )
+            intSpinner.adapter = adapter
+        }
+        intSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            var tempStirng : String = stdArrayint[0]
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if(tempStirng == "-" && firstSelectInt == true){
+                    tempStirng= intSpinner.selectedItem.toString()
+                    stdArraystg.remove(tempStirng)
+                    stdArraycon.remove(tempStirng)
+                    stdArraydex.remove(tempStirng)
+                    stdArraypow.remove(tempStirng)
+                    stdArrayapp.remove(tempStirng)
+                    stdArrayedu.remove(tempStirng)
+                    stdArraysiz.remove(tempStirng)
+                }
+                else if(firstSelectInt == true){
+                    stdArraystg.add(tempStirng)
+                    stdArraycon.add(tempStirng)
+                    stdArraydex.add(tempStirng)
+                    stdArraypow.add(tempStirng)
+                    stdArrayapp.add(tempStirng)
+                    stdArrayedu.add(tempStirng)
+                    stdArraysiz.add(tempStirng)
+                    tempStirng= intSpinner.selectedItem.toString()
+                    if(tempStirng != "-"){
+                        stdArraystg.remove(tempStirng)
+                        stdArraycon.remove(tempStirng)
+                        stdArraydex.remove(tempStirng)
+                        stdArraypow.remove(tempStirng)
+                        stdArrayapp.remove(tempStirng)
+                        stdArrayedu.remove(tempStirng)
+                        stdArraysiz.remove(tempStirng)
+                    }
+                }else{
+                    firstSelectInt = true
+                }
+            }
+        }
+        if(sizSpinner!= null){
+            val adapter = ArrayAdapter(
+                this,
+                //add stanard array later "Standard Array"
+                android.R.layout.simple_spinner_item, stdArraysiz
+            )
+            sizSpinner.adapter = adapter
+        }
+        sizSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            var tempStirng : String = stdArraysiz[0]
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if(tempStirng == "-" && firstSelectSize == true){
+                    tempStirng= sizSpinner.selectedItem.toString()
+                    stdArraystg.remove(tempStirng)
+                    stdArrayint.remove(tempStirng)
+                    stdArraycon.remove(tempStirng)
+                    stdArraydex.remove(tempStirng)
+                    stdArraypow.remove(tempStirng)
+                    stdArrayapp.remove(tempStirng)
+                    stdArrayedu.remove(tempStirng)
+                }
+                else if(firstSelectSize == true){
+                    stdArraystg.add(tempStirng)
+                    stdArrayint.add(tempStirng)
+                    stdArraycon.add(tempStirng)
+                    stdArraydex.add(tempStirng)
+                    stdArraypow.add(tempStirng)
+                    stdArrayapp.add(tempStirng)
+                    stdArrayedu.add(tempStirng)
+                    tempStirng= sizSpinner.selectedItem.toString()
+                    if(tempStirng != "-"){
+                        stdArraystg.remove(tempStirng)
+                        stdArrayint.remove(tempStirng)
+                        stdArraycon.remove(tempStirng)
+                        stdArraydex.remove(tempStirng)
+                        stdArraypow.remove(tempStirng)
+                        stdArrayapp.remove(tempStirng)
+                        stdArrayedu.remove(tempStirng)
+                    }
+                }else{
+                    firstSelectSize = true
+                }
+            }
+        }
+        if(powSpinner!= null){
+            val adapter = ArrayAdapter(
+                this,
+                //add stanard array later "Standard Array"
+                android.R.layout.simple_spinner_item, stdArraypow
+            )
+            powSpinner.adapter = adapter
+        }
+        powSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            var tempStirng : String = stdArraypow[0]
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if(tempStirng == "-" && firstSelectPow == true){
+                    tempStirng= powSpinner.selectedItem.toString()
+                    stdArraystg.remove(tempStirng)
+                    stdArrayint.remove(tempStirng)
+                    stdArraycon.remove(tempStirng)
+                    stdArraydex.remove(tempStirng)
+                    stdArraysiz.remove(tempStirng)
+                    stdArrayapp.remove(tempStirng)
+                    stdArrayedu.remove(tempStirng)
+                }
+                else if(firstSelectPow==true){
+                    stdArraystg.add(tempStirng)
+                    stdArrayint.add(tempStirng)
+                    stdArraycon.add(tempStirng)
+                    stdArraydex.add(tempStirng)
+                    stdArraysiz.add(tempStirng)
+                    stdArrayapp.add(tempStirng)
+                    stdArrayedu.add(tempStirng)
+                    tempStirng= powSpinner.selectedItem.toString()
+                    if(tempStirng != "-"){
+                        stdArraystg.remove(tempStirng)
+                        stdArrayint.remove(tempStirng)
+                        stdArraycon.remove(tempStirng)
+                        stdArraydex.remove(tempStirng)
+                        stdArraysiz.remove(tempStirng)
+                        stdArrayapp.remove(tempStirng)
+                        stdArrayedu.remove(tempStirng)
+                    }
+                }else{
+                    firstSelectPow = true
+                }
+            }
+        }
+        if(appSpinner!= null){
+            val adapter = ArrayAdapter(
+                this,
+                //add stanard array later "Standard Array"
+                android.R.layout.simple_spinner_item, stdArrayapp
+            )
+            appSpinner.adapter = adapter
+        }
+        appSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            var tempStirng : String = stdArrayapp[0]
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if(tempStirng == "-" && firstSelectApp == true){
+                    tempStirng= appSpinner.selectedItem.toString()
+                    stdArraystg.remove(tempStirng)
+                    stdArrayint.remove(tempStirng)
+                    stdArraycon.remove(tempStirng)
+                    stdArraydex.remove(tempStirng)
+                    stdArraypow.remove(tempStirng)
+                    stdArraysiz.remove(tempStirng)
+                    stdArrayedu.remove(tempStirng)
+                }
+                else if(firstSelectApp == true){
+                    stdArraystg.add(tempStirng)
+                    stdArrayint.add(tempStirng)
+                    stdArraycon.add(tempStirng)
+                    stdArraydex.add(tempStirng)
+                    stdArraypow.add(tempStirng)
+                    stdArraysiz.add(tempStirng)
+                    stdArrayedu.add(tempStirng)
+                    tempStirng= appSpinner.selectedItem.toString()
+                    if(tempStirng != "-"){
+                        stdArraystg.remove(tempStirng)
+                        stdArrayint.remove(tempStirng)
+                        stdArraycon.remove(tempStirng)
+                        stdArraydex.remove(tempStirng)
+                        stdArraypow.remove(tempStirng)
+                        stdArraysiz.remove(tempStirng)
+                        stdArrayedu.remove(tempStirng)
+                    }
+                }else{
+                    firstSelectApp = true
+                }
+            }
+        }
+        if(eduSpinner!= null){
+            val adapter = ArrayAdapter(
+                this,
+                //add stanard array later "Standard Array"
+                android.R.layout.simple_spinner_item, stdArrayedu
+            )
+            eduSpinner.adapter = adapter
+        }
+        eduSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            var tempStirng : String = stdArrayedu[0]
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if(tempStirng == "-" && firstSelectEdu == true){
+                    tempStirng= eduSpinner.selectedItem.toString()
+                    stdArraystg.remove(tempStirng)
+                    stdArrayint.remove(tempStirng)
+                    stdArraycon.remove(tempStirng)
+                    stdArraydex.remove(tempStirng)
+                    stdArraypow.remove(tempStirng)
+                    stdArraysiz.remove(tempStirng)
+                    stdArrayapp.remove(tempStirng)
+                }
+                else if(firstSelectEdu){
+                    stdArraystg.add(tempStirng)
+                    stdArrayint.add(tempStirng)
+                    stdArraycon.add(tempStirng)
+                    stdArraydex.add(tempStirng)
+                    stdArraypow.add(tempStirng)
+                    stdArraysiz.add(tempStirng)
+                    stdArrayapp.add(tempStirng)
+                    tempStirng= eduSpinner.selectedItem.toString()
+                    if(tempStirng != "-"){
+                        stdArraystg.remove(tempStirng)
+                        stdArrayint.remove(tempStirng)
+                        stdArraycon.remove(tempStirng)
+                        stdArraydex.remove(tempStirng)
+                        stdArraypow.remove(tempStirng)
+                        stdArraysiz.remove(tempStirng)
+                        stdArrayapp.remove(tempStirng)
+                    }
+                }else{
+                    firstSelectEdu = true
+                }
+            }
+        }
 
         /**
          * Buttons
          */
+        continueButton4.setOnClickListener(){
+            if(
+                stgSpinner.selectedItem.toString() != "-" &&
+                conSpinner.selectedItem.toString() != "-" &&
+                dexSpinner.selectedItem.toString() != "-" &&
+                intSpinner.selectedItem.toString() != "-" &&
+                sizSpinner.selectedItem.toString() != "-" &&
+                powSpinner.selectedItem.toString() != "-" &&
+                appSpinner.selectedItem.toString() != "-" &&
+                eduSpinner.selectedItem.toString() != "-"
+            ) {
+                //newCharacter.strength = stgSpinner.selectedItem.toString().toInt()
+                /*newCharacter.constitution = conSpinner.selectedItem.toString().toInt()
+                newCharacter.dexterity = dexSpinner.selectedItem.toString().toInt()
+                newCharacter.intelligence = intSpinner.selectedItem.toString().toInt()
+                newCharacter.size = sizSpinner.selectedItem.toString().toInt()
+                newCharacter.power = powSpinner.selectedItem.toString().toInt()
+                newCharacter.appearance = appSpinner.selectedItem.toString().toInt()
+                newCharacter.education = eduSpinner.selectedItem.toString().toInt()
+
+                newCharacter.hitPoints = ((constitutionStatsTextView.text.toString().toInt() + sizeStatsTextView.text.toString().toInt()) / 10).toString()
+                newCharacter.maxHitPoints = newCharacter.hitPoints
+                newCharacter.magicPoints = (powerStatsTextView.text.toString().toInt() / 5).toString()
+                newCharacter.maxMagicPoints = newCharacter.magicPoints
+                newCharacter.luck = (((1..6).random() + (1..6).random() + (1..6).random())*5).toString()
+                newCharacter.startingLuck = newChracter.luck
+                newCharacter.sanity =  powerStatsTextView.text.toString()
+                newCharacter.startingSanity = newCharacter.sanity
+
+
+                newCharacter.dodge = dexSpinner.selectedItem.toString().toInt() / 2
+                when(stgSpinner.selectedItem.toString().toInt() + sizSpinner.selectedItem.toString().toInt()){
+                    in 2..64 -> {
+                        newCharacter.damageBonus = "-2"
+                        newCharacter.build = -2
+                    }
+                    in 65..84 -> {
+                        newCharacter.damageBonus = "-1"
+                        newCharacter.build = -1
+                    }
+                    in 85..124 -> {
+                        newCharacter.damageBonus = "None"
+                        newCharacter.build = 0
+                    }
+                    in 125..164 ->{
+                        newCharacter.damageBonus = "+1D4"
+                        newCharacter.build = 1
+                    }
+                    in 165..205 -> {
+                        newCharacter.damageBonus = "+1D6"
+                        newCharacter.build = 2
+                    }
+
+                }
+
+                newCharacter.move = moveStat(dexSpinner.selectedItem.toString().toInt(), stgSpinner.selectedItem.toString().toInt(), sizSpinner.selectedItem.toString().toInt())
+                */
+                testing.text = "We got through"+
+                        stgSpinner.selectedItem.toString()  + " " +
+                        conSpinner.selectedItem.toString() + " " +
+                        dexSpinner.selectedItem.toString() + " " +
+                        intSpinner.selectedItem.toString() + " " +
+                        sizSpinner.selectedItem.toString() + " " +
+                        powSpinner.selectedItem.toString() + " " +
+                        appSpinner.selectedItem.toString() + " " +
+                        eduSpinner.selectedItem.toString() + " "
+                //saveCharacter(newCharacter)
+
+                //go to next step
+                //val intent = Intent( this@Create1920sPlayerStepTwoActivity, Create1920sPlayerStepThreeActivity::class.java)
+                //startActivity(intent)
+                //stepTwoPartTwoRollLayout.visibility = View.GONE
+            }else{
+                testing.text = "Change this to a warning to fill out all selections " +
+                        stgSpinner.selectedItem.toString()  + " " +
+                        conSpinner.selectedItem.toString() + " " +
+                        dexSpinner.selectedItem.toString() + " " +
+                        intSpinner.selectedItem.toString() + " " +
+                        sizSpinner.selectedItem.toString() + " " +
+                        powSpinner.selectedItem.toString() + " " +
+                        appSpinner.selectedItem.toString() + " " +
+                        eduSpinner.selectedItem.toString() + " "
+            }
+        }
 
         //will return to pervious screen back to step one
         val backToStepOneButton : Button = findViewById(R.id.backToStepOneButton)
@@ -109,6 +619,18 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
                 val stepTwoPartTwoStandardArrayLayout : View = findViewById(R.id.stepTwoPartTwoStandardArrayLayout)
                 stepTwoPartTwoStandardArrayLayout.visibility = View.VISIBLE
             }
+        }
+
+        val backToStepTwoButton2 : Button = findViewById(R.id.backToStepTwoButton2)
+        backToStepTwoButton2.setOnClickListener(){
+            val stepTwoPartTwoStandardArrayLayout : View = findViewById(R.id.stepTwoPartTwoStandardArrayLayout)
+            stepTwoPartTwoStandardArrayLayout.visibility = View.GONE
+        }
+
+        val backToStep2Button : Button = findViewById(R.id.backToStep2Button)
+        backToStep2Button.setOnClickListener(){
+            val stepTwoPartTwoRollLayout : View = findViewById(R.id.stepTwoPartTwoRollLayout)
+            stepTwoPartTwoRollLayout.visibility = View.GONE
         }
 
         val continueButton3 : Button = findViewById(R.id.continueButton3)
@@ -155,6 +677,7 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
                 }
 
             }
+
             newCharacter.move = moveStat(dexterityStatsTextView.text.toString().toInt(), strengthStatTextView.text.toString().toInt(), sizeStatsTextView.text.toString().toInt())
 
             saveCharacter(newCharacter)

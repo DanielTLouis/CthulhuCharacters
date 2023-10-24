@@ -15,7 +15,7 @@ import java.io.File
 import java.io.IOException
 import java.io.OutputStream
 
-
+//personal skill point selection
 class Create1920sPlayerStepFourActivity : ComponentActivity() {
 
     var skillPoints : Int = 0
@@ -259,6 +259,54 @@ class Create1920sPlayerStepFourActivity : ComponentActivity() {
          * Buttons
          */
         backToStepThreeButton.setOnClickListener(){
+            newCharacter.accounting = 5 //105 would be checked
+            newCharacter.anthropology  = 1 // 1 would be unchecked
+            newCharacter.appraise  = 5
+            newCharacter.archaeology  = 1
+            newCharacter.artAndCraft  = 5
+            newCharacter.arts  = ""
+            newCharacter.creditRating  = 0
+            newCharacter.charm = 15
+            newCharacter.climb = 20
+            newCharacter.cthulhuMythos = 0
+            newCharacter.disguise = 5
+            newCharacter.driveAuto = 20
+            newCharacter.elcRepair = 10
+            newCharacter.fastTalk = 5
+            newCharacter.fightingBrawl = 25
+            newCharacter.firearmsHandgun = 20
+            newCharacter.firearmsRifle = 25
+            newCharacter.firstAid = 30
+            newCharacter.history = 5
+            newCharacter.intimidate = 15
+            newCharacter.jump = 20
+            newCharacter.languageOther = 1
+            newCharacter.languages = ""
+            newCharacter.languageOwn = 0
+            newCharacter.law = 5
+            newCharacter.libraryUse = 20
+            newCharacter.listen = 20
+            newCharacter.locksmith = 1
+            newCharacter.mechRepair = 10
+            newCharacter.medicine = 1
+            newCharacter.naturalWorld = 10
+            newCharacter.navigate = 10
+            newCharacter.occult = 5
+            newCharacter.persuade = 10
+            newCharacter.pilot = 1
+            newCharacter.psychoanalysis = 1
+            newCharacter.psychology = 10
+            newCharacter.ride = 5
+            newCharacter.science = 1
+            newCharacter.sciences = ""
+            newCharacter.sleightOfHand = 10
+            newCharacter.spotHidden = 25
+            newCharacter.stealth = 20
+            newCharacter.survival = 10
+            newCharacter.swim = 20
+            newCharacter.thro = 20
+            newCharacter.track = 10
+            saveCharacter(newCharacter)
             val intent = Intent(this@Create1920sPlayerStepFourActivity, Create1920sPlayerStepThreeActivity::class.java)
             startActivity(intent)
         }

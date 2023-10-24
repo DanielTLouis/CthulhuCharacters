@@ -45,6 +45,9 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
     var playerAmmo : ArrayList<String> = arrayListOf()
     var playerMalf : ArrayList<String> = arrayListOf()
 
+    var otherInvesticatorsNames : ArrayList<String> = arrayListOf()
+    var otherInvesticatorsCharacters : ArrayList<String> = arrayListOf()
+
     var characterList : ArrayList<Character> = arrayListOf()
 
     private fun updateArray(arr: String, name: String, num: Int) {
@@ -131,31 +134,10 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
             saveCharacter(newCharacter)
         }
         otherInvestigatorsButton.setOnClickListener(){
-            val player1EditText : EditText = findViewById(R.id.player1EditText)
-            val player2EditText : EditText = findViewById(R.id.player2EditText)
-            val player3EditText : EditText = findViewById(R.id.player3EditText)
-            val player4EditText : EditText = findViewById(R.id.player4EditText)
-            val player5EditText : EditText = findViewById(R.id.player5EditText)
-            val character1EditText : EditText = findViewById(R.id.character1EditText)
-            val character2EditText : EditText = findViewById(R.id.character2EditText)
-            val character3EditText : EditText = findViewById(R.id.character3EditText)
-            val character4EditText : EditText = findViewById(R.id.character4EditText)
-            val character5EditText : EditText = findViewById(R.id.character5EditText)
-            var tempPlayerString = player1EditText.text.toString() +
-                    player2EditText.text.toString() +
-                    player3EditText.text.toString() +
-                    player4EditText.text.toString() +
-                    player5EditText.text.toString()
-            var tempCharacterString : String = character1EditText.text.toString() +
-                    character2EditText.text.toString() +
-                    character3EditText.text.toString() +
-                    character4EditText.text.toString() +
-                    character5EditText.text.toString()
-            newCharacter.characterNames = tempCharacterString
-            newCharacter.playerNames = tempPlayerString
-            saveCharacter(newCharacter)
+            saveInvestivators(newCharacter)
         }
         finializeButton.setOnClickListener(){
+            saveInvestivators(newCharacter)
             newCharacter.era = "1920s"
             saveCharacter(newCharacter)
             createCharacterList(newCharacter)
@@ -176,6 +158,31 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
             startActivity(intent)
         }
 
+    }
+    fun saveInvestivators(newCharacter : Character){
+        val player1EditText : EditText = findViewById(R.id.player1EditText)
+        val player2EditText : EditText = findViewById(R.id.player2EditText)
+        val player3EditText : EditText = findViewById(R.id.player3EditText)
+        val player4EditText : EditText = findViewById(R.id.player4EditText)
+        val player5EditText : EditText = findViewById(R.id.player5EditText)
+        val character1EditText : EditText = findViewById(R.id.character1EditText)
+        val character2EditText : EditText = findViewById(R.id.character2EditText)
+        val character3EditText : EditText = findViewById(R.id.character3EditText)
+        val character4EditText : EditText = findViewById(R.id.character4EditText)
+        val character5EditText : EditText = findViewById(R.id.character5EditText)
+        var tempPlayerString = player1EditText.text.toString() +';' +
+                player2EditText.text.toString() + ';' +
+                player3EditText.text.toString() + ';' +
+                player4EditText.text.toString() + ';' +
+                player5EditText.text.toString()
+        var tempCharacterString : String = character1EditText.text.toString() + ';' +
+                character2EditText.text.toString() + ';' +
+                character3EditText.text.toString() + ';' +
+                character4EditText.text.toString() + ';' +
+                character5EditText.text.toString()
+        newCharacter.characterNames = tempCharacterString
+        newCharacter.playerNames = tempPlayerString
+        saveCharacter(newCharacter)
     }
     fun updateCharacterListAndJson(){
         var tempString : String = "{\"Characters\" : \n[\n"
@@ -224,6 +231,18 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
         catch(e: IOException){
             tempCharacter.name = "Did not find file to open"
         }
+
+        var holdNames : List<String> = listOf()
+        holdNames = tempCharacter.playerNames.split(';')
+        for(i in holdNames){
+            otherInvesticatorsNames.add(i)
+        }
+        var holdCharacters : List<String> = listOf()
+        holdCharacters = tempCharacter.characterNames.split(';')
+        for(i in holdCharacters){
+            otherInvesticatorsCharacters.add(i)
+        }
+
         var holdArtsList : List<String> = listOf()
         holdArtsList = tempCharacter.arts.split(';')
         for(i in holdArtsList){
@@ -305,7 +324,10 @@ class Create1920sPlayerStepSevenActivity : ComponentActivity() {
         try {
             val filename = "NewCharacter.json"
             val output : OutputStream
+
             var tempString : String = ""
+
+            tempString = ""
             for(i in artsArray){
                 if(i.filter { it.isLetterOrDigit() } != "") {
                     tempString += i + "; "

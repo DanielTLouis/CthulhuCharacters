@@ -285,7 +285,8 @@
             android:id="@+id/otherInvestigatorsButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Other Investicators " />
+            android:text="Add Other Investicators "
+            tools:visibility="gone" />
 
         <Button
             android:id="@+id/finializeButton"

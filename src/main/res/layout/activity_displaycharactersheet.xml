@@ -57,15 +57,18 @@
                         android:id="@+id/nameTitleTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="5"
                         android:text="Name :"
+                        android:textAlignment="center"
                         android:textSize="24sp" />
 
                     <TextView
                         android:id="@+id/nameTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="5"
                         android:text="Did not load"
+                        android:textAlignment="center"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -80,15 +83,18 @@
                         android:id="@+id/occupationTitleTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="5"
                         android:text="Occupation:"
+                        android:textAlignment="center"
                         android:textSize="24sp" />
 
                     <TextView
                         android:id="@+id/occupationTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="5"
                         android:text="Did not load"
+                        android:textAlignment="center"
                         android:textSize="20sp" />
                 </LinearLayout>
 
@@ -2233,19 +2239,121 @@
                 </LinearLayout>
 
                 <View
+                    android:id="@+id/view11"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#673AB7" />
+
+                <LinearLayout
+                    android:id="@+id/moneyLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/cashTitleTextViewe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cash" />
+
+                        <TextView
+                            android:id="@+id/cashTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/spendingLevelTitleTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Spending Level" />
+
+                        <TextView
+                            android:id="@+id/spendingLevelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Spending Level " />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/assetsTitleTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Assets" />
+
+                        <TextView
+                            android:id="@+id/assetsTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="None" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
                     android:id="@+id/view10"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="#673AB7" />
 
                 <LinearLayout
-                    android:id="@+id/partymembersLayout"
+                    android:id="@+id/otherInvestigatorsLinearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical" />
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/otherPlayersLinearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/PlayerNameTitleTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="Player's Name" />
+
+                        <View
+                            android:id="@+id/view12"
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0"
+                            android:background="#673AB7" />
+
+                        <TextView
+                            android:id="@+id/characerNameTitleTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="Character's Name" />
+                    </LinearLayout>
+                </LinearLayout>
 
                 <View
-                    android:id="@+id/view11"
+                    android:id="@+id/view13"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="#673AB7" />

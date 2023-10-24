@@ -233,6 +233,12 @@
                 android:text="Back" />
 
             <TextView
+                android:id="@+id/printingChracterTestTextView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000" />
+
+            <TextView
                 android:id="@+id/standardArrayTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -246,53 +252,149 @@
                 android:text="Select the value next for each score but only use one of each value"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/strengthTextView2"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Strength:" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/constitutionTextView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Constitution:" />
+                <TextView
+                    android:id="@+id/strengthTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Strength:" />
 
-            <TextView
-                android:id="@+id/dexterityTextView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dexterity:" />
+                <Spinner
+                    android:id="@+id/stgSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/intelligenceTextView2"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Intelligence:" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/sizeTextView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Size:" />
+                <TextView
+                    android:id="@+id/constitutionTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Constitution:" />
 
-            <TextView
-                android:id="@+id/powerTextView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Power:" />
+                <Spinner
+                    android:id="@+id/conSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/appearanceTextView2"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Appearance:" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/educationTextView2"
+                <TextView
+                    android:id="@+id/dexterityTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dexterity:" />
+
+                <Spinner
+                    android:id="@+id/dexSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Education:" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/intelligenceTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Intelligence:" />
+
+                <Spinner
+                    android:id="@+id/intSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sizeTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Size:" />
+
+                <Spinner
+                    android:id="@+id/sizSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/powerTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Power:" />
+
+                <Spinner
+                    android:id="@+id/powSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/appearanceTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Appearance:" />
+
+                <Spinner
+                    android:id="@+id/appSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/educationTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Education:" />
+
+                <Spinner
+                    android:id="@+id/eduSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/continueButton4"
@@ -301,44 +403,47 @@
                 android:text="Next" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/backToStepOneButton"
+        <LinearLayout
+            android:id="@+id/startAct2LinearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Back to Last Step" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Build Stats"
-            android:textSize="34sp" />
+            <Button
+                android:id="@+id/backToStepOneButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back to Last Step"
+                tools:visibility="visible" />
 
-        <Spinner
-            android:id="@+id/stndArrayVsRollspinner"
-            android:layout_width="match_parent"
-            android:layout_height="52dp" />
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Build Stats"
+                android:textSize="34sp"
+                tools:visibility="visible" />
 
-        <Button
-            android:id="@+id/continueButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Next" />
+            <Spinner
+                android:id="@+id/stndArrayVsRollspinner"
+                android:layout_width="match_parent"
+                android:layout_height="52dp" />
 
-        <TextView
-            android:id="@+id/printingChracterTestTextView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000" />
+            <Button
+                android:id="@+id/continueButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next" />
+        </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/testing"
@@ -348,4 +453,5 @@
         </ScrollView>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

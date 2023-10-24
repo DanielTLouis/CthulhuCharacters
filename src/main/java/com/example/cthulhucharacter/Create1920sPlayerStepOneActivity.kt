@@ -22,7 +22,7 @@ import java.io.IOException
 import java.io.OutputStream
 import java.util.UUID
 
-
+//name, gender, age, residence
 class Create1920sPlayerStepOneActivity : ComponentActivity() {
     var artsArray : ArrayList<String> = arrayListOf()
     var languageArray : ArrayList<String> = arrayListOf()
