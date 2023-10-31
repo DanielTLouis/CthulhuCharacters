@@ -99,7 +99,7 @@ class Create1920sPlayerStepSixActivity : ComponentActivity() {
 
         var newCharacter : Character = loadCharacter()
 
-        sixTextView.text = newCharacter.createJson()
+        //sixTextView.text = newCharacter.createJson()
 
         fun buildLists(){
             try {
@@ -158,7 +158,7 @@ class Create1920sPlayerStepSixActivity : ComponentActivity() {
             for(i in gearArray){
                 tempString += i + "\n"
             }
-            ItemsListTextView.text = tempString
+            //ItemsListTextView.text = tempString
         }
 
         /**

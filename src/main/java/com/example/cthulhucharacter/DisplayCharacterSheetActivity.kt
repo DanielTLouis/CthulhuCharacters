@@ -235,6 +235,13 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
         val spendingLevelTextView : TextView = findViewById(R.id.spendingLevelTextView)
         val assetsTextView : TextView = findViewById(R.id.assetsTextView)
 
+        val editCharaterButton : Button = findViewById(R.id.editCharaterButton)
+
+        /**
+         * Change this to allow the edit button
+         */
+        editCharaterButton.visibility = View.GONE
+
         createCharacterList()
         var selectedCharacter : Character = Character()
 

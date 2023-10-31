@@ -377,7 +377,7 @@
           "Jump",
           "Psychology",
           "Spot Hidden",
-          "any two"
+          "Two any"
         ]
       },
       {
@@ -408,7 +408,7 @@
           "Mechanical Repair",
           "Navigate",
           "Spot Hidden",
-          "any one"
+          {"one" : ["any"]}
         ]
       },
       {
@@ -423,7 +423,7 @@
           "Library Use",
           "Listen",
           {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
-          "any two"
+          {"two" :  ["any"]}
         ]
       },
       {

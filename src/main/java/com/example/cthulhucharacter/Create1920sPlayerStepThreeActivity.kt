@@ -16,6 +16,7 @@ import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.text.style.TextDirection.Companion.Content
 import kotlinx.coroutines.newFixedThreadPoolContext
+import kotlinx.coroutines.selects.select
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.File
@@ -25,6 +26,52 @@ import java.io.OutputStream
 
 
 class Create1920sPlayerStepThreeActivity : ComponentActivity() {
+
+    var masterSkillList : List<String> = listOf(
+        "Accounting",
+        "Anthropology",
+        "Appraise",
+        "Archaeology",
+        "ArtandCraft",
+        "Charm",
+        "Climb",
+        "Cthulhu Mythos",
+        "Disguise",
+        "Drive Auto",
+        "Elec Repair",
+        "Fast Talk",
+        "Fighting(Brawl)",
+        "Firearms(Handgun)",
+        "Firearms(Rifle)",
+        "First Aid",
+        "History",
+        "Intimidate",
+        "Jump",
+        "Language Other",
+        "Language Own",
+        "Law",
+        "Library Use",
+        "Listen",
+        "Locksmith",
+        "Mechanical",
+        "Medicine",
+        "Natural World",
+        "Navigate",
+        "Occult",
+        "Persuade",
+        "Pilot",
+        "Psychoanalysis",
+        "Psychology",
+        "Ride",
+        "Science",
+        "Sleight of Hand",
+        "Spot Hidden",
+        "Stealth",
+        "Survival",
+        "Throw",
+        "Track"
+    )
+
     var occupationNames : ArrayList<String> = arrayListOf("-")
     var occupationsDescriptions : ArrayList<String> = arrayListOf("Description")
     var occupationCreditRattings : ArrayList<String> = arrayListOf("CreditRatting")
@@ -38,13 +85,18 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
     var scienceArray : ArrayList<String> = arrayListOf()
 
     private fun updateArray(arr : String, name : String, num : Int){
-        var index : Int = 0
+        var index : Int = -1
         if(arr == "Art") {
             for (i in artsArray.indices) {
                 if (artsArray[i].contains(name)) {
                     index = i
-                    break
+                    //break
                 }
+            }
+            if(index == -1){
+                val skill : String = name + num.toString()
+                artsArray.add(skill)
+                return
             }
             var tempList: List<String> = artsArray.get(index).split('.')
             var tempNum = tempList[1].toInt() + num
@@ -52,29 +104,42 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
             artsArray.removeAt(index)
             artsArray.add(tempText)
         }else if(arr == "Lan") {
+            index = -1
             for (i in languageArray.indices) {
                 if (languageArray[i].contains(name)) {
                     index = i
-                    break
+                    //break
                 }
+            }
+            if(index == -1){
+                val skill : String = name + num.toString()
+                languageArray.add(skill)
+                return
             }
             var tempList: List<String> = languageArray.get(index).split('.')
             var tempNum = tempList[1].toInt() + num
-            var tempText: String = tempList[1] + "." + tempNum.toString()
+            var tempText: String = tempList[0] + "." + tempNum.toString()
             languageArray.removeAt(index)
             languageArray.add(tempText)
         } else if(arr == "Science") {
+            index = -1
             for (i in scienceArray.indices) {
                 if (scienceArray[i].contains(name)) {
                     index = i
-                    break
+                    //break
                 }
+            }
+            if(index == -1){
+                val skill : String = name + num.toString()
+                scienceArray.add(skill)
+                return
             }
             var tempList: List<String> = scienceArray.get(index).split('.')
             var tempNum = tempList[1].toInt() + num
-            var tempText: String = tempList[1] + "." + tempNum.toString()
+            var tempText: String = tempList[0] + "." + tempNum.toString()
             scienceArray.removeAt(index)
             scienceArray.add(tempText)
+
         }
         return
     }
@@ -90,8 +155,6 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
         val backButton : Button = findViewById(R.id.backButton)
         val continueButton5 : Button = findViewById(R.id.contimueButton5)
         val backToStepTwoButton: Button = findViewById(R.id.backToStepTwoButton)
-        val textView2 :TextView = findViewById(R.id.creditRatingSelecttitleTextView)
-        val creditSpinner : Spinner = findViewById(R.id.creditSpinner)
         val skillLayout : LinearLayout = findViewById(R.id.skillLayout)
         val warningTextView : TextView = findViewById(R.id.warningTextView)
         val warningContentTextView2 : TextView = findViewById((R.id.warningContentTextView2))
@@ -259,6 +322,12 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
             newCharacter.swim = 20
             newCharacter.thro = 20
             newCharacter.track = 10
+            newCharacter.arts = ""
+            newCharacter.languages = ""
+            newCharacter.sciences = ""
+            artsArray.clear()
+            scienceArray.clear()
+            languageArray.clear()
             saveCharacter(newCharacter)
             //go to last step
             val intent = Intent(
@@ -278,24 +347,6 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
 
                 skillPoints = occupationPoints[occupationSpinner.selectedItemPosition]
 
-                /**credit rating**/
-                newCharacter.occupation = occupationSpinner.selectedItem.toString()
-                creditRating = occupationCreditRattings[occupationSpinner.selectedItemPosition]
-                val lowEnd: Int = (creditRating[0].plus("").plus(creditRating[1])).toInt()
-                val highEnd: Int = (creditRating[3].plus("").plus(creditRating[4])).toInt()
-                val bounds: ArrayList<Int> = arrayListOf()
-                var i: Int = lowEnd
-                while (i <= highEnd) {
-                    bounds.add(i)
-                    i++
-                }
-                if (creditSpinner != null) {
-                    val adapter = ArrayAdapter(
-                        this,
-                        android.R.layout.simple_spinner_item, bounds
-                    )
-                    creditSpinner.adapter = adapter
-                }
 
                 val skillpointsTextView : TextView = findViewById(R.id.skillpointssTextView)
                 skillpointsTextView.text = skillPoints.toString()
@@ -331,7 +382,7 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                 //start setting up the views in skills
                 for (i in skills) {
 
-                    if (i.contains("ArtandCraft") || i.contains("LanguageOther") || i.contains("Science")) {
+                    if (i.contains("ArtandCraft") || i.contains("Language Other") || i.contains("Science")) {
                        //need to add a way to add new art and craft items
                         //add them to the arrays while also adding them to the way to get it
                         //also will need a way to save those numbers for the new items
@@ -360,7 +411,15 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                         if(trueList[0] == "any") {
                             val inputText: EditText = EditText(this)
                             val inputButton: Button = Button(this)
-                            inputText.hint = "Enter a Art or Craft here"
+                            if(i.contains("ArtandCraft")) {
+                                inputText.hint = "Enter a Art or Craft here"
+                            }else if(i.contains("Language Other")){
+                                inputText.hint = "Enter an Other Language here"
+                            }else if(i.contains("Science")){
+                                inputText.hint = "Enter a Science here"
+                            }else{
+                                inputText.hint = "Failed to find "
+                            }
                             inputButton.text = "Add"
                             inputButton.setOnClickListener() {
                                 var tempTextView: TextView = TextView(this)
@@ -370,6 +429,21 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                                 var containerLayout: LinearLayout = LinearLayout(this)
                                 var dividerView = View(this)
 
+
+                                var tempTitle : String = ""
+                                if(i.contains("ArtandCraft")) {
+                                    artsArray.add(inputText.text.toString() + ".5")
+                                    tempTitle = "Art and Craft: "
+                                }else if(i.contains("Language Other")){
+                                    languageArray.add(inputText.text.toString() + ".1")
+                                    tempTitle = "Language Other: "
+                                }else if(i.contains("Science")){
+                                    scienceArray.add(inputText.text.toString() + ".1")
+                                    tempTitle = "Science: "
+                                }else{
+                                    tempTitle = "Failed ot find : "
+                                }
+
                                 saveCharacter(newCharacter)
                                 addRow(
                                     tempTextView,
@@ -378,7 +452,7 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                                     subButton,
                                     containerLayout,
                                     dividerView,
-                                    inputText.text.toString(),
+                                    tempTitle + inputText.text.toString(),
                                     newLayout,
                                     newCharacter,
                                     {
@@ -390,16 +464,15 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                                         } else {
                                             tempNumberView.text =
                                                 (tempNumberView.text.toString().toInt() + 1).toString()
-                                            saveStat(tempTextView.text.toString(),tempNumberView.text.toString().toInt())
+                                            saveStat(inputText.text.toString(),tempNumberView.text.toString().toInt())
                                             skillPoints -= 1
                                             skillpointssTextView.text = skillPoints.toString()
-                                            updateArray("Art", tempTextView.text.toString(),1)
-                                            if(artsArray.contains(tempTextView.text.toString()+"."+(tempNumberView.text.toString().toInt() - 1).toString())){
-                                                updateArray("Art", tempTextView.text.toString(),1)
-                                            }else if(languageArray.contains(tempTextView.text.toString()+"."+(tempNumberView.text.toString().toInt() - 1).toString())){
-                                                updateArray("Lan", tempTextView.text.toString(),1)
-                                            }else if(scienceArray.contains(tempTextView.text.toString()+"."+(tempNumberView.text.toString().toInt() - 1).toString())){
-                                                updateArray("Science", tempTextView.text.toString(),1)
+                                            if(tempTextView.text.toString().contains("Art and Craft: ")){
+                                                updateArray("Art", inputText.text.toString(),1)
+                                            }else if(tempTextView.text.toString().contains("Language Other: ")){
+                                                updateArray("Lan", inputText.text.toString(),1)
+                                            }else if(tempTextView.text.toString().contains("Science: ")){
+                                                updateArray("Science", inputText.text.toString(),1)
                                             }
                                             warningContentTextView2.text = ""
                                         }
@@ -415,12 +488,12 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                                             saveStat(tempTextView.text.toString(),tempNumberView.text.toString().toInt())
                                             skillPoints += 1
                                             skillpointssTextView.text = skillPoints.toString()
-                                            if(artsArray.contains(tempTextView.text.toString()+"."+(tempNumberView.text.toString().toInt() + 1).toString())){
-                                                updateArray("Art", tempTextView.text.toString(),-1)
-                                            }else if(languageArray.contains(tempTextView.text.toString()+"."+(tempNumberView.text.toString().toInt() + 1).toString())){
-                                                updateArray("Lan", tempTextView.text.toString(),-1)
-                                            }else if(scienceArray.contains(tempTextView.text.toString()+"."+(tempNumberView.text.toString().toInt() + 1).toString())){
-                                                updateArray("Science", tempTextView.text.toString(),-1)
+                                            if(tempTextView.text.toString().contains("Art and Craft: ")){
+                                                updateArray("Art", inputText.text.toString(),-1)
+                                            }else if(tempTextView.text.toString().contains("Language Other: ")){
+                                                updateArray("Lan", inputText.text.toString(),-1)
+                                            }else if(tempTextView.text.toString().contains("Science: ")){
+                                                updateArray("Science", inputText.text.toString(),-1)
                                             }
                                             warningContentTextView2.text = ""
                                         }
@@ -428,12 +501,11 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                                     false
                                 )
                                 newLayout.addView(dividerView)
+                                inputText.text.clear()
                             }
-
                             containerLayout.addView(inputText)
                             containerLayout.addView(inputButton)
                             //newLayout.addView(containerLayout)
-
                         }else{
                             var dividerView = View(this)
                             dividerView.layoutParams = LinearLayout.LayoutParams(
@@ -447,12 +519,17 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                                 var subButton: Button = Button(this)
                                 var containerLayout: LinearLayout = LinearLayout(this)
                                 var dividerView = View(this)
+
+                                var tempTitle : String = ""
                                 if(i.contains("ArtandCraft")) {
                                     artsArray.add(j + ".5")
-                                }else if(i.contains("LanguageOther")){
+                                    tempTitle = "Art and Craft: "
+                                }else if(i.contains("Language Other")){
                                     languageArray.add(j + ".1")
+                                    tempTitle = "Language Other: "
                                 }else if(i.contains("Science")){
                                     scienceArray.add(j + ".1")
+                                    tempTitle = "Science: "
                                 }
                                 saveCharacter(newCharacter)
                                 addRow(
@@ -462,7 +539,7 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                                     subButton,
                                     containerLayout,
                                     dividerView,
-                                    j,
+                                    tempTitle + j,
                                     newLayout,
                                     newCharacter,
                                     {
@@ -477,7 +554,6 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                                             saveStat(tempTextView.text.toString(),tempNumberView.text.toString().toInt())
                                             skillPoints -= 1
                                             skillpointssTextView.text = skillPoints.toString()
-                                            updateArray("Art", tempTextView.text.toString(),1)
                                             if(artsArray.contains(tempTextView.text.toString()+"."+(tempNumberView.text.toString().toInt() - 1).toString())){
                                                 updateArray("Art", tempTextView.text.toString(),1)
                                             }else if(languageArray.contains(tempTextView.text.toString()+"."+(tempNumberView.text.toString().toInt() - 1).toString())){
@@ -515,9 +591,39 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                             }
                             newLayout.addView(dividerView)
                         }
-                    }else if(i.contains("one") || i.contains("two")) {
+                    }else if(i.contains("one") || i.contains("two") || i.contains("three")|| i.contains(("four"))) {
                         //need to finish this
-                        continue
+                        /**
+                         * Working Here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                         */
+                        val tempArray : List<String> = i.split(':')
+                        var skillArray: List<String> = listOf()
+                        if(tempArray[1] == "any"){
+                            /**
+                             * Need to finish
+                             */
+                            skillArray = masterSkillList
+                        }else {
+                            skillArray = tempArray[1].split(';')
+                        }
+
+                        if(i.contains("one")) {
+                            addOne(newLayout, skillArray,newCharacter, warningContentTextView2, skillpointssTextView)
+                        }else if(i.contains("two")) {
+                            addOne(newLayout, skillArray, newCharacter, warningContentTextView2, skillpointssTextView)
+                            addOne(newLayout, skillArray, newCharacter, warningContentTextView2, skillpointssTextView)
+                            warningContentTextView2.text = skillArray.toString()
+                        }else if(i.contains("three")){
+                            addOne(newLayout, skillArray, newCharacter, warningContentTextView2, skillpointssTextView)
+                            addOne(newLayout, skillArray, newCharacter, warningContentTextView2, skillpointssTextView)
+                            addOne(newLayout, skillArray, newCharacter, warningContentTextView2, skillpointssTextView)
+                        }else if(i.contains("four")){
+                            addOne(newLayout, skillArray, newCharacter, warningContentTextView2, skillpointssTextView)
+                            addOne(newLayout, skillArray, newCharacter, warningContentTextView2, skillpointssTextView)
+                            addOne(newLayout, skillArray, newCharacter, warningContentTextView2, skillpointssTextView)
+                            addOne(newLayout, skillArray, newCharacter, warningContentTextView2, skillpointssTextView)
+                        }
+
                     }else {
                         var tempTextView: TextView = TextView(this)
                         var tempNumberView: TextView = TextView(this)
@@ -574,7 +680,6 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
                 val continueToStepFourButton : Button = Button(this)
                 continueToStepFourButton.text = "Continue To Next Step"
                 continueToStepFourButton.setOnClickListener(){
-                    newCharacter.creditRating = creditSpinner.selectedItem.toString().toInt()
                     //load next step for personal points
                     //warningContentTextView2.text = temp
                     saveCharacter(newCharacter)
@@ -645,6 +750,203 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
             startActivity(intent)
         }
 
+    }
+
+    /**
+     * Add a row for when there is a choice to be made for what skill needs to be selected
+     */
+    private fun addOne(newLayout : LinearLayout, skillArray : List<String>, newCharacter : Character, warningContentTextView2 : TextView, skillpointssTextView: TextView){
+        val tempSpinner : Spinner = Spinner(this)
+        tempSpinner.layoutParams = LinearLayout.LayoutParams(
+            MATCH_PARENT,
+            MATCH_PARENT,
+            25.0f
+        )
+        if(tempSpinner!= null){
+            val adapter = ArrayAdapter(
+                this,
+                android.R.layout.simple_spinner_item, skillArray
+            )
+            tempSpinner.adapter = adapter
+        }
+        /**
+         * dont need this when I have a select button to accompany
+        tempSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+
+            }
+        }*/
+        val selectButton : Button = Button(this)
+        selectButton.layoutParams = LinearLayout.LayoutParams(
+            MATCH_PARENT,
+            MATCH_PARENT,
+            25.0f
+        )
+        selectButton.text = "Select"
+        selectButton.setOnClickListener(){
+            //add row for the selected item
+            selectButton.visibility = View.GONE
+            tempSpinner.visibility = View.GONE
+            //add row for the selected
+            var tempTextView: TextView = TextView(this)
+            var tempNumberView: TextView = TextView(this)
+            var addButton: Button = Button(this)
+            var subButton: Button = Button(this)
+            var containerLayout: LinearLayout = LinearLayout(this)
+            var dividerView = View(this)
+            addRow(
+                tempTextView,
+                tempNumberView,
+                addButton,
+                subButton,
+                containerLayout,
+                dividerView,
+                tempSpinner.selectedItem.toString(),
+                newLayout,
+                newCharacter,
+                {
+                    if (skillPoints <= 0) {
+                        warningContentTextView2.text = "You are out of points to spend."
+                    } else if (tempNumberView.text.toString().toInt() == 75) {
+                        warningContentTextView2.text =
+                            "You cannot have a stat exceed 75 points."
+                    } else {
+                        tempNumberView.text =
+                            (tempNumberView.text.toString().toInt() + 1).toString()
+                            when(tempTextView.text.toString()){
+                                "Accounting"->newCharacter.accounting = tempNumberView.text.toString().toInt()
+                                "Anthropology"->newCharacter.anthropology = tempNumberView.text.toString().toInt()
+                                "Appraise"->newCharacter.appraise = tempNumberView.text.toString().toInt()
+                                "Archaeology"->newCharacter.archaeology = tempNumberView.text.toString().toInt()
+                                "ArtandCraft"->newCharacter.artAndCraft = tempNumberView.text.toString().toInt()
+                                "Charm"->newCharacter.charm = tempNumberView.text.toString().toInt()
+                                "Climb"->newCharacter.climb = tempNumberView.text.toString().toInt()
+                                "Cthulhu Mythos"->newCharacter.cthulhuMythos = tempNumberView.text.toString().toInt()
+                                "Disguise"->newCharacter.disguise = tempNumberView.text.toString().toInt()
+                                "Drive Auto"->newCharacter.driveAuto = tempNumberView.text.toString().toInt()
+                                "Elec Repair"->newCharacter.elcRepair = tempNumberView.text.toString().toInt()
+                                "Fast Talk"->newCharacter.fastTalk = tempNumberView.text.toString().toInt()
+                                "Fighting(Brawl)"->newCharacter.fightingBrawl = tempNumberView.text.toString().toInt()
+                                "Firearms(Handgun)"->newCharacter.firearmsHandgun = tempNumberView.text.toString().toInt()
+                                "Firearms(Rifle)"->newCharacter.firearmsRifle = tempNumberView.text.toString().toInt()
+                                "First Aid"->newCharacter.firstAid = tempNumberView.text.toString().toInt()
+                                "History"->newCharacter.history = tempNumberView.text.toString().toInt()
+                                "Intimidate"->newCharacter.intimidate = tempNumberView.text.toString().toInt()
+                                "Jump"->newCharacter.jump = tempNumberView.text.toString().toInt()
+                                "Language Other"->newCharacter.languageOther = tempNumberView.text.toString().toInt()
+                                "Language Own"->newCharacter.languageOwn = tempNumberView.text.toString().toInt()
+                                "Law"->newCharacter.law = tempNumberView.text.toString().toInt()
+                                "Library Use"->newCharacter.libraryUse = tempNumberView.text.toString().toInt()
+                                "Listen"->newCharacter.listen = tempNumberView.text.toString().toInt()
+                                "Locksmith"->newCharacter.locksmith = tempNumberView.text.toString().toInt()
+                                "Mechanical"->newCharacter.mechRepair = tempNumberView.text.toString().toInt()
+                                "Medicine"->newCharacter.medicine = tempNumberView.text.toString().toInt()
+                                "Natural World"->newCharacter.naturalWorld = tempNumberView.text.toString().toInt()
+                                "Navigate"->newCharacter.navigate = tempNumberView.text.toString().toInt()
+                                "Occult"->newCharacter.occult = tempNumberView.text.toString().toInt()
+                                "Persuade"->newCharacter.persuade = tempNumberView.text.toString().toInt()
+                                "Pilot"->newCharacter.pilot = tempNumberView.text.toString().toInt()
+                                "Psychoanalysis"->newCharacter.psychoanalysis = tempNumberView.text.toString().toInt()
+                                "Psychology"->newCharacter.psychology = tempNumberView.text.toString().toInt()
+                                "Ride"->newCharacter.ride = tempNumberView.text.toString().toInt()
+                                "Science"->newCharacter.science = tempNumberView.text.toString().toInt()
+                                "Sleight of Hand"->newCharacter.sleightOfHand = tempNumberView.text.toString().toInt()
+                                "Spot Hidden"->newCharacter.spotHidden = tempNumberView.text.toString().toInt()
+                                "Stealth"->newCharacter.stealth = tempNumberView.text.toString().toInt()
+                                "Survival"->newCharacter.survival = tempNumberView.text.toString().toInt()
+                                "Throw"->newCharacter.thro = tempNumberView.text.toString().toInt()
+                                "Track"->newCharacter.track = tempNumberView.text.toString().toInt()
+                            }
+                            saveCharacter(newCharacter)
+                        skillPoints -= 1
+                        skillpointssTextView.text = skillPoints.toString()
+                        warningContentTextView2.text = ""
+                    }
+                },
+                {
+                    val tempChar : Character = Character()
+                    if (tempNumberView.text.toString().toInt() == tempChar.skillPicker(tempTextView.text.toString())||
+                        tempNumberView.text.toString().toInt() == 1) {
+                        warningContentTextView2.text =
+                            "You can not subtract any more from that stat."
+                    } else {
+                        tempNumberView.text =
+                            (tempNumberView.text.toString().toInt() - 1).toString()
+                        when(tempTextView.text.toString()){
+                            "Accounting"->newCharacter.accounting = tempNumberView.text.toString().toInt()
+                            "Anthropology"->newCharacter.anthropology = tempNumberView.text.toString().toInt()
+                            "Appraise"->newCharacter.appraise = tempNumberView.text.toString().toInt()
+                            "Archaeology"->newCharacter.archaeology = tempNumberView.text.toString().toInt()
+                            "ArtandCraft"->newCharacter.artAndCraft = tempNumberView.text.toString().toInt()
+                            "Charm"->newCharacter.charm = tempNumberView.text.toString().toInt()
+                            "Climb"->newCharacter.climb = tempNumberView.text.toString().toInt()
+                            "Cthulhu Mythos"->newCharacter.cthulhuMythos = tempNumberView.text.toString().toInt()
+                            "Disguise"->newCharacter.disguise = tempNumberView.text.toString().toInt()
+                            "Drive Auto"->newCharacter.driveAuto = tempNumberView.text.toString().toInt()
+                            "Elec Repair"->newCharacter.elcRepair = tempNumberView.text.toString().toInt()
+                            "Fast Talk"->newCharacter.fastTalk = tempNumberView.text.toString().toInt()
+                            "Fighting(Brawl)"->newCharacter.fightingBrawl = tempNumberView.text.toString().toInt()
+                            "Firearms(Handgun)"->newCharacter.firearmsHandgun = tempNumberView.text.toString().toInt()
+                            "Firearms(Rifle)"->newCharacter.firearmsRifle = tempNumberView.text.toString().toInt()
+                            "First Aid"->newCharacter.firstAid = tempNumberView.text.toString().toInt()
+                            "History"->newCharacter.history = tempNumberView.text.toString().toInt()
+                            "Intimidate"->newCharacter.intimidate = tempNumberView.text.toString().toInt()
+                            "Jump"->newCharacter.jump = tempNumberView.text.toString().toInt()
+                            "Language Other"->newCharacter.languageOther = tempNumberView.text.toString().toInt()
+                            "Language Own"->newCharacter.languageOwn = tempNumberView.text.toString().toInt()
+                            "Law"->newCharacter.law = tempNumberView.text.toString().toInt()
+                            "Library Use"->newCharacter.libraryUse = tempNumberView.text.toString().toInt()
+                            "Listen"->newCharacter.listen = tempNumberView.text.toString().toInt()
+                            "Locksmith"->newCharacter.locksmith = tempNumberView.text.toString().toInt()
+                            "Mechanical"->newCharacter.mechRepair = tempNumberView.text.toString().toInt()
+                            "Medicine"->newCharacter.medicine = tempNumberView.text.toString().toInt()
+                            "Natural World"->newCharacter.naturalWorld = tempNumberView.text.toString().toInt()
+                            "Navigate"->newCharacter.navigate = tempNumberView.text.toString().toInt()
+                            "Occult"->newCharacter.occult = tempNumberView.text.toString().toInt()
+                            "Persuade"->newCharacter.persuade = tempNumberView.text.toString().toInt()
+                            "Pilot"->newCharacter.pilot = tempNumberView.text.toString().toInt()
+                            "Psychoanalysis"->newCharacter.psychoanalysis = tempNumberView.text.toString().toInt()
+                            "Psychology"->newCharacter.psychology = tempNumberView.text.toString().toInt()
+                            "Ride"->newCharacter.ride = tempNumberView.text.toString().toInt()
+                            "Science"->newCharacter.science = tempNumberView.text.toString().toInt()
+                            "Sleight of Hand"->newCharacter.sleightOfHand = tempNumberView.text.toString().toInt()
+                            "Spot Hidden"->newCharacter.spotHidden = tempNumberView.text.toString().toInt()
+                            "Stealth"->newCharacter.stealth = tempNumberView.text.toString().toInt()
+                            "Survival"->newCharacter.survival = tempNumberView.text.toString().toInt()
+                            "Throw"->newCharacter.thro = tempNumberView.text.toString().toInt()
+                            "Track"->newCharacter.track = tempNumberView.text.toString().toInt()
+                        }
+                        saveCharacter(newCharacter)
+                        skillPoints += 1
+                        skillpointssTextView.text = skillPoints.toString()
+                        warningContentTextView2.text = ""
+                    }
+                },
+                true
+            )
+        }
+
+        var containerLayout: LinearLayout = LinearLayout(this)
+        var dividerView = View(this)
+        dividerView.layoutParams = LinearLayout.LayoutParams(
+            MATCH_PARENT,
+            MATCH_PARENT,
+            25.0f
+        )
+
+        dividerView.layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT, 1
+        )
+        dividerView.setBackgroundResource(R.color.purple_500)
+        containerLayout.orientation = LinearLayout.HORIZONTAL
+
+        //containerLayout.addView(dividerView)
+        containerLayout.addView(tempSpinner)
+        containerLayout.addView(selectButton)
+        newLayout.addView(containerLayout)
     }
 
     private fun addRow(tempTextView: TextView, tempNumberView: TextView, addButton: Button, subButton: Button, containerLayout: LinearLayout, dividerView : View, i: String, newLayout: LinearLayout, newCharacter : Character, lmbdadd: () -> Unit, lmbdsub: () -> Unit, divide : Boolean) {
@@ -747,19 +1049,19 @@ class Create1920sPlayerStepThreeActivity : ComponentActivity() {
             tempString.dropLast(2)
             newCharacter.arts = tempString
 
-            tempString = ""
+            var tempString2 = ""
             for(i in languageArray){
-                tempString += i + "; "
+                tempString2 += i + "; "
             }
-            tempString.dropLast(2)
-            newCharacter.languages = tempString
+            tempString2.dropLast(2)
+            newCharacter.languages = tempString2
 
-            tempString = ""
+            var tempString3 = ""
             for(i in scienceArray){
-                tempString += i + "; "
+                tempString3 += i + "; "
             }
-            tempString.dropLast(2)
-            newCharacter.sciences = tempString
+            tempString3.dropLast(2)
+            newCharacter.sciences = tempString3
 
             openFileOutput(filename, Context.MODE_PRIVATE).use {
                 it.write(newCharacter.createJson().toByteArray())

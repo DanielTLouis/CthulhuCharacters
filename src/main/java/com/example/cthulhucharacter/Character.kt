@@ -404,6 +404,13 @@ class Character(){
             }
             return -2
         }
+        if(text.contains("Art and Craft: ")){
+            return 5
+        }else if(text.contains("Science: ")){
+            return 1
+        }else if(text.contains("Language Other: ")){
+            return 1
+        }
         when(text){
             "Accounting"->return this.accounting
             "Anthropology"->return this.anthropology
