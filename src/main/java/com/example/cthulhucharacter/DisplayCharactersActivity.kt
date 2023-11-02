@@ -27,6 +27,10 @@ import java.util.UUID
 
 
 class DisplayCharactersActivity : ComponentActivity() {
+
+    /**
+     * View variables for this activity
+     */
     var artsArray: ArrayList<String> = arrayListOf()
     var languageArray: ArrayList<String> = arrayListOf()
     var scienceArray: ArrayList<String> = arrayListOf()
@@ -106,12 +110,24 @@ class DisplayCharactersActivity : ComponentActivity() {
         /**
          * Button
          */
+
+        /**
+         * Button backToMainButton
+         * * Will return to the previous activity of the MainActivity (Home)
+         */
         backToMainButton.setOnClickListener(){
             val intent = Intent(this@DisplayCharactersActivity, MainActivity::class.java)
             startActivity(intent)
         }
     }
 
+    /**
+     * Function updateCharacterListAndJson
+     * * Will call the class Character method createJson and open the Character.json file
+     * ** then is will append the json string  created to the end of the opened json file
+     * *This function has no parameters
+     * * Nor does it return any values after called
+     */
     fun updateCharacterListAndJson(){
         var tempString : String = "{\"Characters\" : \n[\n"
         val filename = "Characters.json"
@@ -129,6 +145,13 @@ class DisplayCharactersActivity : ComponentActivity() {
         }
     }
 
+    /**
+     * Function createCharacterList
+     * * This function will read the json file Character.json and create the character objects that are represented in the json file
+     * ** this will fill out the character array with character objects from the json file
+     * * This function takes no parameters
+     * * Nor will it return any values, however the Character array declared above will have the character objets stored in it
+     */
     fun createCharacterList(){
         try {
             val json : String
@@ -149,6 +172,12 @@ class DisplayCharactersActivity : ComponentActivity() {
         }
     }
 
+    /**
+     * Function loadCharacter
+     * * This function will load a character from a json fil and store the values into the corresponding stats
+     * * This function takes no input parameters
+     * * It will return a Character object that has all the stats replaced with the corresponding json file
+     */
     private fun loadCharacter(): Character {
         var tempCharacter : Character = Character()
         try {

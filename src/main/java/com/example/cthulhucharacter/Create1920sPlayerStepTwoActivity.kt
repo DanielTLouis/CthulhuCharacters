@@ -21,7 +21,13 @@ import java.io.InputStream
 import java.io.OutputStream
 import java.time.temporal.Temporal
 
-//generate base skills
+/**
+ * Create1920sPlayerStepTwoActivity Class
+ * * Will set the base stats for the character and will allow the user to re-roll the stats if they desire
+ * ** Base stats that are set: strength, constitution, dexterity, intelligent, size, power, appearance,
+ * *** education, health, sanity, luck   
+ */
+//generate base stats
 class Create1920sPlayerStepTwoActivity : ComponentActivity() {
     var artsArray : ArrayList<String> = arrayListOf()
     var languageArray : ArrayList<String> = arrayListOf()
@@ -695,6 +701,12 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
         }
     }
 
+    /**
+     * Function loadCharacter
+     * * This function will load a character from the temporary json file and store the values into the corresponding stats of a Character object
+     * * This function takes no input parameters
+     * * It will return a Character object that has all the stats replaced with the corresponding json file
+     */
     private fun loadCharacter(): Character {
         var tempCharacter : Character = Character()
         try {
@@ -725,7 +737,14 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
         return tempCharacter
     }
 
-
+    /**
+     * Function saveCharacter
+     * * This function will save the json string created by the Character object to the temporary character json
+     * ** This uses the characters createJson method to write to the external json file "NewCharacter.json"
+     * * The function takes one parameter as imput
+     * ** the input is a character object that the user wants to save to the json file
+     * * the function will not return anything, at the end it will have saved the json string to the json file
+     */
     //print character class to TextView this will change to save json file
     private fun saveCharacter(newCharacter : Character) {
         try {

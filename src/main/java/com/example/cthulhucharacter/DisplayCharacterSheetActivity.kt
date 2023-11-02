@@ -18,7 +18,16 @@ import java.io.IOException
 import java.io.OutputStream
 import kotlin.random.Random
 
+/**
+ * DisplayCharacterSheetActivity Class
+ * * This activity will display the selected character from the previous activity
+ * * The display will be what shows up on a character sheet
+ * ** along with the ability to "roll" a dice 1-100 to see if the result is less or more thann the selected skill
+ */
 class DisplayCharacterSheetActivity : ComponentActivity() {
+    /**
+     * View variables for this activity
+     */
     var artsArray: ArrayList<String> = arrayListOf()
     var languageArray: ArrayList<String> = arrayListOf()
     var scienceArray: ArrayList<String> = arrayListOf()
@@ -44,6 +53,17 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
 
     var characterList : ArrayList<Character> = arrayListOf()
 
+    /**
+     * Function updateArray
+     * *This function will update the Arts, Language, and Science arrays from the json file so that
+     * * the unique states for those can be displayed
+     * * This function takes 3 parameters
+     * ** An arr variable that is a string of the json chracter
+     * ** a name varaible which is also a string in the name of the element to be updated
+     * ** And an num that is an Int for the number the to increase by that much of if it does not exsitst
+     * * in the array it will be added with the starting number of the inputs
+     * *This app does not return anything
+     */
     private fun updateArray(arr: String, name: String, num: Int) {
         var index: Int = 0
         if (arr == "Art") {
@@ -460,10 +480,20 @@ class DisplayCharacterSheetActivity : ComponentActivity() {
         /**
          * Buttons
          */
+
+        /**
+         * BackToCharSelectButton Button
+         * * Will load the previous activity moving the use back a step
+         */
         BackToCharSelectButton.setOnClickListener(){
             val intent = Intent(this@DisplayCharacterSheetActivity, DisplayCharactersActivity::class.java)
             startActivity(intent)
         }
+        /**
+         * rollSTRButton Button
+         * * Will generate a random number from 1-100 and compare it to the Strength stat
+         * ** and will display the result being one of exterem success, hard success, success, or failure
+         */
         rollSTRButton.setOnClickListener(){
             var num : Int = Random.nextInt(1, 100)
             if(num >= selectedCharacter.strength){

@@ -8,16 +8,23 @@ import java.io.File
 import java.io.IOException
 import java.io.OutputStream
 
+/**
+ * Character Class
+ * * A class to contain the functions and variables associated with the Characters that will be save to Json and loaded from Json
+ * ** Contains all variables that reflect the stats of the character sheet
+ * ** Also contains utility functions to help utilize the character stats easily along with a way to save the json files.
+ * * There are no parameters to pass for the creator to create the class
+ */
 class Character(){
     /**
      * Add a note section that can add breaks / new entries for each session, maybe a tab with the character to get
      * to the stats or the notes. also add an edit section for  character
-     * also make easy inserts for line breaks and chapter / charater breaks to better organize what is going on.
-     * add the fellow player for the charater breaks
+     * also make easy inserts for line breaks and chapter / charter breaks to better organize what is going on.
+     * add the fellow player for the charter breaks
      */
 
     /**
-     * variables
+     * variables / character stats
      */
     //descriptors
     var name : String = ""
@@ -54,7 +61,7 @@ class Character(){
     var dying : Boolean = false
 
     //skills
-    //could ust first digit to show if it is checked or not (1-99) + 0r - 100
+    //could use first digit to show if it is checked or not for investigator improvement(1-99) + 0r - 100
     var accounting : Int = 5 //105 would be checked
     var anthropology : Int = 1 // 1 would be unchecked
     var appraise : Int = 5
@@ -141,13 +148,22 @@ class Character(){
     //fellow investigators
     var characterNames : String = ""
     var playerNames : String = ""
-
+    //era of the investigator
     var era : String = ""
 
     /**
-     * functions
+     * Functions Below (This is a break to separate the functions and the variables)
      */
 
+    /**
+     * Function loadCharacter
+     * * Loads the character from a json file and updates all the stats according to that json file
+     * * Needs an parameter input of a string that is representing the json file
+     * ** This string should be loaded by using the Json Object class to read in the json and create the json string
+     * ** that will be passed into this function
+     * * Will give a warning that the json file did not load and place the warning message to the character's name variable
+     * * This will return a Character object at the end
+     */
     fun loadCharacter(json : String) : Character{
         try {
             val obj = JSONObject(json)
@@ -260,7 +276,13 @@ class Character(){
         return this
     }
 
-    //print character class to TextView this will change to save json file
+    /**
+     * Function createJson
+     * * This function will create the string that the json file to be saved to the external json,
+     * ** it will create a string that is in a json format
+     * * There is no input parameter for this function
+     * * This will return a String that is the json formatted string
+     */
     fun createJson() : String {
         //add items
         val json = "    {\"Character\" :\n" +
@@ -369,6 +391,13 @@ class Character(){
         return json
     }
 
+    /**
+     * Function skillPicker
+     * * This function gets the numeric value of a stat for a character from the name (String) of the skill and receiving the numeric value back
+     * ** This allows the user to get the skill value without going straight to the character if not possible.
+     * * This function needs the parameter of a string that represents one of the skills on the character sheet
+     * * This function will return an integer (Int) that is the numeric value assigned to the skill
+     */
     fun skillPicker(text : String) : Int{
         if(this.arts.contains(text)) {
             var tempArray : List<String> = listOf()

@@ -11,13 +11,29 @@ import java.io.File
 import java.io.IOException
 import java.io.OutputStream
 
-//
+/**
+ * Create1920sPlayerStepFiveActivity Class
+ * * In this step the user has the option to fill in the background of the character
+ * * This is done by input fields that will save the input into the character object
+ * ** and write it to the temporary json file
+ */
 class Create1920sPlayerStepFiveActivity : ComponentActivity() {
 
     var artsArray : ArrayList<String> = arrayListOf()
     var languageArray : ArrayList<String> = arrayListOf()
     var scienceArray : ArrayList<String> = arrayListOf()
 
+    /**
+     * Function updateArray
+     * *This function will update the Arts, Language, and Science arrays from the json file so that
+     * * the unique states for those can be displayed
+     * * This function takes 3 parameters
+     * ** An arr variable that is a string of the json chracter
+     * ** a name varaible which is also a string in the name of the element to be updated
+     * ** And an num that is an Int for the number the to increase by that much of if it does not exsitst
+     * * in the array it will be added with the starting number of the inputs
+     * *This app does not return anything
+     */
     private fun updateArray(arr : String, name : String, num : Int){
         var index : Int = 0
         if(arr == "Art") {
@@ -106,6 +122,13 @@ class Create1920sPlayerStepFiveActivity : ComponentActivity() {
             startActivity(intent)
         }
     }
+
+    /**
+     * Function loadCharacter
+     * * This function will load a character from the temporary json file and store the values into the corresponding stats of a Character object
+     * * This function takes no input parameters
+     * * It will return a Character object that has all the stats replaced with the corresponding json file
+     */
     private fun loadCharacter(): Character {
         var tempCharacter : Character = Character()
         try {
@@ -140,7 +163,14 @@ class Create1920sPlayerStepFiveActivity : ComponentActivity() {
         return tempCharacter
     }
 
-
+    /**
+     * Function saveCharacter
+     * * This function will save the json string created by the Character object to the temporary character json
+     * ** This uses the characters createJson method to write to the external json file "NewCharacter.json"
+     * * The function takes one parameter as imput
+     * ** the input is a character object that the user wants to save to the json file
+     * * the function will not return anything, at the end it will have saved the json string to the json file
+     */
     //print character class to TextView this will change to save json file
     private fun saveCharacter(newCharacter : Character) {
         try {

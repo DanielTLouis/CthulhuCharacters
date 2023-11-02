@@ -10,6 +10,7 @@
         android:id="@+id/mainLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#51FF9800"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +58,7 @@
                         android:id="@+id/nameTitleTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5"
+                        android:layout_weight="1"
                         android:text="Name :"
                         android:textAlignment="center"
                         android:textSize="24sp" />
@@ -66,7 +67,7 @@
                         android:id="@+id/nameTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5"
+                        android:layout_weight="1"
                         android:text="Did not load"
                         android:textAlignment="center"
                         android:textSize="20sp" />
@@ -83,7 +84,7 @@
                         android:id="@+id/occupationTitleTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5"
+                        android:layout_weight="1"
                         android:text="Occupation:"
                         android:textAlignment="center"
                         android:textSize="24sp" />
@@ -92,9 +93,9 @@
                         android:id="@+id/occupationTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5"
+                        android:layout_weight="1"
                         android:text="Did not load"
-                        android:textAlignment="center"
+                        android:textAlignment="textStart"
                         android:textSize="20sp" />
                 </LinearLayout>
 
@@ -109,12 +110,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Gender:"
+                        android:textAlignment="center"
                         android:textSize="24sp" />
 
                     <TextView
                         android:id="@+id/genderTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Did not load"
                         android:textSize="20sp" />
 

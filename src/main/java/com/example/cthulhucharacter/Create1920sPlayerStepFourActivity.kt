@@ -16,6 +16,13 @@ import java.io.IOException
 import java.io.OutputStream
 
 //personal skill point selection
+/**
+ * Create1920sPlayerStepFourActivity Class
+ * * This activity is the step that allows the user to spend personal points on the skills they wish to improve
+ * ** The user can select any skill to improve (unlike the professional skills being a select few)
+ * ** As they select the skills to improve the personal skill points will go down until it reaches 0
+ * *** and then the user will no longer be able to spend points
+ */
 class Create1920sPlayerStepFourActivity : ComponentActivity() {
 
     var skillPoints : Int = 0
@@ -23,6 +30,17 @@ class Create1920sPlayerStepFourActivity : ComponentActivity() {
     var languageArray : ArrayList<String> = arrayListOf()
     var scienceArray : ArrayList<String> = arrayListOf()
 
+    /**
+     * Function updateArray
+     * *This function will update the Arts, Language, and Science arrays from the json file so that
+     * * the unique states for those can be displayed
+     * * This function takes 3 parameters
+     * ** An arr variable that is a string of the json chracter
+     * ** a name varaible which is also a string in the name of the element to be updated
+     * ** And an num that is an Int for the number the to increase by that much of if it does not exsitst
+     * * in the array it will be added with the starting number of the inputs
+     * *This app does not return anything
+     */
     private fun updateArray(arr : String, name : String, num : Int){
         var index : Int = 0
         if(arr == "Art") {
@@ -81,7 +99,14 @@ class Create1920sPlayerStepFourActivity : ComponentActivity() {
         pointsTextView.text = skillPoints.toString()
         //testing4.text = newCharacter.createJson()
 
-        //add dilimitor for if it needs the array lists
+        /**
+         * Function saveStat
+         * * Will save a specific stat and write it to the json file
+         * * This function will take 2 input parameters
+         * ** One is the name (String) of the skill that needs to be saved
+         * ** Two is the new value (Int)  for the skill to save
+         */
+        //add deliminator for if it needs the array lists
         fun saveStat(text : String, num : Int) {
             when(text){
                 "Accounting"->newCharacter.accounting = num
@@ -255,8 +280,13 @@ class Create1920sPlayerStepFourActivity : ComponentActivity() {
             startActivity(intent)
         }
         skillLayout.addView(continueButton)
+
         /**
          * Buttons
+         */
+        /**
+         * backToStepThreeButton Button
+         * will set all improved skills back to original number and then send the user back to the beginning of step 3
          */
         backToStepThreeButton.setOnClickListener(){
             newCharacter.accounting = 5 //105 would be checked
@@ -313,6 +343,25 @@ class Create1920sPlayerStepFourActivity : ComponentActivity() {
 
     }
 
+    /**
+     * Function addRow
+     * *This function will create views and dynamically append them onto the main linear layout for the step
+     * ** These will be the views for each of the skills that are avalible to improve for the user.
+     * * there are 12 input paramaters
+     * **
+     * **
+     * **
+     * **
+     * **     fill this out
+     * **
+     * **
+     * **
+     * **
+     * **
+     * **
+     * * This function does not return any value, at the end it will add a row of a linear layout view that is horizontally oriented
+     * ** with the name of the skill, the current numeric value of the skill, an increase button to increase the skill, and a decrease button.
+     */
     private fun addRow(tempTextView: TextView, tempNumberView: TextView, addButton: Button, subButton: Button, containerLayout: LinearLayout, dividerView : View, i: String, newLayout: LinearLayout, newCharacter : Character, lmbdadd: () -> Unit, lmbdsub: () -> Unit, divide : Boolean) {
 
         dividerView.layoutParams = LinearLayout.LayoutParams(
@@ -373,6 +422,12 @@ class Create1920sPlayerStepFourActivity : ComponentActivity() {
 
     }
 
+    /**
+     * Function loadCharacter
+     * * This function will load a character from the temporary json file and store the values into the corresponding stats of a Character object
+     * * This function takes no input parameters
+     * * It will return a Character object that has all the stats replaced with the corresponding json file
+     */
     private fun loadCharacter(): Character {
         var tempCharacter : Character = Character()
         try {
@@ -407,7 +462,14 @@ class Create1920sPlayerStepFourActivity : ComponentActivity() {
         return tempCharacter
     }
 
-
+    /**
+     * Function saveCharacter
+     * * This function will save the json string created by the Character object to the temporary character json
+     * ** This uses the characters createJson method to write to the external json file "NewCharacter.json"
+     * * The function takes one parameter as imput
+     * ** the input is a character object that the user wants to save to the json file
+     * * the function will not return anything, at the end it will have saved the json string to the json file
+     */
     //print character class to TextView this will change to save json file
     private fun saveCharacter(newCharacter : Character) {
         try {
