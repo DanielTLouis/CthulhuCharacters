@@ -3,7 +3,6 @@ This repository consists of Src code for Android Studio project consisting of **
 ## Table Of Contents
 * [Kotlin Activity](#kotlin-activity)
 * [Layout XML](#layout-xml)
-* [Drawable Resources](#drawable-resources)
 
 ### Kotlin Activity
 |                  Name                 |                                         Location                                          |
@@ -14,9 +13,11 @@ This repository consists of Src code for Android Studio project consisting of **
 |  Create1920sPlayerStepTwoActivity.kt  |  [Here](/src/main/java/com/example/cthulhucharacter/Create1920sPlayerStepTwoActivity.kt)  |
 | Create1920sPlayerStepThreeActivity.kt | [Here](/src/main/java/com/example/cthulhucharacter/Create1920sPlayerStepThreeActivity.kt) |
 | Create1920sPlayerStepFourActivity.kt  |  [Here](/src/main/java/com/example/cthulhucharacter/Create1920sPlayerStepFourActivity.kt) |
-|  Create1920sPlayerStepSixActivity.kt  |  [Here](/src/main/java/com/example/cthulhucharacter/Create1920sPlayerStepSixActivity.kt)  |
 | Create1920sPlayerStepFiveActivity.kt  | [Here](/src/main/java/com/example/cthulhucharacter/Create1920sPlayerStepFiveActivity.kt)  |
+|  Create1920sPlayerStepSixActivity.kt  |  [Here](/src/main/java/com/example/cthulhucharacter/Create1920sPlayerStepSixActivity.kt)  |
 | Create1920sPlayerStepSevenActivity.kt | [Here](/src/main/java/com/example/cthulhucharacter/Create1920sPlayerStepSevenActivity.kt) |
+|      DisplayCharacterActivity.kt      |      [Here](/src/main/java/com/example/cthulhucharacter/DisplayCharacterActivity.kt)      |
+|    DisplayCharacterSheetActivity.kt   |   [Here](/src/main/java/com/example/cthulhucharacter/DisplayCharacterSheetActivity.kt)    |
 
 ### Layout XML 
 |                  Name                   |                             Location                                |
@@ -30,6 +31,8 @@ This repository consists of Src code for Android Studio project consisting of **
 | activity_create1920splayerstepfive.xml  | [Here](/src/main/res/layout/activity_create1920splayerstepfive.xml) |
 |  activity_create1920splayerstepsix.xml  | [Here](/src/main/res/layout/activity_create1920splayerstepsix.xml)  |
 | activity_create1920splayerstepseven.xml |[Here](/src/main/res/layout/activity_create1920splayerstepseven.xml) |
+|      activity_displaycharacters.xml     |      [Here](/src/main/res/layout/activity_displaycharacters.xml)    |
+|    activity_displaychractersheet.xml    |   [Here](/src/main/res/layout/activity_displaychractersheet.xml)    |
 
-### Drawable Resources
+
 
