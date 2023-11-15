@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:id="@+id/stepThreeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#51FF9800"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <Button
+            android:id="@+id/backToStepTwoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back " />
+
+        <TextView
+            android:id="@+id/titleTextView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Occupation:"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/occuptionsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select an Occupation Below"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/warningTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/occupationSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:splitMotionEvents="true" />
+
+        <TextView
+            android:id="@+id/OccupationDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/creditRatingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Credit Ratting"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/occPointsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Occupation Points" />
+
+        <TextView
+            android:id="@+id/skillsFromOccupationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Skills From Occupation: "
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/contimueButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/stepThreePart2Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#51FF9800"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to last step" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/skillLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:scrollbarStyle="insideInset">
+
+                <TextView
+                    android:id="@+id/pickingJobSkillsTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Your Occupation Points to Skills"
+                    android:textSize="24sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/titleSkillsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Skill Points:"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/skillpointssTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/warningContentTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider"
+                    android:backgroundTint="#683495" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

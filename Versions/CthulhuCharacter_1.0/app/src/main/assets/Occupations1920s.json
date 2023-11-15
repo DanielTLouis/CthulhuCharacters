@@ -1,0 +1,1723 @@
+{"Occupations":
+[
+  {"name": "Antiquarian",
+    "Description" : "",
+    "Occupation Points":  220,
+    "Credit Rating" :  "30-70",
+    "Occupation Skills" : [
+      "Appraise",
+      {"ArtandCraft" : ["any"]},
+      "History",
+      "Library Use",
+      {"Language Other" :  ["any"]},
+      {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Spot Hidden",
+      "any one"
+    ]
+  },
+  {"name": "Archaeologist",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "10-40",
+    "Occupation Skills": [
+      "Appraise",
+      "Archeology",
+      "History",
+      {"Language Other" : ["any"]},
+      "Library Use",
+      "Spot Hidden",
+      "Mechanical Repair",
+      {"one" :  ["Navigate; Science(any)"]}
+    ]
+  },
+  {"name": "Author",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "09-30",
+    "Occupation Skills": [
+      {"ArtandCraft" : ["Literature"]},
+      "History",
+      "Library Use",
+      {"one": ["Natural World; Occult"]},
+      {"Language Other" : ["any"]},
+      "Language Own",
+      "Psychology",
+      "any one"
+    ]
+  },
+  {"name": "Dilettante",
+    "Description" : "",
+    "Occupation Points": 200,
+    "Credit Rating": "50-99",
+    "Occupation Skills": [
+      {"ArtandCraft" : ["any"]},
+      "Firearms(Handgun)",
+      "Firearms(Rifle)",
+      {"Language Other":["any"]},
+      "Ride",
+      {"one":["Charm; Fast Talk; Intimidate; Persuade"]},
+      "any three"
+    ]
+  },
+  {"name": "Doctor of Medicine",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "30-80",
+    "Occupation Skills": [
+      "First Aid",
+      "Medicine",
+      {"Language Other" : ["Latin"]},
+      "Psychology",
+      {"Science" : ["Biology; Pharmacy"]},
+      "any two"
+    ]
+  },
+  {"name": "Pilot",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "20-70",
+    "Occupation Skills": [
+      "Electrical Repair",
+      "Mechanical Repair",
+      "Navigate",
+      "Operate Heavy Machine",
+      "Pilot",
+      {"Science" : ["Astronomy"]},
+      "any two"
+    ]
+  },
+  {"name": "Police Detective",
+    "Description" : "",
+    "Occupation Points": 250,
+    "Credit Rating": "20-50",
+    "Occupation Skills": [
+      {"ArtandCraft" : "Acting; Disguise"},
+      "Firearms(Handgun)",
+      "Firearms(Rifle)",
+      "Law",
+      "Listen",
+      {"one" : "Charm; Fast Talk; Intimidate; Persuade"},
+      "Psychology",
+      "Spot Hidden",
+      "any one"
+    ]
+  },
+  {"name": "Professor",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "20-70",
+    "Occupation Skills": [
+      "Library Use",
+      {"Language Other":["any"]},
+      "Language Own",
+      "Psychology",
+      "any four"
+    ]
+  },
+  {"name": "Reporter",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "09-30",
+    "Occupation Skills": [
+      {"ArtandCraft": ["Acting"]},
+      "History",
+      "Listen",
+      "Language Own",
+      {"one":["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Psychology",
+      "Stealth",
+      "Spot Hidden"
+    ]
+  },
+  {"name": "Uniformed Police Officer",
+    "Description" : "",
+    "Occupation Points": 250,
+    "Credit Rating": "09-30",
+    "Occupation Skills": [
+      "Fighting(Brawl)",
+      "Firearms(Handgun)",
+      "Firearms(Rifle)",
+      "First Aid",
+      {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Law",
+      "Psychology",
+      "Spot Hidden",
+      {"one" : ["Drive Automobile; Ride"]}
+    ]
+  },
+  {"name": "Accountant",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "30-70",
+    "Occupation Skills": [
+      "Accounting",
+      "Law",
+      "Library Use",
+      "Listen",
+      "Persuade",
+      "Spot Hidden",
+      "any two"
+    ]
+  },
+  {"name": "Acrobat",
+    "Description" : "",
+    "Occupation Points": 250,
+    "Credit Rating": "09-20",
+    "Occupation Skills": [
+      "Climb",
+      "Dodge",
+      "Jump",
+      "Throw",
+      "Spot Hidden",
+      "Swim",
+      "any two"
+    ]
+  },
+  {"name": "Agency Detective",
+    "Description" : "",
+    "Occupation Points": 250,
+    "Credit Rating": "20-45",
+    "Occupation Skills": [
+      {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Fighting (Brawl)",
+      "Firearms(Rifle)",
+      "Firearms(Handgun)",
+      "Law",
+      "Library Use",
+      "Psychology",
+      "Stealth",
+      "Track"
+    ]
+  },
+  {"name": "Alienist",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "10-60",
+    "Occupation Skills": [
+      "Law",
+      "Listen",
+      "Medicine",
+      {"Language Other" : ["any"]},
+      "Psychoanalysis",
+      "Psychology",
+      {"Science" : ["Biology; Chemistry"]}
+    ]
+  },
+  {"name": "Animal Trainer",
+    "Description" : "",
+    "Occupation Points": 200,
+    "Credit Rating": "10-40",
+    "Occupation Skills": [
+      "Jump",
+      "Listen",
+      "Natural World",
+      "Psychology",
+      {"Science" : ["Zoology"]},
+      "Stealth",
+      "Track",
+      "any one"
+    ]
+  },
+  {"name": "Antique Dealer",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "30-50",
+    "Occupation Skills": [
+      "Accounting",
+      "Appraise",
+      "Drive Auto",
+      {"two Charm" : ["Fast Talk; Intimidate; Persuade"]},
+      "History",
+      "Library Use",
+      "Navigate"
+    ]
+  },
+  {"name": "Architect",
+    "Description" : "",
+    "Occupation Points": 280,
+    "Credit Rating": "30-70",
+    "Occupation Skills": [
+      "Accounting",
+      {"ArtandCraft" : ["Technical Drawing"]},
+      "Law",
+      "Own Language",
+      "Library Use",
+      "Persuade",
+      "Psychology",
+      {"Science" : ["Mathematics"]}
+    ]
+  },
+  {"name": "Artist",
+    "Description" : "",
+    "Occupation Points": 290,
+    "Credit Rating": "09-50",
+    "Occupation Skills": [
+      {"ArtandCraft" : ["any"]},
+      {"one" : ["History; Natural World"]},
+      {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      {"Language Other" : ["any"]},
+      "Psychology",
+      "Spot Hidden",
+      "any two"
+    ]
+  },
+  {"name": "Asylum Attendant",
+    "Description" : "",
+    "Occupation Points": 260,
+    "Credit Rating": "08-20",
+    "Occupation Skills": [
+      "Dodge",
+      "Fighting(Brawl)",
+      "First Aid",
+      {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Listen",
+      "Psychology",
+      "Stealth"
+    ]
+  },
+  {"name": "Athlete",
+    "Description" : "",
+    "Occupation Points": 260,
+    "Credit Rating": "09-70",
+    "Occupation Skills": [
+      "Climb",
+      "Jump",
+      "Fighting(Brawl)",
+      "Ride",
+      {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Swim",
+      "Throw",
+      "any one"
+    ]
+  },
+  {"name": "Aviator",
+    "Description" : "",
+    "Occupation Points": 210,
+    "Credit Rating": "30-60",
+    "Occupation Skills": [
+      "Accounting",
+      "Electrical Repair",
+      "Listen",
+      "Mechanical Repair",
+      "Navigate",
+      "Pilot",
+      "Spot Hidden",
+      "any one"
+    ]
+  },
+  {"name": "Bartender",
+    "Description" : "",
+    "Occupation Points": 220,
+    "Credit Rating": "08-25",
+    "Occupation Skills": [
+      "Accounting",
+      {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+      "Fighting(Brawl)",
+      "Listen",
+      "Psychology",
+      "Spot Hidden",
+      "any one"
+    ]
+  },
+  {"name": "Big Game Hunter",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "20-50",
+        "Occupation Skills": [
+          "Firearms(Handgun)",
+          "Firearms(Rifle)",
+          {"one" : ["Listen; Spot Hidden"]},
+          "Natural World",
+          "Navigate",
+          {"Language Other" : ["any"]},
+          "Survival",
+          {"Science" : ["Biology; Botany)"]},
+          "Stealth",
+          "Track"
+        ]
+      },
+      {"name": "Book Dealer",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "20-40",
+        "Occupation Skills": [
+          "Accounting",
+          "Appraise",
+          "Drive Auto",
+          "History",
+          "Library Use",
+          "Language Own",
+          {"Language Other":["any"]},
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]}
+        ]
+      },
+      {"name": "Bounty Hunter",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "09-30",
+        "Occupation Skills": [
+          "Drive Auto",
+          "Electrical Repair",
+          {"one":["Fighting(Brawl), Firearms(Handgun); Firearms(Rifle)"]},
+          {"one" : ["Fast Talk; Charm; Intimidate; Persuade"]},
+          "Law",
+          "Psychology",
+          "Track",
+          "Stealth"
+        ]
+      },
+      {"name": "Boxer",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "09-60",
+        "Occupation Skills": [
+          "Dodge",
+          "Fighting(Brawl)",
+          "Intimidate",
+          "Jump",
+          "Psychology",
+          "Spot Hidden",
+          "Two any"
+        ]
+      },
+      {
+        "name" : "Butler",
+        "Description" : "",
+        "Occupation Points": 160,
+        "Credit Rating": "9 - 40",
+        "Occupation Skills": [
+          "Accounting or Appraise",
+          {"ArtandCraft" : ["Cook; Tailor; Barber; any"]},
+          "First Aid",
+          "Listen",
+          "Language Other",
+          "Psychology",
+          "Spot Hidden",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Chauffeur",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "10-40",
+        "Occupation Skills": [
+          "Drive Auto",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Listen",
+          "Mechanical Repair",
+          "Navigate",
+          "Spot Hidden",
+          {"one" : ["any"]}
+        ]
+      },
+      {
+        "name" : "Clerk/Executive",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "9-20",
+        "Occupation Skills": [
+          "Accounting",
+          "Language",
+          "Law",
+          "Library Use",
+          "Listen",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          {"two" :  ["any"]}
+        ]
+      },
+      {
+        "name" : "Cowboy",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "9-20",
+        "Occupation Skills": [
+          "Dodge",
+          {"one" :["Fighting; Firearms"]},
+          {"one" : ["First Aid; Natural World"]},
+          "Jump",
+          "Ride",
+          "Survival",
+          "Throw",
+          "Track"
+        ]
+      },
+      {
+        "name" : "Craftsperson",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "10-40",
+        "Occupation Skills": [
+          "Accounting",
+          {"ArtandCraft" : ["any two"]},
+          "Mechanical Repair",
+          "Natural World",
+          "Spot Hidden",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Criminal",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "5-65",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["Acting; Disguise"]},
+          "Appraise",
+          {"one" : ["Charm; Fast Talk;  Intimidate"]},
+          {"one" :  ["Fighting; Firearms"]},
+          {"one" :  ["Locksmith; Mechanical Repair"]},
+          "Stealth",
+          "Psychology",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Criminal: Assassin",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "30-60",
+        "Occupation Skills": [
+          "Disguise",
+          "Electrical Repair",
+          "Fighting",
+          "Firearms",
+          "Locksmith",
+          "Mechanical Repair",
+          "Stealth",
+          "Psychology"
+        ]
+      },
+      {
+        "name" : "Criminal: Bank Robber",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "5-75",
+        "Occupation Skills": [
+          "Drive Auto",
+          "Electrical or Mechanical Repair",
+          "Fighting",
+          "Firearms",
+          "Intimidate",
+          "Locksmith",
+          "Operate Heavy Machinery",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Criminal: Bootlegger",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "5-30",
+        "Occupation Skills": [
+          "Drive Auto",
+          "Fighting",
+          "Firearms",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "Stealth",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Criminal: Burglar",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "5-40",
+        "Occupation Skills": [
+          "Appraise",
+          "Climb",
+          "Electrical or Mechanical Repair",
+          "Listen",
+          "Locksmith",
+          "Sleight of Hand",
+          "Stealth",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Criminal: Conman",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "10-65",
+        "Occupation Skills": [
+          "Appraise",
+          {"ArtandCraft" : ["Acting"]},
+          {"one" : ["Law; Other Language"]},
+          "Listen",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "Sleight of Hand"
+        ]
+      },
+      {
+        "name" : "Criminal: Counterfeiter",
+        "Description" : "",
+        "Occupation Points": 340,
+        "Credit Rating": "20-60",
+        "Occupation Skills": [
+          "Accounting",
+          "Appraise",
+          {"ArtandCraft" : ["Forgery"]},
+          "History",
+          "Library Use",
+          "Spot Hidden",
+          "Sleight of Hand",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Criminal: Fence",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "20-40",
+        "Occupation Skills": [
+          "Accounting",
+          "Appraise",
+          {"ArtandCraft" : ["Forgery"]},
+          "History",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Library Use",
+          "Spot Hidden",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Criminal: Forger",
+        "Description" : "",
+        "Occupation Points": 340,
+        "Credit Rating": "20-60",
+        "Occupation Skills": [
+          "Accounting",
+          "Appraise",
+          {"ArtandCraft" : ["Forgery"]},
+          "History",
+          "Library Use",
+          "Spot Hidden",
+          "Sleight of Hand",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Criminal: Gun Moll",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "10-80",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["any"]},
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          {"one" : ["Fighting(Brawl); Firearms(Handgun)"]},
+          "Drive Auto",
+          "Listen",
+          "Stealth",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Criminal: Smuggler",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "30-60",
+        "Occupation Skills": [
+          "Firearms",
+          "Listen",
+          "Navigate",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          {"one" : ["Drive Auto; Pilot(Boat)"]},
+          "Psychology",
+          "Sleight of Hand",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Criminal: Street Punk",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "3-10",
+        "Occupation Skills": [
+          "Climb",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Fighting",
+          "Firearms",
+          "Jump",
+          "Sleight of Hand",
+          "Stealth",
+          "Throw"
+        ]
+      },
+      {
+        "name" : "Criminal: Thug",
+        "Description" : "",
+        "Occupation Points": 260,
+        "Credit Rating": "5-30",
+        "Occupation Skills": [
+          "Drive Auto",
+          "Fighting",
+          "Firearms",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "Stealth",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Cult Leader",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "30-60",
+        "Occupation Skills": [
+          "Accounting",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Occult",
+          "Psychology",
+          "Spot Hidden",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Designer",
+        "Description" : "",
+        "Occupation Points": 200,
+        "Credit Rating": "20-60",
+        "Occupation Skills": [
+          "Accounting, Art (Photography)",
+          {"ArtandCraft" : ["any"]},
+          {"one" :  ["Computer Use; Library Use"]},
+          "Mechanical Repair",
+          "Psychology",
+          "Spot Hidden",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Diver",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          "Diving",
+          "First Aid",
+          "Mechanical Repair",
+          "Pilot(Boat)",
+          "Science(Biology)",
+          "Spot Hidden",
+          "Swim",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Drifter",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "0-5",
+        "Occupation Skills": [
+          "Climb",
+          "Jump",
+          "Listen",
+          "Navigate",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Stealth",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Driver",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "9-20",
+        "Occupation Skills": [
+          "Accounting",
+          "Drive Auto",
+          "Listen",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Mechanical Repair",
+          "Navigate",
+          "Psychology",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Editor",
+        "Description" : "",
+        "Occupation Points": 200,
+        "Credit Rating": "10-30",
+        "Occupation Skills": [
+          "Accounting",
+          "History",
+          "Own Language",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "Spot Hidden",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Elected Official",
+        "Description" : "",
+        "Occupation Points": 200,
+        "Credit Rating": "50-90",
+        "Occupation Skills": [
+          "Charm",
+          "History",
+          "Intimidate",
+          "Fast Talk",
+          "Listen",
+          "Own Language",
+          "Persuade",
+          "Psychology"
+        ]
+      },
+      {
+        "name" : "Engineer",
+        "Description" : "",
+        "Occupation Points": 200,
+        "Credit Rating": "30-60",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["Technical Drawing"]},
+          "Electrical Repair",
+          "Library Use",
+          "Mechanical Repair",
+          "Operate Heavy Machine",
+          {"Science" : ["Engineering; Physics"]},
+          "any one"
+        ]
+      },
+      {
+        "name" : "Entertainer",
+        "Description" : "",
+        "Occupation Points": 200,
+        "Credit Rating": "9-70",
+        "Occupation Skills": [
+          {"ArtandCraft" : [" Acting; Singer; Comedian; any"]},
+          "Disguise",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Listen",
+          "Psychology",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Explorer",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "55-80",
+        "Occupation Skills": [
+          "Climb",
+          "Dodge",
+          "Drive Auto",
+          "First Aid",
+          "Jump",
+          "Mechanical Repair",
+          "Operate Heavy Machinery",
+          "Throw"
+        ]
+      },
+      {
+        "name" : "Farmer",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["Farming"]},
+          "Drive Auto (or Wagon)",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Mechanical Repair",
+          "Natural World",
+          "Operate Heavy Machinery",
+          "Track",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Federal Agent",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "20-40",
+        "Occupation Skills": [
+          "Drive Auto",
+          "Fighting(Brawl)",
+          "Firearms",
+          "Law",
+          "Persuade",
+          "Stealth",
+          "Spot Hidden",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Film Star",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "20-90",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["Acting"]},
+          "Disguise",
+          "Drive Auto",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Fire Fighter",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          "Climb",
+          "Dodge",
+          "Drive Auto",
+          "First Aid",
+          "Jump",
+          "Mechanical Repair",
+          "Operate Heavy Machinery",
+          "Throw."
+        ]
+      },
+      {
+        "name" : "Foreign Correspondent",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "10-40",
+        "Occupation Skills": [
+          "History",
+          {"Language Other" : ["any"]},
+          "Own Language",
+          "Listen",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "any one"
+        ]
+      },
+      {
+        "name" : " Forensic Surgeon",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "40-60",
+        "Occupation Skills": [
+          {"Language Other" : ["Latin"]},
+          "Library Use",
+          "Medicine",
+          "Persuade",
+          {"Science" : ["Biology; Forensics; Pharmacy"]},
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Gambler",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "8-50",
+        "Occupation Skills": [
+          "Accounting",
+          {"ArtandCraft" :  ["Acting"]},
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Listen",
+          "Psychology",
+          "Sleight of Hand",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Gangster Boss",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "60-90",
+        "Occupation Skills": [
+          "Fighting",
+          "Firearms",
+          "Law",
+          "Listen",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Gangster Underling",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "9-20",
+        "Occupation Skills": [
+          "Drive Auto",
+          "Fighting",
+          "Firearms",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Gentleman/Lady",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "40-90",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["any"]},
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Firearms(Rifle/Shotgun)",
+          "History",
+          {"Language Other" : ["any"]},
+          "Navigate",
+          "Ride"
+        ]
+      },
+      {
+        "name" : "Hobo",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "0-5",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["any"]},
+          "Climb",
+          "Jump",
+          "Listen",
+          {"one" : ["Locksmith; Sleight of Hand"]},
+          "Navigate",
+          "Stealth",
+          "any one."
+        ]
+      },
+      {
+        "name" : "Hospital Orderly",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "6-15",
+        "Occupation Skills": [
+          "Electrical Repair",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Fighting(Brawl)",
+          "First Aid",
+          "Listen",
+          "Mechanical Repair",
+          "Psychology",
+          "Stealth"
+        ]
+      },
+      {
+        "name" : "Investigative Journalist",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["Art; Photography"]},
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "History",
+          "Library Use",
+          "Own Language",
+          "Psychology",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Judge",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "50-80",
+        "Occupation Skills": [
+          "History",
+          "Intimidate",
+          "Law",
+          "Library Use",
+          "Listen",
+          "Own Language",
+          "Persuade",
+          "Psychology"
+        ]
+      },
+      {
+        "name" : "Laboratory Assistant",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "10-30",
+        "Occupation Skills": [
+          "Library Use",
+          "Electrical Repair",
+          {"Language Other" : ["any"]},
+          {"Science" : ["Chemistry; two others"]},
+          "Spot Hidden",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Laborer",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "9-20",
+        "Occupation Skills": [
+          "Drive Auto",
+          "Electrical Repair",
+          "Fighting",
+          "First Aid",
+          "Mechanical Repair",
+          "Operate Heavy Machinery",
+          "Throw",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Lawyer",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "30-80",
+        "Occupation Skills": [
+          "Accounting",
+          "Law",
+          "Library use",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "any two other skills."
+        ]
+      },
+      {
+        "name" : "Librarian",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "9-35",
+        "Occupation Skills": [
+          "Accounting",
+          "Library use",
+          {"Language Other" : ["any"]},
+          "Own Language",
+          "any four"
+        ]
+      },
+      {
+        "name" : "Lumberjack",
+        "Description" : "",
+        "Occupation Points": 240,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          "Climb",
+          "Dodge",
+          "Fighting(Chainsaw)",
+          "First Aid",
+          "Jump",
+          "Mechanical Repair",
+          {"one":["Natural World; Science(Biology; Botany)"]},
+          "Row"
+        ]
+      },
+      {
+        "name" : "Maid",
+        "Description" : "",
+        "Occupation Points": 220,
+        "Credit Rating": "9-40",
+        "Occupation Skills": [
+          "Accounting or Appraise",
+          {"ArtandCraft" : ["Cook; Tailor; Barber; any"]},
+          "First Aid",
+          "Listen",
+          {"Language Other" : ["any"]},
+          "Psychology",
+          "Spot Hidden",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Manager",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "20-80",
+        "Occupation Skills": [
+          "Accounting",
+          {"Language Other" :  ["any"]},
+          "Law",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Member of the Clergy",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "9-60",
+        "Occupation Skills": [
+          "Accounting",
+          "History",
+          "Library Use",
+          "Listen",
+          {"Language Other" : ["any"]},
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Military Officer",
+        "Description" : "",
+        "Occupation Points": 290,
+        "Credit Rating": "20-70",
+        "Occupation Skills": [
+          "Firearms",
+          "Navigate",
+          "First Aid",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Miner",
+        "Description" : "",
+        "Occupation Points": 290,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          "Climb",
+          "Geology",
+          "Jump",
+          "Mechanical Repair",
+          "Operate Heavy Machinery",
+          "Stealth",
+          "Spot Hidden",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Mountain Climber",
+        "Description" : "",
+        "Occupation Points": 290,
+        "Credit Rating": "30-60",
+        "Occupation Skills": [
+          "Climb",
+          "First Aid",
+          "Jump",
+          "Listen",
+          "Navigate",
+          {"Language Other" : ["any"]},
+          "Survival",
+          "Track"
+        ]
+      },
+      {
+        "name" : "Museum Curator",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "10-30",
+        "Occupation Skills": [
+          "Accounting",
+          "Appraise",
+          "Archaeology",
+          "History",
+          "Library Use",
+          "Occult",
+          {"Language Other" : ["any"]},
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Musician",
+        "Description" : "",
+        "Occupation Points": 300,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["Instrument"]},
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Listen",
+          "Psychology",
+          "any four"
+        ]
+      },
+      {
+        "name" : "Nurse",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          "First Aid",
+          "Listen",
+          "Medicine",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          {"Science" : ["Biology; Chemistry"]},
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Occultist",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "9-65",
+        "Occupation Skills": [
+          "Anthropology",
+          "History",
+          "Library Use",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Occult",
+          {"Language Other" : ["any"]},
+          {"Science" : ["Astronomy"]},
+          "any one"
+        ]
+      },
+      {
+        "name" : "Outdoorsman",
+        "Description" : "",
+        "Occupation Points": 290,
+        "Credit Rating": "5-20",
+        "Occupation Skills": [
+          "Firearms",
+          "First Aid",
+          "Listen",
+          "Natural World",
+          "Navigate",
+          "Spot Hidden",
+          "Survival",
+          "Track"
+        ]
+      },
+      {
+        "name" : "Parapsychologist",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          "Anthropology",
+          {"ArtandCraft" : ["Photography"]},
+          "History",
+          "Library Use",
+          "Occult",
+          {"Language Other" : ["any"]},
+          "Psychology",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Pharmacist",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "35-75",
+        "Occupation Skills": [
+          "Accounting",
+          "First Aid",
+          {"Language Other" : ["Latin"]},
+          "Library Use",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          {"Science" :["Pharmacy; Chemistry"]}
+        ]
+      },
+      {
+        "name" : "Photographer",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["Photography"]},
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          {"Science" : ["Chemistry"]},
+          "Stealth",
+          "Spot Hidden",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Photojournalist",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "10-30",
+        "Occupation Skills": [
+          {"ArtansCraft" : ["Photography"]},
+          "Climb",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          {"Language Other" : ["any"]},
+          "Psychology",
+          {"Science" : ["Chemistry"]},
+          "any two"
+        ]
+      },
+      {
+        "name" : "Private Investigator",
+        "Description" : "",
+        "Occupation Points": 290,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["photography"]},
+          "Disguise",
+          "Law",
+          "Library Use",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "Spot Hidden",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Prospector",
+        "Description" : "",
+        "Occupation Points": 290,
+        "Credit Rating": "1-20",
+        "Occupation Skills": [
+          "Climb",
+          "First Aid",
+          "History",
+          "Mechanical Repair",
+          "Navigate",
+          {"Science" : ["Geology"]},
+          "Spot Hidden",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Prostitute",
+        "Description" : "",
+        "Occupation Points": 300,
+        "Credit Rating": "5-50",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["any"]},
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Dodge",
+          "Psychology",
+          "Sleight of Hand",
+          "Stealth",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Psychiatrist",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "30-80",
+        "Occupation Skills": [
+          {"Language Other" : ["any"]},
+          "Listen",
+          "Medicine",
+          "Persuade",
+          "Psychoanalysis",
+          "Psycholog",
+          {"Science" : ["Biology; Chemistry"]}
+        ]
+      },
+      {
+        "name" : "Psychologist",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "10-40",
+        "Occupation Skills": [
+          "Accounting",
+          "Library Use",
+          "Listen",
+          "Persuade",
+          "Psychoanalysis",
+          "Psychology",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Researcher",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          "History",
+          "Library Use",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          {"Language Other" : ["any"]},
+          "Spot Hidden",
+          "any three"
+        ]
+      },
+      {
+        "name" : "Sailor (Commercial)",
+        "Description" : "",
+        "Occupation Points": 290,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          "First Aid",
+          "Mechanical Repair",
+          "Natural World",
+          "Navigate",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Pilot(Boat)",
+          "Spot Hidden",
+          "Swim"
+        ]
+      },
+      {
+        "name" : "Sailor (Naval)",
+        "Description" : "",
+        "Occupation Points": 290,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          {"one" :  ["Electrical; Mechanical Repair"]},
+          "Fighting",
+          "Firearms",
+          "First Aid",
+          "Navigate",
+          "Pilot(Boat)",
+          "Survival",
+          "Swim"
+        ]
+      },
+      {
+        "name" : "Salesperson",
+        "Description" : "",
+        "Occupation Points": 300,
+        "Credit Rating": "9-40",
+        "Occupation Skills": [
+          "Accounting",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Drive Auto",
+          "Listen",
+          "Psychology",
+          {"one" : ["Stealth; Sleight of Hand"]},
+          "any one"
+        ]
+      },
+      {
+        "name" : "Scientist",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "9-50",
+        "Occupation Skills": [
+          "Any three science specialisms",
+          "Computer Use or Library Use",
+          {"Language Other" : ["any"]},
+          "Own Language",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Secretary",
+        "Description" : "",
+        "Occupation Points": 300,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          "Accounting",
+          {"ArtandCraft" : ["Typing; Short Hand"]},
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Own Language",
+          "Library Use",
+          "Psychology",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Shopkeeper",
+        "Description" : "",
+        "Occupation Points": 300,
+        "Credit Rating": "20-40",
+        "Occupation Skills": [
+          "Accounting",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Electrical Repair",
+          "Listen",
+          "Mechanical Repair",
+          "Psychology",
+          "Spot Hidden"
+        ]
+      },
+      {
+        "name" : "Skilled Tradesperson",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "9-40",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["Carpentry; Welding; Plumbing; any"]},
+          "Climb",
+          "Drive Auto",
+          "Electrical Repair",
+          "Mechanical Repair",
+          "Operate Heavy Machinery",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Soldier",
+        "Description" : "",
+        "Occupation Points": 290,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          {"one" :  ["Climb; Swim"]},
+          "Dodge",
+          "Fighting",
+          "Firearms",
+          "Stealth",
+          "Survival",
+          {"two" : ["First Aid; Mechanical Repair; Language Other(any)"]}
+        ]
+      },
+      {
+        "name" : "Spy",
+        "Description" : "",
+        "Occupation Points": 300,
+        "Credit Rating": "20-60",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["Acting; Disguise"]},
+          "Firearms",
+          "Listen",
+          {"Language Other" : ["any"]},
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "Sleight of Hand",
+          "Stealth"
+        ]
+      },
+      {
+        "name" : "Stage Actor",
+        "Description" : "",
+        "Occupation Points": 300,
+        "Credit Rating": "9-40",
+        "Occupation Skills": [
+          "Art/Craft (Acting)",
+          "Disguise",
+          "Fighting",
+          "History",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Taxi Driver",
+        "Description" : "",
+        "Occupation Points": 280,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          "Accounting",
+          "Drive Auto",
+          "Electrical Repair",
+          "Fast Talk",
+          "Mechanical Repair",
+          "Navigate",
+          "Spot Hidden",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Stuntman",
+        "Description" : "",
+        "Occupation Points": 290,
+        "Credit Rating": "10-50",
+        "Occupation Skills": [
+          "Climb",
+          "Dodge",
+          "Electrical Repair or Mechanical Repair",
+          "Fighting",
+          "First Aid",
+          "Jump",
+          "Swim",
+          "Diving",
+          "Drive Automobile",
+          "Pilot",
+          "Ride"
+        ]
+      },
+      {
+        "name" : "Tribe Member",
+        "Description" : "",
+        "Occupation Points": 290,
+        "Credit Rating": "1-15",
+        "Occupation Skills": [
+          "Climb",
+          {"one" : ["Fighting(Brawl); Row"]},
+          "Listen",
+          "Natural World",
+          "Occult",
+          "Spot Hidden",
+          "Swim",
+          "Survival"
+        ]
+      },
+      {
+        "name" : "Undertaker",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "20-40",
+        "Occupation Skills": [
+          "Accounting",
+          "Drive Auto",
+          {"one" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "History",
+          "Occult",
+          "Psychology",
+          {"Science" : ["Biology; Chemistry"]}
+        ]
+      },
+      {
+        "name" : "Union Activist",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "5-30",
+        "Occupation Skills": [
+          "Accounting",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Fighting(Brawl)",
+          "Law",
+          "Listen",
+          "Operate Heavy Machinery",
+          "Psychology"
+        ]
+      },
+      {
+        "name" : "Valet",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "9-40",
+        "Occupation Skills": [
+          "Accounting or Appraise",
+          {"ArtandCraft" : ["any"]},
+          "First Aid",
+          "Listen",
+          {"Language Other" : ["any"]},
+          "Psychology",
+          "Spot Hidden",
+          "any two"
+        ]
+      },
+      {
+        "name" : "Waiter/Waitress",
+        "Description" : "",
+        "Occupation Points": 300,
+        "Credit Rating": "9-30",
+        "Occupation Skills": [
+          "Accounting",
+          {"ArtandCraft" : ["any"]},
+          "Dodge",
+          "Listen",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "any one"
+        ]
+      },
+      {
+        "name" : "Wrester",
+        "Description" : "",
+        "Occupation Points": 0,
+        "Credit Rating": "0-0",
+        "Occupation Skills": [
+          ""
+        ]
+      },
+      {
+        "name" : "Zealot",
+        "Description" : "",
+        "Occupation Points": 300,
+        "Credit Rating": "1-30",
+        "Occupation Skills": [
+          "History",
+          {"two" : ["Charm; Fast Talk; Intimidate; Persuade"]},
+          "Psychology",
+          "Stealth",
+          "any three"
+        ]
+      },
+      {
+        "name" : "Zookeeper",
+        "Description" : "",
+        "Occupation Points": 360,
+        "Credit Rating": "9-40",
+        "Occupation Skills": [
+          {"ArtandCraft" : ["Animal Handling"]},
+          "Accounting",
+          "Dodge",
+          "First Aid",
+          "Natural World",
+          "Medicine",
+          {"Science" : ["Pharmacy; Zoology"]}
+        ]
+      }
+    ]
+  }

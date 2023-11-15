@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#51FF9800">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/backToStepFourButtonn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Last Step" />
+
+        <TextView
+            android:id="@+id/backgroundTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Background"
+            android:textSize="34sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/myStoryTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="My Story: "
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/myStoryEditTextTextMultiLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Please enter your back story here (Optional)"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/personalDescriptionTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Personal Description: "
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/personalDescriptionEditTextTextMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Please enter your personal description here (Optional)"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/traitTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Traits: "
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/traitEditTextTextMultiLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Please enter your traits here (Optional)"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/ideologyAndBeliefsTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ideology And Beliefs:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/ideologyAndBeliefsEditTextTextMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Please enter your ideology and beliefs here (Optional)"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/injuriesAndScarsTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Injuries And Scars:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/injuriesAndScarsEditTextTextMultiLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Please enter your injuries and scars here (Optional)"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/significantPeopleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Significant People:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/significantPeopleEditTextTextMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Please enter your significant people here (Optional)"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/phobiasAndManiasTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Phobias And Manias:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/phobiasAndManiasEditTextTextMultiLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Please enter your phobias and manias here (Optional)"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/meaningfulLocationsTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Meaningful Locations:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/meaningfulLocationsEditTextTextMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Please enter your meaningful locations here (Optional)"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/arcaneTomesAndSpellsTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Arcane Tomes And Spells:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/arcaneTomesAndSpellsEditTextTextMultiLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Please enter your arcane tomes and spells here (Optional)"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/treasuredPossessionsTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Treasured Possessions:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/treasuredPossessionsEditTextTextMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Please enter your treasured possessions here (Optional)"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/encountersWithStrangeEntitiesTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Encounters With Strange Entities:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/encountersWithStrangeEntitiesEditTextTextMultiLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Please enter your encounters with strange entities here (Optional)"
+                    android:inputType="textMultiLine" />
+
+                <Button
+                    android:id="@+id/continueToStepSixButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Continue to Next Step" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
