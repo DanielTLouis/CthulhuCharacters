@@ -1,5 +1,6 @@
 # Cthulhu Charater | Create & Manage Your Cthulhu Charaters
 This repository consists of Src code for Android Studio project consisting of **Kotlin Activity**, **Layout XML**, and **Drawable Resources**.
+The Version folder contains the different versions of the app that is ready to be placed on ghe app store. The app will be release onto the Google PlayStore. 
 ## Table Of Contents
 * [Kotlin Activity](#kotlin-activity)
 * [Layout XML](#layout-xml)
