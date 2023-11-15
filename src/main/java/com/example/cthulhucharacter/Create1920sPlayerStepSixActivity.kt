@@ -41,6 +41,17 @@ class Create1920sPlayerStepSixActivity : ComponentActivity() {
     var playerAmmo : ArrayList<String> = arrayListOf()
     var playerMalf : ArrayList<String> = arrayListOf()
 
+    /**
+     * Function updateArray
+     * *This function will update the Arts, Language, and Science arrays from the json file so that
+     * * the unique states for those can be displayed
+     * * This function takes 3 parameters
+     * ** An arr variable that is a string of the json chracter
+     * ** a name varaible which is also a string in the name of the element to be updated
+     * ** And an num that is an Int for the number the to increase by that much of if it does not exsitst
+     * * in the array it will be added with the starting number of the inputs
+     * *This app does not return anything
+     */
     private fun updateArray(arr: String, name: String, num: Int) {
         var index: Int = 0
         if (arr == "Art") {

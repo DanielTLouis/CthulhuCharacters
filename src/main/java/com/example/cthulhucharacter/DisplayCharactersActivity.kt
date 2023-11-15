@@ -7,6 +7,7 @@ import android.os.Environment
 import android.preference.PreferenceManager
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -100,6 +101,23 @@ class DisplayCharactersActivity : ComponentActivity() {
                 startActivity(intent)
             }
             val horLayout : LinearLayout = LinearLayout(this)
+
+            charName.layoutParams = LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                25.0f
+            )
+            choiceButton.layoutParams = LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                25.0f
+            )
+            deleteButton.layoutParams = LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                25.0f
+            )
+
             horLayout.orientation = LinearLayout.HORIZONTAL
             horLayout.addView(charName)
             horLayout.addView(choiceButton)

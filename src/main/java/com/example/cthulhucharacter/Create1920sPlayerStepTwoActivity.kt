@@ -27,7 +27,6 @@ import java.time.temporal.Temporal
  * ** Base stats that are set: strength, constitution, dexterity, intelligent, size, power, appearance,
  * *** education, health, sanity, luck   
  */
-//generate base stats
 class Create1920sPlayerStepTwoActivity : ComponentActivity() {
     var artsArray : ArrayList<String> = arrayListOf()
     var languageArray : ArrayList<String> = arrayListOf()
@@ -91,12 +90,15 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
         val continueButton4 : Button = findViewById(R.id.continueButton4)
         val testing : TextView = findViewById(R.id.testing)
 
-
+        /**
+         * Function rollStats
+         * * This function will calculate and assign the values for each stat to the corresponding TextView for that stat
+         * * This function takes no input parameters
+         * * This function will not return a values, but when it finishes the TextViews for each stat value will be updated
+         * ** with the new stat value.
+         */
         fun rollStats(){
-            //roll stats
-            /**
-             * add a re-roll button
-             */
+            //the calculations mimic rolling D-6s according to the roles in the keeper's handbook
             strengthStatTextView.text = (((1..6).random() + (1..6).random() + (1..6).random())*5).toString()
             constitutionStatsTextView.text = (((1..6).random() + (1..6).random() + (1..6).random())*5).toString()
             dexterityStatsTextView.text = (((1..6).random() + (1..6).random() + (1..6).random())*5).toString()
@@ -519,6 +521,11 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
         /**
          * Buttons
          */
+        /**
+         * continueButton4 Button
+         * * this button will open the standard array picker
+         * * This button does not show up in the application
+         */
         continueButton4.setOnClickListener(){
             if(
                 stgSpinner.selectedItem.toString() != "-" &&
@@ -605,12 +612,23 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
         }
 
         //will return to pervious screen back to step one
+        /**
+         * backToStepOneButton Button
+         * * Will return to the previous Activity in the creating character process
+         */
         val backToStepOneButton : Button = findViewById(R.id.backToStepOneButton)
         backToStepOneButton.setOnClickListener(){
             //go to next step
             val intent = Intent(this@Create1920sPlayerStepTwoActivity, Create1920sPlayerStepOneActivity::class.java)
             startActivity(intent)
         }
+        /**
+         * continueButton2 Button
+         * * This button will continue to the next steps in generating stats depending on the users selection
+         * ** If the spanner is selected to Roll then is will make the roll view visible
+         * ** If the spanner is selected to Standard array it will make the standard array view visible
+         * * This button does not show up in the app right now
+         */
         //continueButton2
         val continueButton2 : Button = findViewById(R.id.continueButton2)
         continueButton2.setOnClickListener(){
@@ -626,19 +644,29 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
                 stepTwoPartTwoStandardArrayLayout.visibility = View.VISIBLE
             }
         }
-
+        /**
+         * backToStepTwoButton2 Button
+         * *This button closes the chosen view to be able to choose another view
+         * *This button does not show up in the app right now
+         */
         val backToStepTwoButton2 : Button = findViewById(R.id.backToStepTwoButton2)
         backToStepTwoButton2.setOnClickListener(){
             val stepTwoPartTwoStandardArrayLayout : View = findViewById(R.id.stepTwoPartTwoStandardArrayLayout)
             stepTwoPartTwoStandardArrayLayout.visibility = View.GONE
         }
-
+        /**
+         * backToStep2Button Button
+         * * This will make the layout for the standard array to be GONE so the selection between roll and standard array will appear again
+         */
         val backToStep2Button : Button = findViewById(R.id.backToStep2Button)
         backToStep2Button.setOnClickListener(){
             val stepTwoPartTwoRollLayout : View = findViewById(R.id.stepTwoPartTwoRollLayout)
             stepTwoPartTwoRollLayout.visibility = View.GONE
         }
-
+        /**
+         * continueButton3 Button
+         * * This will save the stats to the json character sheet and load the next activity in the character creation process
+         */
         val continueButton3 : Button = findViewById(R.id.continueButton3)
         continueButton3.setOnClickListener(){
             newCharacter.strength = strengthStatTextView.text.toString().toInt()
@@ -694,7 +722,10 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
             //stepTwoPartTwoRollLayout.visibility = View.GONE
 
         }
-
+        /**
+         * rerollButton Button
+         * * This will call the rolStats function to generate new values for the stats
+         */
         val rerollButton : Button = findViewById(R.id.rerollButton)
         rerollButton.setOnClickListener(){
             rollStats()
@@ -780,6 +811,12 @@ class Create1920sPlayerStepTwoActivity : ComponentActivity() {
         }
     }
 
+    /**
+     * Function moveStat
+     * * This will determine the movement speed for the character
+     * * This requires the input parameters of 3 integers (Int) representing the character's dex, str, and siz
+     * * This function returns an integer that is a representation of their movement speed.
+     */
     fun moveStat(dex : Int, str : Int, siz : Int):Int{
         if(dex > siz && str > siz){
             return 9
